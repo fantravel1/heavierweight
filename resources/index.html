@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources: Tools & Calculators for Lifters | HEAVIERWEIGHT</title>
+  <meta name="description" content="Free tools and resources for strength athletes. 1RM calculator, Wilks/DOTS calculator, meet finder, approved equipment lists, and more.">
+  <link rel="canonical" href="https://heavierweight.com/resources/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#ffd700">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .page-hero { padding: 80px 0; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(26, 26, 46, 0.95) 100%); }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+    .tool-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 32px; border-radius: 16px; }
+    .tool-card h3 { color: #ffd700; margin: 0 0 12px 0; }
+    .tool-card p { color: #a0a0a0; margin: 0 0 20px 0; line-height: 1.7; }
+    .calculator { background: rgba(255,255,255,0.02); padding: 24px; border-radius: 12px; margin-top: 16px; }
+    .calculator label { display: block; color: #a0a0a0; margin-bottom: 8px; font-size: 0.9rem; }
+    .calculator input, .calculator select { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem; margin-bottom: 16px; }
+    .calculator input:focus, .calculator select:focus { outline: none; border-color: #ffd700; }
+    .calculator button { width: 100%; padding: 14px; background: #ffd700; color: #1a1a2e; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+    .calculator button:hover { background: #ffed4a; }
+    .result { background: rgba(255,215,0,0.1); padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center; }
+    .result-value { font-size: 2rem; font-weight: 800; color: #ffd700; }
+    .result-label { color: #a0a0a0; font-size: 0.9rem; }
+    .resources-section { margin-top: 60px; }
+    .resources-section h2 { color: #ffd700; margin-bottom: 24px; }
+    .link-list { display: grid; gap: 12px; }
+    .link-item { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px 20px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+    .link-item:hover { border-color: #ffd700; }
+    .link-item-title { color: #fff; font-weight: 600; }
+    .link-item-desc { color: #6b7280; font-size: 0.9rem; }
+    .link-item-arrow { color: #ffd700; }
+  </style>
+</head>
+<body>
+  <header style="padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem;">HEAVIERWEIGHT</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/train/" style="color: #a0a0a0;">Train</a>
+        <a href="/compete/" style="color: #a0a0a0;">Compete</a>
+        <a href="/science/" style="color: #a0a0a0;">Science</a>
+        <a href="/gear/" style="color: #a0a0a0;">Gear</a>
+        <a href="/fuel/" style="color: #a0a0a0;">Fuel</a>
+        <a href="/life/" style="color: #a0a0a0;">Life</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 style="font-size: 2.5rem; margin-bottom: 16px; color: #ffd700;">Resources</h1>
+      <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 600px;">
+        Free tools, calculators, and links to help you train smarter and compete better.
+      </p>
+    </div>
+  </section>
+
+  <main class="container" style="padding: 60px 20px;">
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3>1RM Calculator</h3>
+        <p>Estimate your one-rep max based on a submaximal set. Uses the Epley formula.</p>
+        <div class="calculator">
+          <label>Weight Lifted (kg)</label>
+          <input type="number" id="weight-1rm" placeholder="100">
+          <label>Reps Completed</label>
+          <input type="number" id="reps-1rm" placeholder="5">
+          <button onclick="calculate1RM()">Calculate</button>
+          <div class="result" id="result-1rm" style="display: none;">
+            <div class="result-value" id="value-1rm">-</div>
+            <div class="result-label">Estimated 1RM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <h3>DOTS Calculator</h3>
+        <p>Compare your total across weight classes. The modern replacement for Wilks in IPF competition.</p>
+        <div class="calculator">
+          <label>Bodyweight (kg)</label>
+          <input type="number" id="bw-dots" placeholder="63">
+          <label>Total (kg)</label>
+          <input type="number" id="total-dots" placeholder="400">
+          <label>Sex</label>
+          <select id="sex-dots">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+          <button onclick="calculateDOTS()">Calculate</button>
+          <div class="result" id="result-dots" style="display: none;">
+            <div class="result-value" id="value-dots">-</div>
+            <div class="result-label">DOTS Score</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <h3>RPE to Percentage</h3>
+        <p>Convert Rate of Perceived Exertion to percentage of 1RM for programming.</p>
+        <div class="calculator">
+          <label>RPE</label>
+          <select id="rpe-convert">
+            <option value="10">10 (Max effort)</option>
+            <option value="9.5">9.5</option>
+            <option value="9">9</option>
+            <option value="8.5">8.5</option>
+            <option value="8" selected>8</option>
+            <option value="7.5">7.5</option>
+            <option value="7">7</option>
+            <option value="6.5">6.5</option>
+            <option value="6">6</option>
+          </select>
+          <label>Reps</label>
+          <select id="reps-convert">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+          <button onclick="calculateRPE()">Calculate</button>
+          <div class="result" id="result-rpe" style="display: none;">
+            <div class="result-value" id="value-rpe">-</div>
+            <div class="result-label">Percentage of 1RM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Protein Calculator</h3>
+        <p>Calculate your daily protein needs based on bodyweight and activity level.</p>
+        <div class="calculator">
+          <label>Bodyweight (kg)</label>
+          <input type="number" id="bw-protein" placeholder="65">
+          <label>Goal</label>
+          <select id="goal-protein">
+            <option value="1.6">Maintenance (1.6g/kg)</option>
+            <option value="2.0" selected>Building (2.0g/kg)</option>
+            <option value="2.4">Cutting (2.4g/kg)</option>
+          </select>
+          <button onclick="calculateProtein()">Calculate</button>
+          <div class="result" id="result-protein" style="display: none;">
+            <div class="result-value" id="value-protein">-</div>
+            <div class="result-label">Daily Protein Target</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="resources-section">
+      <h2>Federation Resources</h2>
+      <div class="link-list">
+        <a href="https://www.powerlifting.sport/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">IPF (International Powerlifting Federation)</div>
+            <div class="link-item-desc">Official IPF website, rules, and competition calendar</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="https://www.usapowerlifting.com/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">USA Powerlifting (USAPL)</div>
+            <div class="link-item-desc">US affiliate of IPF, find local meets</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="https://www.uspa.net/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">USPA</div>
+            <div class="link-item-desc">Drug-tested and untested divisions, flexible equipment rules</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="https://www.iwf.net/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">IWF (International Weightlifting Federation)</div>
+            <div class="link-item-desc">Olympic weightlifting governing body</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resources-section">
+      <h2>Equipment Lists</h2>
+      <div class="link-list">
+        <a href="https://www.powerlifting.sport/fileadmin/ipf/data/rules/approved-list/IPF_Approved_List.pdf" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">IPF Approved Equipment List</div>
+            <div class="link-item-desc">Official list of approved gear for IPF/USAPL competition</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resources-section">
+      <h2>Meet Finders</h2>
+      <div class="link-list">
+        <a href="https://www.openpowerlifting.org/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">OpenPowerlifting</div>
+            <div class="link-item-desc">Comprehensive database of powerlifting results from all federations</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="https://liftingcast.com/" class="link-item" target="_blank" rel="noopener">
+          <div>
+            <div class="link-item-title">LiftingCast</div>
+            <div class="link-item-desc">Meet management and results platform, live competition tracking</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resources-section">
+      <h2>HEAVIERWEIGHT Guides</h2>
+      <div class="link-list">
+        <a href="/start-here/" class="link-item">
+          <div>
+            <div class="link-item-title">Start Here: Beginner's Guide</div>
+            <div class="link-item-desc">Everything you need to begin strength training</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="/glossary/" class="link-item">
+          <div>
+            <div class="link-item-title">Glossary</div>
+            <div class="link-item-desc">100+ strength training terms explained</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+        <a href="/compete/first-powerlifting-meet/" class="link-item">
+          <div>
+            <div class="link-item-title">First Meet Guide</div>
+            <div class="link-item-desc">Everything you need for your first powerlifting competition</div>
+          </div>
+          <span class="link-item-arrow">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p style="color: #6b7280;">&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculate1RM() {
+      const weight = parseFloat(document.getElementById('weight-1rm').value);
+      const reps = parseInt(document.getElementById('reps-1rm').value);
+      if (weight && reps) {
+        // Epley formula
+        const e1rm = weight * (1 + reps / 30);
+        document.getElementById('value-1rm').textContent = Math.round(e1rm) + ' kg';
+        document.getElementById('result-1rm').style.display = 'block';
+      }
+    }
+
+    function calculateDOTS() {
+      const bw = parseFloat(document.getElementById('bw-dots').value);
+      const total = parseFloat(document.getElementById('total-dots').value);
+      const sex = document.getElementById('sex-dots').value;
+
+      if (bw && total) {
+        // Simplified DOTS calculation (female coefficients)
+        let coeff;
+        if (sex === 'female') {
+          coeff = -0.0000010930 * Math.pow(bw, 4) + 0.0007391293 * Math.pow(bw, 3) - 0.1947099831 * Math.pow(bw, 2) + 24.0900255159 * bw - 574.4041082726;
+        } else {
+          coeff = -0.0000010930 * Math.pow(bw, 4) + 0.0007391293 * Math.pow(bw, 3) - 0.1918759221 * Math.pow(bw, 2) + 24.0900255159 * bw - 307.75076;
+        }
+        const dots = total * (500 / coeff);
+        document.getElementById('value-dots').textContent = dots.toFixed(2);
+        document.getElementById('result-dots').style.display = 'block';
+      }
+    }
+
+    function calculateRPE() {
+      const rpe = parseFloat(document.getElementById('rpe-convert').value);
+      const reps = parseInt(document.getElementById('reps-convert').value);
+
+      // RPE chart (simplified)
+      const chart = {
+        '10-1': 100, '9.5-1': 97.5, '9-1': 95.5, '8.5-1': 93.5, '8-1': 92, '7.5-1': 90.5, '7-1': 89, '6.5-1': 87.5, '6-1': 86,
+        '10-2': 95.5, '9.5-2': 93.5, '9-2': 92, '8.5-2': 90.5, '8-2': 89, '7.5-2': 87.5, '7-2': 86, '6.5-2': 84.5, '6-2': 83,
+        '10-3': 92, '9.5-3': 90.5, '9-3': 89, '8.5-3': 87.5, '8-3': 86, '7.5-3': 84.5, '7-3': 83, '6.5-3': 81.5, '6-3': 80,
+        '10-5': 86, '9.5-5': 84.5, '9-5': 83, '8.5-5': 81.5, '8-5': 80, '7.5-5': 78.5, '7-5': 77, '6.5-5': 75.5, '6-5': 74,
+        '10-8': 78, '9.5-8': 76.5, '9-8': 75, '8.5-8': 73.5, '8-8': 72, '7.5-8': 70.5, '7-8': 69, '6.5-8': 67.5, '6-8': 66,
+        '10-10': 74, '9.5-10': 72.5, '9-10': 71, '8.5-10': 69.5, '8-10': 68, '7.5-10': 66.5, '7-10': 65, '6.5-10': 63.5, '6-10': 62
+      };
+
+      const key = rpe + '-' + reps;
+      const percentage = chart[key] || 'N/A';
+      document.getElementById('value-rpe').textContent = percentage + '%';
+      document.getElementById('result-rpe').style.display = 'block';
+    }
+
+    function calculateProtein() {
+      const bw = parseFloat(document.getElementById('bw-protein').value);
+      const multiplier = parseFloat(document.getElementById('goal-protein').value);
+      if (bw) {
+        const protein = Math.round(bw * multiplier);
+        document.getElementById('value-protein').textContent = protein + 'g';
+        document.getElementById('result-protein').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
