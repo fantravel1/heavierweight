@@ -1,0 +1,37 @@
+# HEAVIERWEIGHT.COM Robots.txt
+# The Definitive Resource for Women's Competitive Lifting
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://heavierweight.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow all assets
+Allow: /assets/
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+
+# Social media bots - welcome!
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /

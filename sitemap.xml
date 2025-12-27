@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://heavierweight.com/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-home.svg</image:loc>
+      <image:title>HEAVIERWEIGHT - Women's Competitive Lifting</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: TRAIN -->
+  <url>
+    <loc>https://heavierweight.com/train/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-train.svg</image:loc>
+      <image:title>TRAIN - Programming &amp; Technique for Women</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: COMPETE -->
+  <url>
+    <loc>https://heavierweight.com/compete/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-compete.svg</image:loc>
+      <image:title>COMPETE - Federations, Meet Prep &amp; Athletes</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: SCIENCE -->
+  <url>
+    <loc>https://heavierweight.com/science/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-science.svg</image:loc>
+      <image:title>SCIENCE - Evidence-Based Training &amp; Physiology</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: GEAR -->
+  <url>
+    <loc>https://heavierweight.com/gear/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-gear.svg</image:loc>
+      <image:title>GEAR - Equipment Reviews &amp; Buying Guides</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: FUEL -->
+  <url>
+    <loc>https://heavierweight.com/fuel/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-fuel.svg</image:loc>
+      <image:title>FUEL - Nutrition &amp; Recovery</image:title>
+    </image:image>
+  </url>
+
+  <!-- PILLAR: LIFE -->
+  <url>
+    <loc>https://heavierweight.com/life/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://heavierweight.com/assets/og-life.svg</image:loc>
+      <image:title>LIFE - Mindset, Community &amp; Wellness</image:title>
+    </image:image>
+  </url>
+
+  <!-- EDITORIAL -->
+  <url>
+    <loc>https://heavierweight.com/editorial/calendar-2025/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heavierweight.com/editorial/calendar-2026/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heavierweight.com/editorial/style-guide/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- RESEARCH -->
+  <url>
+    <loc>https://heavierweight.com/research/competitor-analysis/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://heavierweight.com/research/keyword-research/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://heavierweight.com/research/audience-personas/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- SUPPORTING PAGES -->
+  <url>
+    <loc>https://heavierweight.com/partners/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heavierweight.com/contributing/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

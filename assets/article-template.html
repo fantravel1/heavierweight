@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===========================================
+       REPLACE THESE VALUES FOR EACH ARTICLE
+       =========================================== -->
+  <title>{{ARTICLE_TITLE}} | HEAVIERWEIGHT</title>
+  <meta name="description" content="{{META_DESCRIPTION_150_160_CHARS}}">
+  <meta name="keywords" content="{{KEYWORD_1}}, {{KEYWORD_2}}, {{KEYWORD_3}}">
+  <meta name="author" content="HEAVIERWEIGHT Editorial">
+  <link rel="canonical" href="https://heavierweight.com/{{PILLAR}}/{{ARTICLE_SLUG}}/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://heavierweight.com/{{PILLAR}}/{{ARTICLE_SLUG}}/">
+  <meta property="og:title" content="{{ARTICLE_TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="https://heavierweight.com/assets/articles/{{ARTICLE_SLUG}}.svg">
+  <meta property="article:published_time" content="{{PUBLISH_DATE}}">
+  <meta property="article:modified_time" content="{{MODIFIED_DATE}}">
+  <meta property="article:section" content="{{PILLAR_NAME}}">
+  <meta property="article:tag" content="{{TAG_1}}">
+  <meta property="article:tag" content="{{TAG_2}}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@heavierweight">
+  <meta name="twitter:title" content="{{ARTICLE_TITLE}}">
+  <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+  <meta name="twitter:image" content="https://heavierweight.com/assets/articles/{{ARTICLE_SLUG}}.svg">
+
+  <!-- Favicon & Theme -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#e94560">
+
+  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ARTICLE_TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
+    "image": "https://heavierweight.com/assets/articles/{{ARTICLE_SLUG}}.svg",
+    "datePublished": "{{PUBLISH_DATE}}",
+    "dateModified": "{{MODIFIED_DATE}}",
+    "author": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT Editorial",
+      "url": "https://heavierweight.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heavierweight.com/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://heavierweight.com/{{PILLAR}}/{{ARTICLE_SLUG}}/"
+    },
+    "keywords": "{{KEYWORDS_COMMA_SEPARATED}}"
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://heavierweight.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{PILLAR_NAME}}",
+        "item": "https://heavierweight.com/{{PILLAR}}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ARTICLE_TITLE}}",
+        "item": "https://heavierweight.com/{{PILLAR}}/{{ARTICLE_SLUG}}/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header (include from partials) -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">HEAVIERWEIGHT</a>
+        <!-- Navigation items -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="article">
+      <header class="article__header">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> /
+          <a href="/{{PILLAR}}/">{{PILLAR_NAME}}</a> /
+          <span>{{ARTICLE_TITLE}}</span>
+        </nav>
+
+        <!-- Meta -->
+        <div class="article__meta">
+          <span>{{PILLAR_EMOJI}} {{PILLAR_NAME}}</span>
+          <span>{{READING_TIME}} min read</span>
+          <time datetime="{{PUBLISH_DATE}}">{{PUBLISH_DATE_FORMATTED}}</time>
+        </div>
+
+        <!-- Title -->
+        <h1 class="article__title">{{ARTICLE_TITLE}}</h1>
+
+        <!-- Excerpt -->
+        <p class="article__excerpt">{{ARTICLE_EXCERPT}}</p>
+      </header>
+
+      <!-- Key Takeaway -->
+      <div class="takeaway">
+        <p class="takeaway__title">Key Takeaway</p>
+        <p>{{KEY_TAKEAWAY_50_WORDS}}</p>
+      </div>
+
+      <!-- Table of Contents (for Comprehensive+ articles) -->
+      <nav class="toc" aria-label="Table of Contents">
+        <h2>In This Article</h2>
+        <ul>
+          <li><a href="#section-1">{{SECTION_1_TITLE}}</a></li>
+          <li><a href="#section-2">{{SECTION_2_TITLE}}</a></li>
+          <li><a href="#section-3">{{SECTION_3_TITLE}}</a></li>
+        </ul>
+      </nav>
+
+      <!-- Article Content -->
+      <div class="article__content">
+        <h2 id="section-1">{{SECTION_1_TITLE}}</h2>
+        <p>{{SECTION_1_CONTENT}}</p>
+
+        <!-- Pro Tip Example -->
+        <div class="pro-tip">
+          <p class="pro-tip__title">Pro Tip</p>
+          <p>{{PRO_TIP_CONTENT}}</p>
+        </div>
+
+        <h2 id="section-2">{{SECTION_2_TITLE}}</h2>
+        <p>{{SECTION_2_CONTENT}}</p>
+
+        <!-- Warning Example -->
+        <div class="warning">
+          <p class="warning__title">Important</p>
+          <p>{{WARNING_CONTENT}}</p>
+        </div>
+
+        <h2 id="section-3">{{SECTION_3_TITLE}}</h2>
+        <p>{{SECTION_3_CONTENT}}</p>
+
+        <!-- FAQ Section (adds FAQ schema) -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3>{{FAQ_QUESTION_1}}</h3>
+        <p>{{FAQ_ANSWER_1}}</p>
+
+        <h3>{{FAQ_QUESTION_2}}</h3>
+        <p>{{FAQ_ANSWER_2}}</p>
+
+        <!-- Next Steps -->
+        <h2 id="next-steps">Next Steps</h2>
+        <p>{{NEXT_STEPS_CONTENT}}</p>
+
+        <!-- Related Articles -->
+        <h3>Related Articles</h3>
+        <ul>
+          <li><a href="/{{PILLAR}}/{{RELATED_1_SLUG}}/">{{RELATED_1_TITLE}}</a></li>
+          <li><a href="/{{PILLAR}}/{{RELATED_2_SLUG}}/">{{RELATED_2_TITLE}}</a></li>
+          <li><a href="/{{PILLAR}}/{{RELATED_3_SLUG}}/">{{RELATED_3_TITLE}}</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer (include from partials) -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+
+  <!-- FAQ Schema (if FAQ section present) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{FAQ_QUESTION_1}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{FAQ_ANSWER_1}}"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "{{FAQ_QUESTION_2}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{FAQ_ANSWER_2}}"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

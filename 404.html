@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | HEAVIERWEIGHT</title>
+
+  <meta name="description" content="Page not found. Return to HEAVIERWEIGHT for women's competitive lifting content.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #1a1a2e;
+      --bg-darker: #16213e;
+      --accent-primary: #e94560;
+      --accent-secondary: #ff6b6b;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .barbell {
+      margin-bottom: 48px;
+      opacity: 0.3;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--accent-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent-secondary);
+      transform: translateY(-2px);
+    }
+
+    .links {
+      margin-top: 48px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .links a:hover {
+      color: var(--accent-primary);
+    }
+  </style>
+</head>
+<body>
+  <svg class="barbell" width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="40" y="26" width="120" height="8" rx="2" fill="#e94560"/>
+    <rect x="25" y="18" width="12" height="24" rx="2" fill="#ff6b6b"/>
+    <rect x="10" y="12" width="10" height="36" rx="2" fill="#e94560"/>
+    <rect x="163" y="18" width="12" height="24" rx="2" fill="#ff6b6b"/>
+    <rect x="180" y="12" width="10" height="36" rx="2" fill="#e94560"/>
+  </svg>
+
+  <div class="error-code">404</div>
+  <h1>Page Not Found</h1>
+  <p>Looks like this page missed the lift. Let's get you back to the platform.</p>
+
+  <a href="/" class="btn">Return Home</a>
+
+  <div class="links">
+    <a href="/train/">TRAIN</a>
+    <a href="/compete/">COMPETE</a>
+    <a href="/science/">SCIENCE</a>
+    <a href="/gear/">GEAR</a>
+    <a href="/fuel/">FUEL</a>
+    <a href="/life/">LIFE</a>
+  </div>
+</body>
+</html>

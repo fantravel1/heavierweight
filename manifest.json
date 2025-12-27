@@ -1,0 +1,64 @@
+{
+  "name": "HEAVIERWEIGHT",
+  "short_name": "HEAVIERWEIGHT",
+  "description": "The Definitive Resource for Women's Competitive Lifting",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#e94560",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["fitness", "sports", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/og-home.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "label": "HEAVIERWEIGHT Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "TRAIN",
+      "short_name": "Train",
+      "description": "Programming & Technique",
+      "url": "/train/",
+      "icons": [{"src": "/assets/og-train.svg", "sizes": "96x96"}]
+    },
+    {
+      "name": "COMPETE",
+      "short_name": "Compete",
+      "description": "Federations & Meet Prep",
+      "url": "/compete/",
+      "icons": [{"src": "/assets/og-compete.svg", "sizes": "96x96"}]
+    },
+    {
+      "name": "GEAR",
+      "short_name": "Gear",
+      "description": "Equipment Reviews",
+      "url": "/gear/",
+      "icons": [{"src": "/assets/og-gear.svg", "sizes": "96x96"}]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
