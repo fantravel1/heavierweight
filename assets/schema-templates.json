@@ -1,0 +1,186 @@
+{
+  "_comment": "Schema.org JSON-LD Templates for HEAVIERWEIGHT.COM",
+  "_usage": "Copy and customize these templates for each page type",
+
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HEAVIERWEIGHT",
+    "alternateName": "HEAVIERWEIGHT.COM",
+    "url": "https://heavierweight.com",
+    "logo": "https://heavierweight.com/favicon.svg",
+    "description": "The Definitive Resource for Women's Competitive Lifting",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://twitter.com/heavierweight",
+      "https://instagram.com/heavierweight",
+      "https://github.com/fantravel1/heavierweight"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "editorial",
+      "email": "editorial@heavierweight.com"
+    }
+  },
+
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HEAVIERWEIGHT",
+    "url": "https://heavierweight.com",
+    "description": "The Definitive Resource for Women's Competitive Lifting",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://heavierweight.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+
+  "article_template": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITLE}}",
+    "description": "{{DESCRIPTION}}",
+    "image": "{{OG_IMAGE}}",
+    "datePublished": "{{DATE_PUBLISHED}}",
+    "dateModified": "{{DATE_MODIFIED}}",
+    "author": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT Editorial",
+      "url": "https://heavierweight.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heavierweight.com/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{CANONICAL_URL}}"
+    },
+    "keywords": "{{KEYWORDS}}"
+  },
+
+  "howto_template": {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "{{TITLE}}",
+    "description": "{{DESCRIPTION}}",
+    "image": "{{OG_IMAGE}}",
+    "totalTime": "PT{{READING_TIME}}M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Step 1",
+        "text": "{{STEP_1_TEXT}}",
+        "image": "{{STEP_1_IMAGE}}"
+      }
+    ]
+  },
+
+  "faq_template": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{QUESTION_1}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ANSWER_1}}"
+        }
+      }
+    ]
+  },
+
+  "product_review_template": {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "{{PRODUCT_NAME}}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{BRAND_NAME}}"
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "{{RATING}}",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT Editorial"
+    },
+    "reviewBody": "{{REVIEW_SUMMARY}}"
+  },
+
+  "athlete_profile_template": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ATHLETE_NAME}}",
+    "jobTitle": "Professional Powerlifter",
+    "description": "{{ATHLETE_BIO}}",
+    "image": "{{ATHLETE_IMAGE}}",
+    "nationality": {
+      "@type": "Country",
+      "name": "{{COUNTRY}}"
+    },
+    "award": "{{ACHIEVEMENTS}}",
+    "sameAs": [
+      "{{INSTAGRAM_URL}}",
+      "{{TWITTER_URL}}"
+    ]
+  },
+
+  "collection_page_template": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "{{PILLAR_NAME}}",
+    "description": "{{PILLAR_DESCRIPTION}}",
+    "url": "{{CANONICAL_URL}}",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HEAVIERWEIGHT",
+      "url": "https://heavierweight.com"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Women's Competitive Lifting"
+    },
+    "numberOfItems": "{{ARTICLE_COUNT}}"
+  },
+
+  "breadcrumb_template": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://heavierweight.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{PILLAR_NAME}}",
+        "item": "https://heavierweight.com/{{PILLAR_SLUG}}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ARTICLE_TITLE}}",
+        "item": "{{CANONICAL_URL}}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>HEAVIERWEIGHT</title>
+    <link>https://heavierweight.com</link>
+    <description>The Definitive Resource for Women's Competitive Lifting</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2024 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://heavierweight.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://heavierweight.com/favicon.svg</url>
+      <title>HEAVIERWEIGHT</title>
+      <link>https://heavierweight.com</link>
+    </image>
+
+    <!-- TRAIN Pillar -->
+    <item>
+      <title>TRAIN: Women's Strength Training Programs &amp; Technique Guides</title>
+      <link>https://heavierweight.com/train/</link>
+      <guid isPermaLink="true">https://heavierweight.com/train/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Training</category>
+      <description>75 evidence-based articles on strength training for women. Beginner to advanced programs, technique guides, and Olympic weightlifting content.</description>
+    </item>
+
+    <!-- COMPETE Pillar -->
+    <item>
+      <title>COMPETE: Powerlifting Federations, Meet Prep &amp; Athlete Profiles</title>
+      <link>https://heavierweight.com/compete/</link>
+      <guid isPermaLink="true">https://heavierweight.com/compete/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Competition</category>
+      <description>28+ articles on competitive lifting for women. Federation guides, first meet preparation, weight class strategy, and inspiring athlete profiles.</description>
+    </item>
+
+    <!-- SCIENCE Pillar -->
+    <item>
+      <title>SCIENCE: Evidence-Based Training &amp; Female Physiology</title>
+      <link>https://heavierweight.com/science/</link>
+      <guid isPermaLink="true">https://heavierweight.com/science/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Science</category>
+      <description>34 research-backed articles on women's training science. Menstrual cycle, pregnancy, menopause, and biomechanics for female lifters.</description>
+    </item>
+
+    <!-- GEAR Pillar -->
+    <item>
+      <title>GEAR: Women's Lifting Equipment Reviews &amp; Buying Guides</title>
+      <link>https://heavierweight.com/gear/</link>
+      <guid isPermaLink="true">https://heavierweight.com/gear/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Equipment</category>
+      <description>40 equipment reviews for female lifters. Belts, shoes, barbells, knee sleeves, and home gym guides with women's sizing and fit focus.</description>
+    </item>
+
+    <!-- FUEL Pillar -->
+    <item>
+      <title>FUEL: Nutrition &amp; Recovery for Female Lifters</title>
+      <link>https://heavierweight.com/fuel/</link>
+      <guid isPermaLink="true">https://heavierweight.com/fuel/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Nutrition</category>
+      <description>24 articles on nutrition for women who lift. Protein needs, RED-S awareness, supplements, and recovery strategies for strength athletes.</description>
+    </item>
+
+    <!-- LIFE Pillar -->
+    <item>
+      <title>LIFE: Mindset, Community &amp; Wellness for Women Lifters</title>
+      <link>https://heavierweight.com/life/</link>
+      <guid isPermaLink="true">https://heavierweight.com/life/</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 GMT</pubDate>
+      <dc:creator>HEAVIERWEIGHT Editorial</dc:creator>
+      <category>Lifestyle</category>
+      <description>24 articles on lifting lifestyle. Body image, gym confidence, health conditions, and community building for women who lift.</description>
+    </item>
+
+  </channel>
+</rss>

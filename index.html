@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEAVIERWEIGHT | The Definitive Resource for Women's Competitive Lifting</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="225+ evidence-based articles on women's powerlifting and Olympic weightlifting. Training, competition, science, gear, nutrition, and lifestyle content.">
+  <meta name="keywords" content="women's powerlifting, women's weightlifting, strength training for women, female competitive lifting">
+  <meta name="author" content="HEAVIERWEIGHT Editorial">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://heavierweight.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://heavierweight.com/">
+  <meta property="og:title" content="HEAVIERWEIGHT | Women's Competitive Lifting">
+  <meta property="og:description" content="The definitive resource for women's competitive lifting. 225+ articles, 6 pillars, evidence-based, inclusive.">
+  <meta property="og:image" content="https://heavierweight.com/assets/og-home.svg">
+  <meta property="og:site_name" content="HEAVIERWEIGHT">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@heavierweight">
+  <meta name="twitter:title" content="HEAVIERWEIGHT | Women's Competitive Lifting">
+  <meta name="twitter:description" content="The definitive resource for women's competitive lifting. 225+ articles, 6 pillars, evidence-based, inclusive.">
+  <meta name="twitter:image" content="https://heavierweight.com/assets/og-home.svg">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#e94560">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #1a1a2e;
+      --bg-darker: #16213e;
+      --accent-primary: #e94560;
+      --accent-secondary: #ff6b6b;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --text-muted: #6b7280;
+      --train-color: #e94560;
+      --compete-color: #ffd700;
+      --science-color: #00d9ff;
+      --gear-color: #8b5cf6;
+      --fuel-color: #22c55e;
+      --life-color: #f472b6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Pillars Grid */
+    .pillars {
+      padding: 80px 0;
+    }
+
+    .pillars h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s, border-color 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+    }
+
+    .pillar-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .pillar-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pillar-desc {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .pillar-count {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .pillar-count strong {
+      color: var(--accent-primary);
+    }
+
+    /* Color accents for each pillar */
+    .pillar-train .pillar-name { color: var(--train-color); }
+    .pillar-compete .pillar-name { color: var(--compete-color); }
+    .pillar-science .pillar-name { color: var(--science-color); }
+    .pillar-gear .pillar-name { color: var(--gear-color); }
+    .pillar-fuel .pillar-name { color: var(--fuel-color); }
+    .pillar-life .pillar-name { color: var(--life-color); }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+
+    .feature {
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .stats {
+        gap: 32px;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+      }
+
+      .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HEAVIERWEIGHT",
+    "alternateName": "HEAVIERWEIGHT.COM",
+    "url": "https://heavierweight.com",
+    "description": "The Definitive Resource for Women's Competitive Lifting",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HEAVIERWEIGHT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heavierweight.com/favicon.svg"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://heavierweight.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" fill="#1a1a2e"/>
+          <circle cx="16" cy="16" r="14" stroke="url(#grad)" stroke-width="1"/>
+          <rect x="6" y="14.5" width="20" height="3" rx="1" fill="#e94560"/>
+          <rect x="4" y="11" width="2.5" height="10" rx="1" fill="#ff6b6b"/>
+          <rect x="2.5" y="9.5" width="2" height="13" rx="0.8" fill="#e94560"/>
+          <rect x="25.5" y="11" width="2.5" height="10" rx="1" fill="#ff6b6b"/>
+          <rect x="27.5" y="9.5" width="2" height="13" rx="0.8" fill="#e94560"/>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#e94560"/>
+              <stop offset="100%" style="stop-color:#ff6b6b"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">HEAVIERWEIGHT</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>The Definitive Resource for Women's Competitive Lifting</h1>
+        <p>Evidence-based content for powerlifting and Olympic weightlifting. From beginners to elite competitors, we've got you covered.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">225+</div>
+            <div class="stat-label">Articles Planned</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Content Pillars</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Women-Focused</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="container">
+        <h2>Explore Our Six Pillars</h2>
+
+        <div class="pillar-grid">
+          <a href="/train/" class="pillar-card pillar-train">
+            <div class="pillar-icon">🏋️</div>
+            <h3 class="pillar-name">TRAIN</h3>
+            <p class="pillar-desc">Programming & technique from beginner to advanced. Programs, technique guides, and Olympic weightlifting.</p>
+            <p class="pillar-count"><strong>75</strong> articles planned</p>
+          </a>
+
+          <a href="/compete/" class="pillar-card pillar-compete">
+            <div class="pillar-icon">🏆</div>
+            <h3 class="pillar-name">COMPETE</h3>
+            <p class="pillar-desc">Federations, meet prep, weight classes, and athlete profiles. Everything for competitive lifters.</p>
+            <p class="pillar-count"><strong>28+</strong> articles planned</p>
+          </a>
+
+          <a href="/science/" class="pillar-card pillar-science">
+            <div class="pillar-icon">🔬</div>
+            <h3 class="pillar-name">SCIENCE</h3>
+            <p class="pillar-desc">Evidence-based training science. Menstrual cycle, pregnancy, menopause, and biomechanics.</p>
+            <p class="pillar-count"><strong>34</strong> articles planned</p>
+          </a>
+
+          <a href="/gear/" class="pillar-card pillar-gear">
+            <div class="pillar-icon">⚙️</div>
+            <h3 class="pillar-name">GEAR</h3>
+            <p class="pillar-desc">Equipment reviews with women's sizing and fit. Belts, shoes, barbells, and home gym setups.</p>
+            <p class="pillar-count"><strong>40</strong> articles planned</p>
+          </a>
+
+          <a href="/fuel/" class="pillar-card pillar-fuel">
+            <div class="pillar-icon">⚡</div>
+            <h3 class="pillar-name">FUEL</h3>
+            <p class="pillar-desc">Nutrition and recovery for female strength athletes. Protein, supplements, and RED-S awareness.</p>
+            <p class="pillar-count"><strong>24</strong> articles planned</p>
+          </a>
+
+          <a href="/life/" class="pillar-card pillar-life">
+            <div class="pillar-icon">💪</div>
+            <h3 class="pillar-name">LIFE</h3>
+            <p class="pillar-desc">Beyond the barbell. Body image, confidence, health conditions, and building your community.</p>
+            <p class="pillar-count"><strong>24</strong> articles planned</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Why HEAVIERWEIGHT?</h2>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🔬</div>
+            <h3>Evidence-Based</h3>
+            <p>Research-backed content with proper citations. No bro-science, just science.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">👩</div>
+            <h3>Women-Specific</h3>
+            <p>Content created for women, not adapted from men's training resources.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🏋️‍♀️</div>
+            <h3>Competition Focus</h3>
+            <p>Powerlifting and Olympic weightlifting expertise. Meet prep to nationals.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">💜</div>
+            <h3>Inclusive</h3>
+            <p>All body types, ages, and skill levels. Representation without tokenization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 HEAVIERWEIGHT.COM. All rights reserved.</p>
+      <p style="margin-top: 8px;">
+        <a href="/partners/">Partnerships</a> ·
+        <a href="/contributing/">Contributing</a> ·
+        <a href="https://github.com/fantravel1/heavierweight">GitHub</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

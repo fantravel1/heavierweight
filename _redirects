@@ -1,0 +1,33 @@
+# HEAVIERWEIGHT.COM Redirects
+# For Netlify and similar platforms
+
+# Pillar shortlinks
+/training    /train/     301
+/compete     /compete/   301
+/competition /compete/   301
+/research    /science/   301
+/equipment   /gear/      301
+/nutrition   /fuel/      301
+/lifestyle   /life/      301
+/community   /life/      301
+
+# Common typos and alternatives
+/pillars/train      /train/     301
+/pillars/compete    /compete/   301
+/pillars/science    /science/   301
+/pillars/gear       /gear/      301
+/pillars/fuel       /fuel/      301
+/pillars/life       /life/      301
+
+# Feed alternatives
+/rss         /feed.xml   301
+/rss.xml     /feed.xml   301
+/atom.xml    /feed.xml   301
+
+# Supporting pages
+/contribute  /contributing/  301
+/partner     /partners/      301
+/partnership /partners/      301
+
+# Remove trailing slashes (optional - uncomment if needed)
+# /train   /train/  301!
