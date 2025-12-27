@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athlete Profiles | HEAVIERWEIGHT</title>
+  <meta name="description" content="Profiles of inspiring women in powerlifting and Olympic weightlifting. Training insights, competition history, and advice from the best.">
+  <link rel="canonical" href="https://heavierweight.com/athletes/">
+  <meta property="og:image" content="https://heavierweight.com/assets/og-compete.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#ffd700">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .athletes-hero { padding: 80px 0; border-bottom: 1px solid rgba(255,215,0,0.3); background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(26, 26, 46, 0.95) 100%); }
+    .athlete-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 48px 0; }
+    .athlete-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; text-align: center; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+    .athlete-card:hover { border-color: #ffd700; transform: translateY(-4px); box-shadow: 0 10px 40px rgba(255,215,0,0.1); }
+    .athlete-avatar { width: 100px; height: 100px; background: linear-gradient(135deg, #ffd700, #b8860b); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 20px; }
+    .athlete-name { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .athlete-class { color: #ffd700; font-size: 0.9rem; margin-bottom: 8px; }
+    .athlete-achievement { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
+    .athlete-sport { display: inline-block; background: rgba(255,215,0,0.1); color: #ffd700; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .filter-tabs { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+    .filter-tab { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 8px; color: #a0a0a0; cursor: pointer; transition: all 0.2s; }
+    .filter-tab:hover, .filter-tab.active { background: rgba(255,215,0,0.1); border-color: #ffd700; color: #ffd700; }
+  </style>
+</head>
+<body>
+  <header style="padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem;">HEAVIERWEIGHT</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/train/" style="color: #a0a0a0;">Train</a>
+        <a href="/compete/" style="color: #ffd700;">Compete</a>
+        <a href="/science/" style="color: #a0a0a0;">Science</a>
+        <a href="/gear/" style="color: #a0a0a0;">Gear</a>
+        <a href="/fuel/" style="color: #a0a0a0;">Fuel</a>
+        <a href="/life/" style="color: #a0a0a0;">Life</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="athletes-hero">
+    <div class="container">
+      <a href="/compete/" style="color: #a0a0a0; text-decoration: none; font-size: 0.9rem;">← Compete</a>
+      <h1 style="font-size: 3rem; margin: 24px 0 16px 0; color: #ffd700;">Athlete Profiles</h1>
+      <p style="color: #a0a0a0; max-width: 600px; line-height: 1.7;">
+        Inspiring women in powerlifting and Olympic weightlifting. Training philosophy, competition insights, and advice for aspiring lifters.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section style="padding: 60px 0;">
+      <div class="container">
+        <div class="filter-tabs">
+          <span class="filter-tab active">All Athletes</span>
+          <span class="filter-tab">Powerlifting</span>
+          <span class="filter-tab">Olympic Weightlifting</span>
+          <span class="filter-tab">World Champions</span>
+          <span class="filter-tab">Masters (40+)</span>
+        </div>
+
+        <div class="athlete-grid">
+          <a href="/athletes/jennifer-thompson/" class="athlete-card">
+            <div class="athlete-avatar">🥇</div>
+            <div class="athlete-name">Jennifer Thompson</div>
+            <div class="athlete-class">63kg Powerlifting</div>
+            <div class="athlete-achievement">11x IPF World Champion • USA</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/stefi-cohen/" class="athlete-card">
+            <div class="athlete-avatar">💪</div>
+            <div class="athlete-name">Stefi Cohen</div>
+            <div class="athlete-class">56kg Multi-Sport</div>
+            <div class="athlete-achievement">25+ World Records • Venezuela/USA</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/olivia-reeves/" class="athlete-card">
+            <div class="athlete-avatar">🏅</div>
+            <div class="athlete-name">Olivia Reeves</div>
+            <div class="athlete-class">71kg Weightlifting</div>
+            <div class="athlete-achievement">2024 Olympic Gold • USA</div>
+            <span class="athlete-sport">Weightlifting</span>
+          </a>
+
+          <a href="/athletes/amanda-lawrence/" class="athlete-card">
+            <div class="athlete-avatar">🔥</div>
+            <div class="athlete-name">Amanda Lawrence</div>
+            <div class="athlete-class">84kg Powerlifting</div>
+            <div class="athlete-achievement">IPF World Champion • USA</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/jessica-buettner/" class="athlete-card">
+            <div class="athlete-avatar">⭐</div>
+            <div class="athlete-name">Jessica Buettner</div>
+            <div class="athlete-class">76kg Powerlifting</div>
+            <div class="athlete-achievement">Type 1 Diabetes Advocate • Canada</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/mattie-rogers/" class="athlete-card">
+            <div class="athlete-avatar">🇺🇸</div>
+            <div class="athlete-name">Mattie Rogers</div>
+            <div class="athlete-class">76kg Weightlifting</div>
+            <div class="athlete-achievement">2x Olympian • USA</div>
+            <span class="athlete-sport">Weightlifting</span>
+          </a>
+
+          <a href="/athletes/kimberly-walford/" class="athlete-card">
+            <div class="athlete-avatar">👑</div>
+            <div class="athlete-name">Kimberly Walford</div>
+            <div class="athlete-class">72kg Powerlifting</div>
+            <div class="athlete-achievement">Masters Champion, 40+ • USA</div>
+            <span class="athlete-sport">Masters</span>
+          </a>
+
+          <a href="/athletes/emily-campbell/" class="athlete-card">
+            <div class="athlete-avatar">🥈</div>
+            <div class="athlete-name">Emily Campbell</div>
+            <div class="athlete-class">+81kg Weightlifting</div>
+            <div class="athlete-achievement">Olympic Silver 2020 • GBR</div>
+            <span class="athlete-sport">Weightlifting</span>
+          </a>
+
+          <a href="/athletes/agata-sitko/" class="athlete-card">
+            <div class="athlete-avatar">🌟</div>
+            <div class="athlete-name">Agata Sitko</div>
+            <div class="athlete-class">69kg Powerlifting</div>
+            <div class="athlete-achievement">IPF World Champion, 20yo • Poland</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/sonita-muluh/" class="athlete-card">
+            <div class="athlete-avatar">💥</div>
+            <div class="athlete-name">Sonita Muluh</div>
+            <div class="athlete-class">84+kg Powerlifting</div>
+            <div class="athlete-achievement">First Woman 300kg Raw Squat • USA</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+
+          <a href="/athletes/li-wenwen/" class="athlete-card">
+            <div class="athlete-avatar">🏆</div>
+            <div class="athlete-name">Li Wenwen</div>
+            <div class="athlete-class">+81kg Weightlifting</div>
+            <div class="athlete-achievement">Olympic Gold, World Records • CHN</div>
+            <span class="athlete-sport">Weightlifting</span>
+          </a>
+
+          <a href="/athletes/tiffany-chapon/" class="athlete-card">
+            <div class="athlete-avatar">🇫🇷</div>
+            <div class="athlete-name">Tiffany Chapon</div>
+            <div class="athlete-class">47kg Powerlifting</div>
+            <div class="athlete-achievement">Lightweight Specialist • France</div>
+            <span class="athlete-sport">Powerlifting</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p style="color: #6b7280;">&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+</body>
+</html>
