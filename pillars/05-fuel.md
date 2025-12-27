@@ -1,3 +1,27 @@
+---
+title: "FUEL: Nutrition & Recovery for Female Lifters"
+description: "24 articles on nutrition for women who lift. Protein needs, RED-S awareness, supplements, and recovery strategies for strength athletes."
+keywords:
+  - protein intake female lifters
+  - nutrition for female lifters
+  - creatine for women
+  - RED-S female athletes
+  - female athlete nutrition
+emoji: "⚡"
+og_image: "/assets/og-fuel.svg"
+og_title: "FUEL | Women's Lifting Nutrition & Recovery"
+og_description: "Evidence-based nutrition for female strength athletes. Protein, supplements, RED-S awareness, and recovery strategies."
+canonical: "https://heavierweight.com/fuel/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "fuel"
+article_count: 24
+primary_keyword: "protein intake female lifters"
+search_volume: "1,000-1,500/month"
+content_gap: "Competitors gate nutrition content behind apps/certifications"
+---
+
 # Pillar 5: FUEL - Nutrition & Recovery
 
 > **Purpose**: Address critical gap in women-specific nutrition content. Competitors either don't cover it or gate it behind apps/certifications.

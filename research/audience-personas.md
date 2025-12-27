@@ -1,3 +1,23 @@
+---
+title: "Audience Personas: Understanding Women Who Lift"
+description: "8 detailed audience personas for women's competitive lifting. Demographics, goals, pain points, and content consumption patterns."
+keywords:
+  - audience personas
+  - user research
+  - target audience
+  - content strategy
+emoji: "👥"
+og_image: "/assets/og-research.svg"
+og_title: "Audience Personas | HEAVIERWEIGHT Research"
+og_description: "8 detailed personas from beginners to elite competitors. Demographics, goals, and content mapping by user type."
+canonical: "https://heavierweight.com/research/audience-personas/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+research_type: "user_research"
+personas_defined: 8
+---
+
 # Audience Personas
 
 ## Overview

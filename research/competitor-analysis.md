@@ -1,3 +1,23 @@
+---
+title: "Competitor Analysis: Women's Strength Training Market Landscape"
+description: "Competitive analysis of women's lifting content market. Gap analysis vs BarBend, Girls Gone Strong, Stronger By Science, and more."
+keywords:
+  - competitor analysis
+  - market research
+  - content gap analysis
+  - women's fitness market
+emoji: "🔍"
+og_image: "/assets/og-research.svg"
+og_title: "Competitor Analysis | HEAVIERWEIGHT Research"
+og_description: "Market landscape analysis: content gaps, competitor weaknesses, and HEAVIERWEIGHT's unique positioning."
+canonical: "https://heavierweight.com/research/competitor-analysis/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+research_type: "competitive_intelligence"
+competitors_analyzed: 10
+---
+
 # Competitor Analysis
 
 ## Executive Summary

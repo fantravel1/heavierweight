@@ -1,3 +1,26 @@
+---
+title: "HEAVIERWEIGHT: The Definitive Resource for Women's Competitive Lifting"
+description: "Complete content strategy for HEAVIERWEIGHT.COM. 225+ planned articles across 6 pillars: TRAIN, COMPETE, SCIENCE, GEAR, FUEL, LIFE."
+keywords:
+  - women's powerlifting
+  - women's weightlifting
+  - strength training for women
+  - female competitive lifting
+  - women's fitness content
+emoji: "🏋️‍♀️"
+og_image: "/assets/og-home.svg"
+og_title: "HEAVIERWEIGHT | Women's Competitive Lifting"
+og_description: "The definitive resource for women's competitive lifting. 225+ articles, 6 pillars, evidence-based, inclusive."
+canonical: "https://heavierweight.com/"
+schema_type: "WebSite"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+total_articles: 225
+pillars: 6
+launch_year: 2025
+twitter_handle: "@heavierweight"
+---
+
 # HEAVIERWEIGHT.COM
 
 ## The Definitive Content Resource for Women's Competitive Lifting

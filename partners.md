@@ -1,3 +1,23 @@
+---
+title: "Partnership Strategy: Athletes, Experts & Brand Collaborations"
+description: "HEAVIERWEIGHT partnership framework. Expert contributors, athlete profiles, brand partnerships, and collaboration opportunities."
+keywords:
+  - partnership opportunities
+  - athlete collaborations
+  - expert contributors
+  - brand partnerships
+emoji: "🤝"
+og_image: "/assets/og-partners.svg"
+og_title: "Partnerships | HEAVIERWEIGHT"
+og_description: "Join our network of athletes, coaches, and brands. Expert contributor opportunities and partnership frameworks."
+canonical: "https://heavierweight.com/partners/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+partner_tiers: 3
+athletes_profiled: 12
+---
+
 # Partnership Strategy
 
 ## Overview

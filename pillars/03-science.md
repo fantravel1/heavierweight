@@ -1,3 +1,27 @@
+---
+title: "SCIENCE: Evidence-Based Training & Female Physiology"
+description: "34 research-backed articles on women's training science. Menstrual cycle, pregnancy, menopause, and biomechanics for female lifters."
+keywords:
+  - menstrual cycle strength training
+  - lifting during pregnancy
+  - strength training menopause
+  - female athlete physiology
+  - women's sports science
+emoji: "🔬"
+og_image: "/assets/og-science.svg"
+og_title: "SCIENCE | Female Training Physiology & Research"
+og_description: "Evidence-based training content with a female-specific lens. Only 6% of sports science is women-only—we fill that gap."
+canonical: "https://heavierweight.com/science/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "science"
+article_count: 34
+primary_keyword: "menstrual cycle strength training"
+search_volume: "800-1,200/month"
+key_stat: "Only 6% of sports science research is women-only"
+---
+
 # Pillar 3: SCIENCE - Evidence-Based Training & Physiology
 
 > **Purpose**: Establish authority by filling gap for Stronger By Science-quality content with female-specific lens. Key insight: only 6% of sports science research is women-only.

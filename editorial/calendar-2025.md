@@ -1,3 +1,24 @@
+---
+title: "Editorial Calendar 2025: Content Strategy & Publishing Schedule"
+description: "HEAVIERWEIGHT 2025 content calendar. Phase 1-2 roadmap with 114 articles planned across 6 pillars for women's competitive lifting."
+keywords:
+  - content calendar
+  - editorial strategy
+  - content planning
+  - publishing schedule
+emoji: "📅"
+og_image: "/assets/og-editorial.svg"
+og_title: "2025 Editorial Calendar | HEAVIERWEIGHT"
+og_description: "Phase 1-2 content roadmap: Foundation & Growth. 114 articles planned for women's competitive lifting."
+canonical: "https://heavierweight.com/editorial/calendar-2025/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+year: 2025
+phase: "Foundation & Growth"
+article_target: 114
+---
+
 # Editorial Calendar 2025
 
 ## Overview
