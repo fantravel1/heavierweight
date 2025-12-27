@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leverages and Body Proportions for Powerlifting - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #00d9ff, #00a6cc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #00d9ff; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(0, 217, 255, 0.2);
+      color: #00d9ff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #00d9ff;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.1));
+      border-left: 4px solid #00d9ff;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #00d9ff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .comparison-card {
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .comparison-card h4 {
+      color: #00d9ff;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .comparison-card p {
+      color: #d1d5db;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #00d9ff;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/science/">Science</a>
+          <span>/</span>
+          <span>Leverages & Proportions</span>
+        </div>
+        <div class="category-badge">Science</div>
+        <h1>Leverages and Body Proportions</h1>
+        <p class="subtitle">How your unique anatomy determines your optimal technique in each lift.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>No two lifters are built exactly alike. Limb lengths, torso proportions, and hip structure all influence what technique works best for YOU. Understanding your leverages helps you stop fighting your anatomy and start working with it.</p>
+
+      <h2>Key Proportions That Matter</h2>
+
+      <p>Three ratios have the biggest impact on technique selection:</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="35" fill="#00d9ff" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">KEY PROPORTIONS FOR POWERLIFTING</text>
+
+          <!-- Figure 1: Femur to torso -->
+          <g transform="translate(100, 70)">
+            <text x="70" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">FEMUR : TORSO</text>
+
+            <!-- Short femur figure -->
+            <g transform="translate(0, 40)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+              <line x1="40" y1="35" x2="40" y2="100" stroke="#22c55e" stroke-width="2"/>
+              <line x1="20" y1="50" x2="60" y2="50" stroke="#22c55e" stroke-width="2"/>
+              <!-- Short femur -->
+              <line x1="40" y1="100" x2="30" y2="155" stroke="#22c55e" stroke-width="3"/>
+              <line x1="40" y1="100" x2="50" y2="155" stroke="#22c55e" stroke-width="3"/>
+              <!-- Lower leg -->
+              <line x1="30" y1="155" x2="30" y2="210" stroke="#22c55e" stroke-width="2"/>
+              <line x1="50" y1="155" x2="50" y2="210" stroke="#22c55e" stroke-width="2"/>
+
+              <!-- Measurement lines -->
+              <line x1="65" y1="35" x2="65" y2="100" stroke="#22c55e" stroke-width="1" stroke-dasharray="3"/>
+              <text x="75" y="70" fill="#22c55e" font-family="Inter, sans-serif" font-size="8">Long torso</text>
+              <line x1="65" y1="100" x2="65" y2="155" stroke="#f97316" stroke-width="1" stroke-dasharray="3"/>
+              <text x="75" y="130" fill="#f97316" font-family="Inter, sans-serif" font-size="8">Short femur</text>
+
+              <text x="40" y="240" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Short Femur</text>
+              <text x="40" y="255" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">More upright squat</text>
+            </g>
+
+            <!-- Long femur figure -->
+            <g transform="translate(100, 40)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <line x1="40" y1="35" x2="40" y2="80" stroke="#ef4444" stroke-width="2"/>
+              <line x1="20" y1="50" x2="60" y2="50" stroke="#ef4444" stroke-width="2"/>
+              <!-- Long femur -->
+              <line x1="40" y1="80" x2="25" y2="160" stroke="#ef4444" stroke-width="3"/>
+              <line x1="40" y1="80" x2="55" y2="160" stroke="#ef4444" stroke-width="3"/>
+              <!-- Lower leg -->
+              <line x1="25" y1="160" x2="25" y2="210" stroke="#ef4444" stroke-width="2"/>
+              <line x1="55" y1="160" x2="55" y2="210" stroke="#ef4444" stroke-width="2"/>
+
+              <!-- Measurement lines -->
+              <line x1="70" y1="35" x2="70" y2="80" stroke="#22c55e" stroke-width="1" stroke-dasharray="3"/>
+              <text x="80" y="60" fill="#22c55e" font-family="Inter, sans-serif" font-size="8">Short torso</text>
+              <line x1="70" y1="80" x2="70" y2="160" stroke="#f97316" stroke-width="1" stroke-dasharray="3"/>
+              <text x="80" y="125" fill="#f97316" font-family="Inter, sans-serif" font-size="8">Long femur</text>
+
+              <text x="40" y="240" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Long Femur</text>
+              <text x="40" y="255" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">More forward lean</text>
+            </g>
+          </g>
+
+          <!-- Figure 2: Arm length -->
+          <g transform="translate(350, 70)">
+            <text x="70" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">ARM LENGTH</text>
+
+            <!-- Short arms -->
+            <g transform="translate(0, 40)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+              <line x1="40" y1="35" x2="40" y2="100" stroke="#22c55e" stroke-width="2"/>
+              <!-- Short arms -->
+              <line x1="25" y1="50" x2="10" y2="100" stroke="#22c55e" stroke-width="2"/>
+              <line x1="55" y1="50" x2="70" y2="100" stroke="#22c55e" stroke-width="2"/>
+              <line x1="40" y1="100" x2="25" y2="160" stroke="#22c55e" stroke-width="2"/>
+              <line x1="40" y1="100" x2="55" y2="160" stroke="#22c55e" stroke-width="2"/>
+              <line x1="25" y1="160" x2="25" y2="210" stroke="#22c55e" stroke-width="2"/>
+              <line x1="55" y1="160" x2="55" y2="210" stroke="#22c55e" stroke-width="2"/>
+
+              <text x="40" y="240" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Short Arms</text>
+              <text x="40" y="255" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Better bench ROM</text>
+            </g>
+
+            <!-- Long arms -->
+            <g transform="translate(100, 40)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#a855f7" stroke-width="2"/>
+              <line x1="40" y1="35" x2="40" y2="100" stroke="#a855f7" stroke-width="2"/>
+              <!-- Long arms -->
+              <line x1="25" y1="50" x2="0" y2="130" stroke="#a855f7" stroke-width="2"/>
+              <line x1="55" y1="50" x2="80" y2="130" stroke="#a855f7" stroke-width="2"/>
+              <line x1="40" y1="100" x2="25" y2="160" stroke="#a855f7" stroke-width="2"/>
+              <line x1="40" y1="100" x2="55" y2="160" stroke="#a855f7" stroke-width="2"/>
+              <line x1="25" y1="160" x2="25" y2="210" stroke="#a855f7" stroke-width="2"/>
+              <line x1="55" y1="160" x2="55" y2="210" stroke="#a855f7" stroke-width="2"/>
+
+              <text x="40" y="240" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Long Arms</text>
+              <text x="40" y="255" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Better deadlift ROM</text>
+            </g>
+          </g>
+
+          <!-- Figure 3: Torso length for deadlift -->
+          <g transform="translate(550, 70)">
+            <text x="70" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">TORSO LENGTH</text>
+
+            <rect x="0" y="50" width="140" height="200" rx="8" fill="rgba(0, 217, 255, 0.1)" stroke="#00d9ff" stroke-width="1"/>
+            <text x="70" y="80" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">AFFECTS</text>
+
+            <text x="20" y="110" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">Long torso:</text>
+            <text x="20" y="125" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">→ More upright squat</text>
+            <text x="20" y="140" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">→ Harder deadlift start</text>
+
+            <text x="20" y="170" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">Short torso:</text>
+            <text x="20" y="185" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">→ More forward squat</text>
+            <text x="20" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">→ Easier deadlift setup</text>
+            <text x="20" y="215" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">→ May favor sumo</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Your proportions are fixed—optimize technique around them, not against them</div>
+      </div>
+
+      <h2>Squat: Femur Length Effects</h2>
+
+      <p>Femur length relative to torso is the biggest determinant of squat style. Long femurs require more forward lean to keep the bar over midfoot.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">FEMUR LENGTH → SQUAT STYLE</text>
+
+          <!-- Short femur squat -->
+          <g transform="translate(100, 60)">
+            <text x="100" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">SHORT FEMURS</text>
+
+            <!-- Floor line -->
+            <line x1="20" y1="250" x2="180" y2="250" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Lifter at bottom - more upright -->
+            <circle cx="100" cy="80" r="18" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="98" x2="100" y2="150" stroke="#22c55e" stroke-width="2"/>
+            <line x1="70" y1="115" x2="130" y2="115" stroke="#22c55e" stroke-width="2"/>
+            <!-- Short femur - less forward -->
+            <path d="M100 150 Q90 190 80 230" stroke="#22c55e" stroke-width="2"/>
+            <path d="M100 150 Q110 190 120 230" stroke="#22c55e" stroke-width="2"/>
+            <!-- Lower leg -->
+            <line x1="80" y1="230" x2="70" y2="250" stroke="#22c55e" stroke-width="2"/>
+            <line x1="120" y1="230" x2="130" y2="250" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Vertical reference line -->
+            <line x1="100" y1="60" x2="100" y2="260" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+            <text x="100" y="280" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Midfoot</text>
+
+            <!-- Angle indicator -->
+            <path d="M100 150 L120 130" stroke="#22c55e" stroke-width="1"/>
+            <text x="135" y="135" fill="#22c55e" font-family="Inter, sans-serif" font-size="9">~60°</text>
+
+            <text x="100" y="310" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">More upright torso</text>
+            <text x="100" y="325" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">High bar works well</text>
+          </g>
+
+          <!-- Long femur squat -->
+          <g transform="translate(350, 60)">
+            <text x="100" y="20" fill="#ef4444" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">LONG FEMURS</text>
+
+            <!-- Floor line -->
+            <line x1="20" y1="250" x2="180" y2="250" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Lifter at bottom - more forward lean -->
+            <circle cx="80" cy="95" r="18" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <line x1="85" y1="112" x2="105" y2="160" stroke="#ef4444" stroke-width="2"/>
+            <line x1="55" y1="125" x2="115" y2="110" stroke="#ef4444" stroke-width="2"/>
+            <!-- Long femur - more forward -->
+            <path d="M105 160 Q90 200 70 235" stroke="#ef4444" stroke-width="2"/>
+            <path d="M105 160 Q120 200 130 235" stroke="#ef4444" stroke-width="2"/>
+            <!-- Lower leg -->
+            <line x1="70" y1="235" x2="65" y2="250" stroke="#ef4444" stroke-width="2"/>
+            <line x1="130" y1="235" x2="135" y2="250" stroke="#ef4444" stroke-width="2"/>
+
+            <!-- Vertical reference line -->
+            <line x1="100" y1="60" x2="100" y2="260" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+            <text x="100" y="280" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Midfoot</text>
+
+            <!-- Angle indicator -->
+            <path d="M105 160 L130 135" stroke="#ef4444" stroke-width="1"/>
+            <text x="145" y="140" fill="#ef4444" font-family="Inter, sans-serif" font-size="9">~45°</text>
+
+            <text x="100" y="310" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">More forward lean</text>
+            <text x="100" y="325" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Low bar often better</text>
+          </g>
+
+          <!-- Recommendations box -->
+          <g transform="translate(520, 60)">
+            <rect x="0" y="0" width="150" height="260" rx="8" fill="rgba(0, 217, 255, 0.1)" stroke="#00d9ff" stroke-width="1"/>
+            <text x="75" y="25" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">ADJUSTMENTS</text>
+
+            <text x="15" y="55" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" font-weight="600">Short femurs:</text>
+            <text x="15" y="75" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• High bar position</text>
+            <text x="15" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Narrower stance OK</text>
+            <text x="15" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Olympic shoes help</text>
+
+            <text x="15" y="140" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" font-weight="600">Long femurs:</text>
+            <text x="15" y="160" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Low bar position</text>
+            <text x="15" y="175" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Wider stance</text>
+            <text x="15" y="190" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Flat shoes or heels</text>
+            <text x="15" y="205" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• More hip mobility</text>
+
+            <text x="15" y="240" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">Neither is "wrong"</text>
+            <text x="15" y="255" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">just different</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Long femurs aren't a disadvantage—they just require a different technique approach</div>
+      </div>
+
+      <h2>Bench: Arm Length and Grip</h2>
+
+      <p>Arm length affects both ROM and optimal grip width. Longer arms mean more distance to travel but can use a wider grip.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="300" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">ARM LENGTH → BENCH CONSIDERATIONS</text>
+
+          <!-- Short arms -->
+          <g transform="translate(100, 60)">
+            <text x="100" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">SHORT ARMS</text>
+
+            <!-- Bench side view -->
+            <rect x="30" y="180" width="140" height="15" rx="3" fill="#3f3f46"/>
+
+            <!-- Lifter on bench -->
+            <ellipse cx="100" cy="165" rx="25" ry="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <line x1="125" y1="165" x2="160" y2="165" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Short arm path -->
+            <line x1="100" y1="150" x2="100" y2="80" stroke="#22c55e" stroke-width="2"/>
+            <line x1="80" y1="75" x2="120" y2="75" stroke="#22c55e" stroke-width="4"/>
+
+            <!-- ROM indicator -->
+            <line x1="140" y1="75" x2="140" y2="165" stroke="#22c55e" stroke-width="1" stroke-dasharray="4"/>
+            <text x="160" y="120" fill="#22c55e" font-family="Inter, sans-serif" font-size="9">Shorter ROM</text>
+
+            <text x="100" y="230" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Less distance to lockout</text>
+            <text x="100" y="248" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Often means bigger bench</text>
+          </g>
+
+          <!-- Long arms -->
+          <g transform="translate(350, 60)">
+            <text x="100" y="20" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">LONG ARMS</text>
+
+            <!-- Bench side view -->
+            <rect x="30" y="180" width="140" height="15" rx="3" fill="#3f3f46"/>
+
+            <!-- Lifter on bench -->
+            <ellipse cx="100" cy="165" rx="25" ry="15" fill="none" stroke="#a855f7" stroke-width="2"/>
+            <line x1="125" y1="165" x2="160" y2="165" stroke="#a855f7" stroke-width="2"/>
+
+            <!-- Long arm path -->
+            <line x1="100" y1="150" x2="100" y2="50" stroke="#a855f7" stroke-width="2"/>
+            <line x1="70" y1="45" x2="130" y2="45" stroke="#a855f7" stroke-width="4"/>
+
+            <!-- ROM indicator -->
+            <line x1="145" y1="45" x2="145" y2="165" stroke="#a855f7" stroke-width="1" stroke-dasharray="4"/>
+            <text x="165" y="105" fill="#a855f7" font-family="Inter, sans-serif" font-size="9">Longer ROM</text>
+
+            <text x="100" y="230" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">More work per rep</text>
+            <text x="100" y="248" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Max grip width critical</text>
+          </g>
+
+          <!-- Compensation strategies -->
+          <g transform="translate(530, 60)">
+            <rect x="0" y="0" width="130" height="180" rx="8" fill="rgba(0, 217, 255, 0.1)" stroke="#00d9ff" stroke-width="1"/>
+            <text x="65" y="25" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle">LONG ARM FIXES</text>
+
+            <text x="15" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Max legal grip width</text>
+            <text x="15" y="68" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Bigger arch</text>
+            <text x="15" y="86" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Touch higher on chest</text>
+            <text x="15" y="104" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Focus on tricep strength</text>
+            <text x="15" y="122" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Build the chest shelf</text>
+
+            <text x="15" y="155" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8">Long arms excel at</text>
+            <text x="15" y="170" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8">deadlift instead</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Short arms = bench advantage; long arms = deadlift advantage. Everyone has a "best" lift.</div>
+      </div>
+
+      <h2>Deadlift: Arm + Torso Interplay</h2>
+
+      <p>Deadlift leverages are the most complex—arm length, torso length, and hip structure all interact to determine whether conventional or sumo suits you better.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">DEADLIFT STANCE SELECTION BY LEVERAGES</text>
+
+          <!-- Conventional favored -->
+          <g transform="translate(50, 60)">
+            <rect x="0" y="0" width="280" height="300" rx="12" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="2"/>
+            <text x="140" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">CONVENTIONAL FAVORED</text>
+
+            <!-- Figure -->
+            <g transform="translate(60, 50)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#f97316" stroke-width="2"/>
+              <!-- Long torso -->
+              <line x1="40" y1="35" x2="40" y2="100" stroke="#f97316" stroke-width="2"/>
+              <!-- Arms (long, hanging low) -->
+              <line x1="25" y1="50" x2="5" y2="120" stroke="#f97316" stroke-width="2"/>
+              <line x1="55" y1="50" x2="75" y2="120" stroke="#f97316" stroke-width="2"/>
+              <!-- Legs -->
+              <line x1="40" y1="100" x2="25" y2="170" stroke="#f97316" stroke-width="2"/>
+              <line x1="40" y1="100" x2="55" y2="170" stroke="#f97316" stroke-width="2"/>
+              <line x1="25" y1="170" x2="25" y2="210" stroke="#f97316" stroke-width="2"/>
+              <line x1="55" y1="170" x2="55" y2="210" stroke="#f97316" stroke-width="2"/>
+
+              <!-- Bar -->
+              <line x1="0" y1="120" x2="80" y2="120" stroke="#f97316" stroke-width="4"/>
+            </g>
+
+            <text x="140" y="295" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">TRAITS:</text>
+
+            <text x="30" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Long arms</text>
+            <text x="30" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Short torso</text>
+            <text x="30" y="215" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Long legs</text>
+            <text x="30" y="235" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Limited hip mobility</text>
+            <text x="30" y="255" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Strong back</text>
+          </g>
+
+          <!-- Sumo favored -->
+          <g transform="translate(370, 60)">
+            <rect x="0" y="0" width="280" height="300" rx="12" fill="rgba(168, 85, 247, 0.1)" stroke="#a855f7" stroke-width="2"/>
+            <text x="140" y="30" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">SUMO FAVORED</text>
+
+            <!-- Figure -->
+            <g transform="translate(60, 50)">
+              <circle cx="40" cy="20" r="15" fill="none" stroke="#a855f7" stroke-width="2"/>
+              <!-- Shorter torso -->
+              <line x1="40" y1="35" x2="40" y2="80" stroke="#a855f7" stroke-width="2"/>
+              <!-- Arms (shorter, closer) -->
+              <line x1="30" y1="50" x2="20" y2="100" stroke="#a855f7" stroke-width="2"/>
+              <line x1="50" y1="50" x2="60" y2="100" stroke="#a855f7" stroke-width="2"/>
+              <!-- Legs (wide) -->
+              <line x1="40" y1="80" x2="5" y2="160" stroke="#a855f7" stroke-width="2"/>
+              <line x1="40" y1="80" x2="75" y2="160" stroke="#a855f7" stroke-width="2"/>
+              <line x1="5" y1="160" x2="0" y2="210" stroke="#a855f7" stroke-width="2"/>
+              <line x1="75" y1="160" x2="80" y2="210" stroke="#a855f7" stroke-width="2"/>
+
+              <!-- Bar -->
+              <line x1="15" y1="100" x2="65" y2="100" stroke="#a855f7" stroke-width="4"/>
+            </g>
+
+            <text x="140" y="295" fill="#a855f7" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">TRAITS:</text>
+
+            <text x="30" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Shorter arms</text>
+            <text x="30" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Long torso</text>
+            <text x="30" y="215" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Good hip mobility</text>
+            <text x="30" y="235" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Short femurs</text>
+            <text x="30" y="255" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">✓ Strong quads/hips</text>
+          </g>
+
+          <!-- Note at bottom -->
+          <text x="350" y="385" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Many lifters are in between—test both stances with submaximal weight to find your best fit</text>
+        </svg>
+        <div class="diagram-caption">These are tendencies, not rules—some lifters break the mold. Test both stances.</div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/zIaPGObPm8Q" title="Leverages in Powerlifting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Finding your optimal technique</div>
+
+      <h2>How to Measure Your Proportions</h2>
+
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <h4>Femur : Torso Ratio</h4>
+          <p>Stand sideways, mark hip crease and knee center. Compare femur length to seated torso height. >1.0 = long femur relative to torso.</p>
+        </div>
+        <div class="comparison-card">
+          <h4>Arm Span : Height</h4>
+          <p>Measure fingertip to fingertip with arms out. Compare to standing height. >1.0 = "long" arms (like Michael Phelps). Good for deadlift.</p>
+        </div>
+        <div class="comparison-card">
+          <h4>Hip Structure</h4>
+          <p>Lie on back, pull knee to chest, then out to side. If you can get thigh parallel to floor easily, you likely have "good" hip structure for sumo.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>The Key Insight</h4>
+        <p>You can't change your proportions, but you CAN optimize technique around them. Stop trying to squat like someone with different leverages—find what works for YOUR body. The best lifters understand their own anatomy.</p>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li>Long femurs → low bar, wider stance, more forward lean squat</li>
+        <li>Short arms → bench advantage, may need compensations on deadlift</li>
+        <li>Long arms → deadlift advantage, max grip width on bench</li>
+        <li>Short torso + long arms = conventional deadlift tendency</li>
+        <li>Long torso + good hips = sumo deadlift tendency</li>
+        <li>Proportions explain why different lifters look different—embrace your structure</li>
+      </ul>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/science/deadlift-stance-guide/" class="related-card">
+          <h4>Deadlift Stance Guide</h4>
+          <p>Conventional vs sumo deep dive</p>
+        </a>
+        <a href="/train/grip-width-guide/" class="related-card">
+          <h4>Grip Width Guide</h4>
+          <p>Optimize grip for your arms</p>
+        </a>
+        <a href="/train/barbell-path/" class="related-card">
+          <h4>Barbell Path</h4>
+          <p>Technique for your proportions</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>
