@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodization Basics for Powerlifting - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #00d9ff, #00a6cc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #00d9ff; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(0, 217, 255, 0.2);
+      color: #00d9ff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #00d9ff;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .phase-card {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .phase-card h4 {
+      color: #00d9ff;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-card .duration {
+      font-size: 0.8rem;
+      color: #a1a1aa;
+      margin-bottom: 0.75rem;
+    }
+
+    .phase-card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.1));
+      border-left: 4px solid #00d9ff;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #00d9ff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #00d9ff;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/science/">Science</a>
+          <span>/</span>
+          <span>Periodization Basics</span>
+        </div>
+        <div class="category-badge">Science</div>
+        <h1>Periodization Basics</h1>
+        <p class="subtitle">How to structure training cycles for continuous progress and peak performance on meet day.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>Periodization is the systematic planning of training to achieve peak performance at a specific time. For powerlifters, this means structuring phases that build capacity, convert to strength, and peak for competition.</p>
+
+      <h2>The Big Picture: Macrocycle</h2>
+
+      <p>A macrocycle is your entire training cycle from one major competition to the next—typically 12-20 weeks. This is broken into phases (mesocycles) that each serve a specific purpose.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="350" fill="#1a1a2e"/>
+          <text x="400" y="35" fill="#00d9ff" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">16-WEEK MACROCYCLE OVERVIEW</text>
+
+          <!-- Timeline base -->
+          <line x1="50" y1="280" x2="750" y2="280" stroke="#3f3f46" stroke-width="2"/>
+
+          <!-- Week markers -->
+          <g fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10">
+            <text x="50" y="300" text-anchor="middle">Week 1</text>
+            <text x="180" y="300" text-anchor="middle">Week 4</text>
+            <text x="310" y="300" text-anchor="middle">Week 8</text>
+            <text x="485" y="300" text-anchor="middle">Week 12</text>
+            <text x="615" y="300" text-anchor="middle">Week 14</text>
+            <text x="750" y="300" text-anchor="middle">Meet</text>
+          </g>
+
+          <!-- Hypertrophy Phase -->
+          <rect x="50" y="80" width="175" height="180" rx="8" fill="rgba(139, 92, 246, 0.2)" stroke="#a855f7" stroke-width="2"/>
+          <text x="137" y="110" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">HYPERTROPHY</text>
+          <text x="137" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Weeks 1-4</text>
+          <text x="137" y="160" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">High Volume</text>
+          <text x="137" y="180" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Moderate Intensity</text>
+          <text x="137" y="200" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">65-75% 1RM</text>
+          <text x="137" y="230" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Build muscle capacity</text>
+
+          <!-- Strength Phase -->
+          <rect x="235" y="80" width="175" height="180" rx="8" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="2"/>
+          <text x="322" y="110" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">STRENGTH</text>
+          <text x="322" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Weeks 5-10</text>
+          <text x="322" y="160" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Moderate Volume</text>
+          <text x="322" y="180" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">High Intensity</text>
+          <text x="322" y="200" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">75-85% 1RM</text>
+          <text x="322" y="230" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Convert size to strength</text>
+
+          <!-- Peaking Phase -->
+          <rect x="420" y="80" width="130" height="180" rx="8" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="2"/>
+          <text x="485" y="110" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">PEAKING</text>
+          <text x="485" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Weeks 11-14</text>
+          <text x="485" y="160" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Low Volume</text>
+          <text x="485" y="180" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Max Intensity</text>
+          <text x="485" y="200" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">85-100% 1RM</text>
+          <text x="485" y="230" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Express strength</text>
+
+          <!-- Taper -->
+          <rect x="560" y="80" width="100" height="180" rx="8" fill="rgba(255, 215, 0, 0.2)" stroke="#ffd700" stroke-width="2"/>
+          <text x="610" y="110" fill="#ffd700" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">TAPER</text>
+          <text x="610" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Weeks 15-16</text>
+          <text x="610" y="160" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Minimal Volume</text>
+          <text x="610" y="180" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Light Openers</text>
+          <text x="610" y="200" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Recover fully</text>
+          <text x="610" y="230" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Peak readiness</text>
+
+          <!-- Meet marker -->
+          <rect x="670" y="80" width="80" height="180" rx="8" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2"/>
+          <text x="710" y="145" fill="#ef4444" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">MEET</text>
+          <text x="710" y="165" fill="#ef4444" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">DAY</text>
+          <text x="710" y="200" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">9/9</text>
+          <text x="710" y="220" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">PR Total</text>
+        </svg>
+        <div class="diagram-caption">Each phase builds on the previous one—you can't skip steps and expect to peak properly</div>
+      </div>
+
+      <h2>Volume vs. Intensity Relationship</h2>
+
+      <p>The fundamental principle of periodization is the inverse relationship between volume and intensity. As one goes up, the other must come down to manage fatigue and drive adaptation.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">VOLUME vs INTENSITY OVER TIME</text>
+
+          <!-- Axes -->
+          <line x1="80" y1="280" x2="650" y2="280" stroke="#3f3f46" stroke-width="2"/>
+          <line x1="80" y1="280" x2="80" y2="60" stroke="#3f3f46" stroke-width="2"/>
+
+          <!-- Y-axis labels -->
+          <text x="40" y="75" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">High</text>
+          <text x="40" y="270" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Low</text>
+          <text x="40" y="170" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" transform="rotate(-90 40 170)">Level</text>
+
+          <!-- X-axis labels -->
+          <text x="350" y="310" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">TIME →</text>
+          <text x="130" y="300" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Hypertrophy</text>
+          <text x="300" y="300" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Strength</text>
+          <text x="470" y="300" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Peaking</text>
+          <text x="600" y="300" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Meet</text>
+
+          <!-- Volume line (purple, starts high, decreases) -->
+          <path d="M100 90 Q200 95 250 120 Q350 150 400 180 Q500 220 550 250 Q580 260 620 270"
+                fill="none" stroke="#a855f7" stroke-width="3"/>
+          <circle cx="100" cy="90" r="5" fill="#a855f7"/>
+          <circle cx="620" cy="270" r="5" fill="#a855f7"/>
+
+          <!-- Intensity line (orange, starts lower, increases) -->
+          <path d="M100 230 Q200 210 250 190 Q350 160 400 140 Q500 110 550 90 Q580 80 620 75"
+                fill="none" stroke="#f97316" stroke-width="3"/>
+          <circle cx="100" cy="230" r="5" fill="#f97316"/>
+          <circle cx="620" cy="75" r="5" fill="#f97316"/>
+
+          <!-- Legend -->
+          <rect x="480" y="45" width="180" height="50" rx="6" fill="rgba(255,255,255,0.05)"/>
+          <line x1="495" y1="60" x2="530" y2="60" stroke="#a855f7" stroke-width="3"/>
+          <text x="540" y="64" fill="#a855f7" font-family="Inter, sans-serif" font-size="11">Volume (sets/reps)</text>
+          <line x1="495" y1="80" x2="530" y2="80" stroke="#f97316" stroke-width="3"/>
+          <text x="540" y="84" fill="#f97316" font-family="Inter, sans-serif" font-size="11">Intensity (%1RM)</text>
+
+          <!-- Phase dividers -->
+          <line x1="200" y1="60" x2="200" y2="280" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="380" y1="60" x2="380" y2="280" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="540" y1="60" x2="540" y2="280" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+        </svg>
+        <div class="diagram-caption">Volume and intensity move in opposite directions—trying to maximize both leads to burnout</div>
+      </div>
+
+      <h2>Training Phases Explained</h2>
+
+      <div class="phase-grid">
+        <div class="phase-card">
+          <h4>Hypertrophy Phase</h4>
+          <div class="duration">3-5 weeks</div>
+          <p>High volume (4-6 sets of 8-12 reps) at moderate intensity (65-75%). Goal is to build muscle tissue that will later be trained for strength. More accessories, more variation.</p>
+        </div>
+        <div class="phase-card">
+          <h4>Strength Phase</h4>
+          <div class="duration">4-6 weeks</div>
+          <p>Moderate volume (3-5 sets of 4-6 reps) at high intensity (75-85%). Goal is to teach that new muscle to produce maximum force. More specific to competition movements.</p>
+        </div>
+        <div class="phase-card">
+          <h4>Peaking Phase</h4>
+          <div class="duration">3-4 weeks</div>
+          <p>Low volume (2-3 sets of 1-3 reps) at max intensity (85-100%). Goal is to express strength while dissipating fatigue. Competition movements only.</p>
+        </div>
+        <div class="phase-card">
+          <h4>Taper/Deload</h4>
+          <div class="duration">1-2 weeks</div>
+          <p>Minimal volume, light weights, focus on rest. Touch openers 5-7 days out. Goal is complete recovery so you're fresh for meet day.</p>
+        </div>
+      </div>
+
+      <h2>Weekly Undulation</h2>
+
+      <p>Within each phase, intensity and volume can undulate week-to-week to manage fatigue while still driving adaptation. This prevents the linear buildup of fatigue that leads to overreaching.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="300" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">WEEKLY UNDULATION PATTERN</text>
+
+          <!-- Week boxes -->
+          <g transform="translate(50, 60)">
+            <rect x="0" y="0" width="140" height="200" rx="8" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="70" y="25" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">WEEK 1</text>
+            <text x="70" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Moderate</text>
+            <rect x="20" y="70" width="100" height="100" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+            <text x="70" y="125" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">5x5 @ 75%</text>
+            <text x="70" y="185" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Standard load</text>
+          </g>
+
+          <g transform="translate(200, 60)">
+            <rect x="0" y="0" width="140" height="200" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="70" y="25" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">WEEK 2</text>
+            <text x="70" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">High</text>
+            <rect x="20" y="55" width="100" height="120" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+            <text x="70" y="120" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">6x5 @ 77.5%</text>
+            <text x="70" y="185" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Overreach</text>
+          </g>
+
+          <g transform="translate(350, 60)">
+            <rect x="0" y="0" width="140" height="200" rx="8" fill="rgba(139, 92, 246, 0.1)" stroke="#a855f7" stroke-width="1"/>
+            <text x="70" y="25" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">WEEK 3</text>
+            <text x="70" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Low (Deload)</text>
+            <rect x="20" y="100" width="100" height="60" rx="4" fill="rgba(139, 92, 246, 0.3)"/>
+            <text x="70" y="135" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">3x5 @ 70%</text>
+            <text x="70" y="185" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Recovery</text>
+          </g>
+
+          <g transform="translate(500, 60)">
+            <rect x="0" y="0" width="140" height="200" rx="8" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="70" y="25" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">WEEK 4</text>
+            <text x="70" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Moderate+</text>
+            <rect x="20" y="65" width="100" height="105" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+            <text x="70" y="120" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">5x5 @ 80%</text>
+            <text x="70" y="185" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Supercompensate</text>
+          </g>
+
+          <!-- Arrows -->
+          <path d="M175 160 L195 160" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow)"/>
+          <path d="M325 160 L345 160" stroke="#a1a1aa" stroke-width="2"/>
+          <path d="M475 160 L495 160" stroke="#a1a1aa" stroke-width="2"/>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#a1a1aa"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">The classic 3:1 pattern: 2 weeks loading, 1 week deload, then push forward</div>
+      </div>
+
+      <h2>Daily Undulating Periodization (DUP)</h2>
+
+      <p>DUP varies intensity within the same week rather than across weeks. Each training day has a different rep/intensity target, providing varied stimulus while preventing monotony.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">DAILY UNDULATING PERIODIZATION</text>
+
+          <!-- Day 1: Hypertrophy -->
+          <rect x="50" y="60" width="180" height="180" rx="8" fill="rgba(139, 92, 246, 0.2)" stroke="#a855f7" stroke-width="2"/>
+          <text x="140" y="90" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">MONDAY</text>
+          <text x="140" y="115" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Hypertrophy Day</text>
+          <text x="140" y="150" fill="#d1d5db" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">4x8-10 @ 70%</text>
+          <text x="140" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Focus: Volume</text>
+          <text x="140" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">RPE 7-8</text>
+          <text x="140" y="225" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Higher reps, more muscle</text>
+
+          <!-- Day 2: Strength -->
+          <rect x="260" y="60" width="180" height="180" rx="8" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="2"/>
+          <text x="350" y="90" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">WEDNESDAY</text>
+          <text x="350" y="115" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Strength Day</text>
+          <text x="350" y="150" fill="#d1d5db" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">5x5 @ 80%</text>
+          <text x="350" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Focus: Load</text>
+          <text x="350" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">RPE 8</text>
+          <text x="350" y="225" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Moderate reps, heavy weight</text>
+
+          <!-- Day 3: Power -->
+          <rect x="470" y="60" width="180" height="180" rx="8" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="2"/>
+          <text x="560" y="90" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">FRIDAY</text>
+          <text x="560" y="115" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Power Day</text>
+          <text x="560" y="150" fill="#d1d5db" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">6x3 @ 85%</text>
+          <text x="560" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Focus: Speed</text>
+          <text x="560" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">RPE 8-9</text>
+          <text x="560" y="225" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Low reps, explosive</text>
+        </svg>
+        <div class="diagram-caption">DUP works well for intermediate lifters who can recover from frequent training</div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/hbp3wKQj4wo" title="Periodization for Powerlifting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Structuring your training blocks</div>
+
+      <h2>Peaking: The Final Weeks</h2>
+
+      <p>The peak is when all your training comes together. Volume drops dramatically while intensity reaches maximum. The goal is to dissipate accumulated fatigue while maintaining the strength you've built.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="320" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">4-WEEK PEAKING PROTOCOL</text>
+
+          <!-- Week boxes -->
+          <g transform="translate(30, 60)">
+            <!-- Week -4 -->
+            <rect x="0" y="0" width="150" height="230" rx="8" fill="rgba(249, 115, 22, 0.15)" stroke="#f97316" stroke-width="1"/>
+            <text x="75" y="25" fill="#f97316" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">4 WEEKS OUT</text>
+            <text x="75" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Heavy singles start</text>
+            <text x="75" y="80" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Work to 90-93%</text>
+            <text x="75" y="110" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Volume: Moderate</text>
+            <rect x="20" y="130" width="110" height="30" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+            <text x="75" y="150" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Squat: 1x1 @ 90%</text>
+            <rect x="20" y="165" width="110" height="30" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+            <text x="75" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bench: 1x1 @ 90%</text>
+            <rect x="20" y="200" width="110" height="30" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+            <text x="75" y="220" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Dead: 1x1 @ 90%</text>
+          </g>
+
+          <g transform="translate(190, 60)">
+            <!-- Week -3 -->
+            <rect x="0" y="0" width="150" height="230" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="1"/>
+            <text x="75" y="25" fill="#22c55e" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">3 WEEKS OUT</text>
+            <text x="75" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Push intensity</text>
+            <text x="75" y="80" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Work to 95-97%</text>
+            <text x="75" y="110" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Volume: Low</text>
+            <rect x="20" y="130" width="110" height="30" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+            <text x="75" y="150" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Squat: 1x1 @ 95%</text>
+            <rect x="20" y="165" width="110" height="30" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+            <text x="75" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bench: 1x1 @ 95%</text>
+            <rect x="20" y="200" width="110" height="30" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+            <text x="75" y="220" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Dead: 1x1 @ 93%</text>
+          </g>
+
+          <g transform="translate(350, 60)">
+            <!-- Week -2 -->
+            <rect x="0" y="0" width="150" height="230" rx="8" fill="rgba(139, 92, 246, 0.15)" stroke="#a855f7" stroke-width="1"/>
+            <text x="75" y="25" fill="#a855f7" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">2 WEEKS OUT</text>
+            <text x="75" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Last heavy day</text>
+            <text x="75" y="80" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Openers only</text>
+            <text x="75" y="110" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Volume: Minimal</text>
+            <rect x="20" y="130" width="110" height="30" rx="4" fill="rgba(139, 92, 246, 0.3)"/>
+            <text x="75" y="150" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Squat: 1x1 opener</text>
+            <rect x="20" y="165" width="110" height="30" rx="4" fill="rgba(139, 92, 246, 0.3)"/>
+            <text x="75" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bench: 1x1 opener</text>
+            <rect x="20" y="200" width="110" height="30" rx="4" fill="rgba(139, 92, 246, 0.3)"/>
+            <text x="75" y="220" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Dead: 1x1 opener</text>
+          </g>
+
+          <g transform="translate(510, 60)">
+            <!-- Meet week -->
+            <rect x="0" y="0" width="150" height="230" rx="8" fill="rgba(255, 215, 0, 0.15)" stroke="#ffd700" stroke-width="2"/>
+            <text x="75" y="25" fill="#ffd700" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">MEET WEEK</text>
+            <text x="75" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Rest & recover</text>
+            <text x="75" y="80" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Light movement only</text>
+            <text x="75" y="110" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Volume: None</text>
+            <rect x="20" y="130" width="110" height="80" rx="4" fill="rgba(255, 215, 0, 0.2)"/>
+            <text x="75" y="155" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">Light walkouts</text>
+            <text x="75" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Empty bar work</text>
+            <text x="75" y="195" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Focus: recovery</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">The taper allows fatigue to dissipate while strength is maintained—don't train through it</div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Common Peaking Mistakes</h4>
+        <p>Don't test maxes 2-3 weeks out—that's your strength phase, not your peak. Don't add volume because you "feel good"—trust the taper. Don't skip the light movement during meet week—stay activated without fatiguing.</p>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li>Periodization structures training to peak at competition, not plateau randomly</li>
+        <li>Volume and intensity are inversely related—you can't maximize both</li>
+        <li>Hypertrophy builds capacity, strength converts it, peaking expresses it</li>
+        <li>Undulation (weekly or daily) manages fatigue while driving adaptation</li>
+        <li>The taper is not optional—fatigue must dissipate for peak performance</li>
+      </ul>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/science/progressive-overload/" class="related-card">
+          <h4>Progressive Overload</h4>
+          <p>How adaptation drives gains</p>
+        </a>
+        <a href="/train/accessory-selection/" class="related-card">
+          <h4>Accessory Selection</h4>
+          <p>Building a complete program</p>
+        </a>
+        <a href="/compete/attempt-selection/" class="related-card">
+          <h4>Attempt Selection</h4>
+          <p>Putting the peak to use</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>

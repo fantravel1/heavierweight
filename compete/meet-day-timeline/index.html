@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competition Day Timeline - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffd700, #ffed4a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #ffd700; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(255, 215, 0, 0.2);
+      color: #ffd700;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #ffd700;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+      border-left: 4px solid #ffd700;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #ffd700;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .checklist {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .checklist h4 {
+      color: #ffd700;
+      margin-bottom: 1rem;
+    }
+
+    .checklist ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+      color: #d1d5db;
+    }
+
+    .checklist li::before {
+      content: "□";
+      position: absolute;
+      left: 0;
+      color: #ffd700;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #ffd700;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/compete/">Compete</a>
+          <span>/</span>
+          <span>Meet Day Timeline</span>
+        </div>
+        <div class="category-badge">Compete</div>
+        <h1>Competition Day Timeline</h1>
+        <p class="subtitle">A complete visual guide to pacing your meet day from weigh-ins to final deadlift.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>Meet day can feel chaotic if you don't have a plan. This guide breaks down the entire day into manageable phases, with timing recommendations for warmups, nutrition, and mental prep.</p>
+
+      <h2>The Big Picture: Meet Day Flow</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="350" fill="#1a1a2e"/>
+          <text x="400" y="30" fill="#ffd700" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">MEET DAY OVERVIEW</text>
+
+          <!-- Timeline bar -->
+          <rect x="50" y="70" width="700" height="40" rx="8" fill="#3f3f46"/>
+
+          <!-- Phase blocks -->
+          <!-- Weigh-ins -->
+          <rect x="50" y="70" width="100" height="40" rx="8" fill="rgba(139, 92, 246, 0.5)"/>
+          <text x="100" y="95" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">WEIGH-IN</text>
+
+          <!-- Refuel -->
+          <rect x="150" y="70" width="80" height="40" fill="rgba(34, 197, 94, 0.5)"/>
+          <text x="190" y="95" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">REFUEL</text>
+
+          <!-- Rules meeting -->
+          <rect x="230" y="70" width="60" height="40" fill="rgba(161, 161, 170, 0.3)"/>
+          <text x="260" y="95" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">RULES</text>
+
+          <!-- Wait / prep -->
+          <rect x="290" y="70" width="100" height="40" fill="rgba(161, 161, 170, 0.2)"/>
+          <text x="340" y="95" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">WAIT / PREP</text>
+
+          <!-- Squat session -->
+          <rect x="390" y="70" width="120" height="40" fill="rgba(249, 115, 22, 0.5)"/>
+          <text x="450" y="95" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">SQUAT</text>
+
+          <!-- Break -->
+          <rect x="510" y="70" width="40" height="40" fill="rgba(161, 161, 170, 0.2)"/>
+          <text x="530" y="95" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">BREAK</text>
+
+          <!-- Bench session -->
+          <rect x="550" y="70" width="100" height="40" fill="rgba(249, 115, 22, 0.5)"/>
+          <text x="600" y="95" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">BENCH</text>
+
+          <!-- Break -->
+          <rect x="650" y="70" width="30" height="40" fill="rgba(161, 161, 170, 0.2)"/>
+
+          <!-- Deadlift session -->
+          <rect x="680" y="70" width="70" height="40" rx="0 8 8 0" fill="rgba(255, 215, 0, 0.5)"/>
+          <text x="715" y="95" fill="#0a0a0f" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">DEAD</text>
+
+          <!-- Time markers -->
+          <text x="50" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="start">Early AM</text>
+          <text x="400" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Mid-day</text>
+          <text x="750" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="end">Late</text>
+
+          <!-- Detailed phase cards below -->
+          <g transform="translate(50, 160)">
+            <rect x="0" y="0" width="160" height="150" rx="8" fill="rgba(139, 92, 246, 0.1)" stroke="#a855f7" stroke-width="1"/>
+            <text x="80" y="25" fill="#a855f7" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">WEIGH-IN PHASE</text>
+            <text x="15" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Arrive 30min early</text>
+            <text x="15" y="68" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Equipment check</text>
+            <text x="15" y="86" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Weigh in efficiently</text>
+            <text x="15" y="104" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Get rack heights</text>
+            <text x="15" y="122" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Submit openers</text>
+            <text x="15" y="140" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">~30-60 min before lifting</text>
+          </g>
+
+          <g transform="translate(220, 160)">
+            <rect x="0" y="0" width="160" height="150" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="80" y="25" fill="#22c55e" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">REFUEL PHASE</text>
+            <text x="15" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Start eating immediately</text>
+            <text x="15" y="68" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Familiar foods only</text>
+            <text x="15" y="86" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Hydrate (electrolytes)</text>
+            <text x="15" y="104" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Carbs + protein</text>
+            <text x="15" y="122" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Light, easily digested</text>
+            <text x="15" y="140" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">Ongoing throughout meet</text>
+          </g>
+
+          <g transform="translate(390, 160)">
+            <rect x="0" y="0" width="160" height="150" rx="8" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="80" y="25" fill="#f97316" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">LIFTING PHASE</text>
+            <text x="15" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Watch flight order</text>
+            <text x="15" y="68" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Time warmups carefully</text>
+            <text x="15" y="86" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Execute attempt plan</text>
+            <text x="15" y="104" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Stay calm between lifts</text>
+            <text x="15" y="122" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Adjust attempts as needed</text>
+            <text x="15" y="140" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">~45-60 min per lift</text>
+          </g>
+
+          <g transform="translate(560, 160)">
+            <rect x="0" y="0" width="160" height="150" rx="8" fill="rgba(255, 215, 0, 0.1)" stroke="#ffd700" stroke-width="1"/>
+            <text x="80" y="25" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">BREAKS</text>
+            <text x="15" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• ~10-15 min between lifts</text>
+            <text x="15" y="68" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Stay warm (sweats on)</text>
+            <text x="15" y="86" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Light snack if hungry</text>
+            <text x="15" y="104" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Bathroom break</text>
+            <text x="15" y="122" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Mental reset</text>
+            <text x="15" y="140" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">Don't cool down too much</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Typical meet day is 4-6 hours from weigh-in to final deadlift</div>
+      </div>
+
+      <h2>Warmup Timing Protocol</h2>
+
+      <p>Timing your warmup is critical. Start too early and you'll be sitting around cold. Start too late and you'll rush through warmups or miss your opener.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#ffd700" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">WARMUP TIMING FLOWCHART</text>
+
+          <!-- Step 1: Count lifters -->
+          <rect x="50" y="60" width="180" height="80" rx="8" fill="rgba(255, 215, 0, 0.2)" stroke="#ffd700" stroke-width="2"/>
+          <text x="140" y="90" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">STEP 1: COUNT</text>
+          <text x="140" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">How many lifters</text>
+          <text x="140" y="130" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">before you?</text>
+
+          <!-- Arrow -->
+          <path d="M230 100 L280 100" stroke="#ffd700" stroke-width="2" marker-end="url(#arrowYellow)"/>
+
+          <!-- Step 2: Calculate time -->
+          <rect x="280" y="60" width="180" height="80" rx="8" fill="rgba(255, 215, 0, 0.2)" stroke="#ffd700" stroke-width="2"/>
+          <text x="370" y="90" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">STEP 2: MULTIPLY</text>
+          <text x="370" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Lifters × ~1 min/attempt</text>
+          <text x="370" y="130" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">= Time until you lift</text>
+
+          <!-- Arrow -->
+          <path d="M460 100 L510 100" stroke="#ffd700" stroke-width="2" marker-end="url(#arrowYellow)"/>
+
+          <!-- Step 3: Start warmup -->
+          <rect x="510" y="60" width="140" height="80" rx="8" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="2"/>
+          <text x="580" y="90" fill="#22c55e" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">STEP 3: START</text>
+          <text x="580" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Begin warmup</text>
+          <text x="580" y="130" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">15-20 min before</text>
+
+          <!-- Example calculation -->
+          <rect x="50" y="170" width="600" height="100" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="#3f3f46" stroke-width="1"/>
+          <text x="350" y="200" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">EXAMPLE CALCULATION</text>
+
+          <g transform="translate(70, 220)">
+            <text x="0" y="0" fill="#ffd700" font-family="Inter, sans-serif" font-size="12">You're lifter #8 in a flight of 12</text>
+            <text x="0" y="25" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11">→ 7 lifters × 3 attempts = 21 attempts before your opener</text>
+            <text x="0" y="45" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11">→ 21 attempts × ~1 min = ~21 minutes until you lift</text>
+            <text x="350" y="0" fill="#22c55e" font-family="Inter, sans-serif" font-size="12" font-weight="600">START WARMUP NOW</text>
+            <text x="350" y="25" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11">(you need ~15-20 min to warm up)</text>
+          </g>
+
+          <!-- Warmup structure -->
+          <text x="350" y="305" fill="#ffd700" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">WARMUP STRUCTURE</text>
+
+          <!-- Warmup timeline -->
+          <rect x="50" y="320" width="600" height="50" rx="8" fill="#3f3f46"/>
+
+          <!-- General warmup -->
+          <rect x="50" y="320" width="100" height="50" rx="8 0 0 8" fill="rgba(139, 92, 246, 0.5)"/>
+          <text x="100" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">GENERAL</text>
+
+          <!-- Empty bar -->
+          <rect x="150" y="320" width="80" height="50" fill="rgba(34, 197, 94, 0.3)"/>
+          <text x="190" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Empty Bar</text>
+
+          <!-- Light sets -->
+          <rect x="230" y="320" width="100" height="50" fill="rgba(34, 197, 94, 0.4)"/>
+          <text x="280" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">50-60%</text>
+
+          <!-- Medium sets -->
+          <rect x="330" y="320" width="100" height="50" fill="rgba(249, 115, 22, 0.4)"/>
+          <text x="380" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">70-80%</text>
+
+          <!-- Heavy -->
+          <rect x="430" y="320" width="100" height="50" fill="rgba(249, 115, 22, 0.6)"/>
+          <text x="480" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">85-90%</text>
+
+          <!-- Last warmup -->
+          <rect x="530" y="320" width="70" height="50" fill="rgba(239, 68, 68, 0.5)"/>
+          <text x="565" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">~93%</text>
+
+          <!-- Opener -->
+          <rect x="600" y="320" width="50" height="50" rx="0 8 8 0" fill="rgba(255, 215, 0, 0.8)"/>
+          <text x="625" y="350" fill="#0a0a0f" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">OPENER</text>
+
+          <defs>
+            <marker id="arrowYellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#ffd700"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Your last warmup should be ~5 lifters out from your opener—take it and head to the platform area</div>
+      </div>
+
+      <h3>Sample Warmup Numbers</h3>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#ffd700" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">WARMUP SET PROGRESSION (100kg Opener Example)</text>
+
+          <!-- Table header -->
+          <rect x="50" y="55" width="600" height="35" rx="4" fill="rgba(255, 215, 0, 0.2)"/>
+          <text x="120" y="78" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">SET</text>
+          <text x="250" y="78" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">WEIGHT</text>
+          <text x="380" y="78" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">% OF OPENER</text>
+          <text x="530" y="78" fill="#ffd700" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">REPS</text>
+
+          <!-- Row 1 -->
+          <rect x="50" y="95" width="600" height="30" fill="rgba(255, 255, 255, 0.02)"/>
+          <text x="120" y="115" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Empty bar</text>
+          <text x="250" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">20 kg</text>
+          <text x="380" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">20%</text>
+          <text x="530" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">5-8</text>
+
+          <!-- Row 2 -->
+          <text x="120" y="145" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Set 1</text>
+          <text x="250" y="145" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">50 kg</text>
+          <text x="380" y="145" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">50%</text>
+          <text x="530" y="145" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">5</text>
+
+          <!-- Row 3 -->
+          <rect x="50" y="155" width="600" height="30" fill="rgba(255, 255, 255, 0.02)"/>
+          <text x="120" y="175" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Set 2</text>
+          <text x="250" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">65 kg</text>
+          <text x="380" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">65%</text>
+          <text x="530" y="175" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">3</text>
+
+          <!-- Row 4 -->
+          <text x="120" y="205" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Set 3</text>
+          <text x="250" y="205" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">80 kg</text>
+          <text x="380" y="205" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">80%</text>
+          <text x="530" y="205" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">2</text>
+
+          <!-- Row 5 -->
+          <rect x="50" y="215" width="600" height="30" fill="rgba(255, 255, 255, 0.02)"/>
+          <text x="120" y="235" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">Last warmup</text>
+          <text x="250" y="235" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">90 kg</text>
+          <text x="380" y="235" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">90%</text>
+          <text x="530" y="235" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">1</text>
+
+          <!-- Row 6 -->
+          <text x="120" y="265" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="700">OPENER</text>
+          <text x="250" y="265" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">100 kg</text>
+          <text x="380" y="265" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">100%</text>
+          <text x="530" y="265" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">1 (on platform)</text>
+        </svg>
+        <div class="diagram-caption">Fewer reps as weight increases—save energy for the platform</div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Key Warmup Rules</h4>
+        <p>Take your last warmup at ~90% when you're about 5 lifters out. After that, stay warm and mobile but don't take more weight. Your opener IS your final warmup—it should feel like a warmup weight.</p>
+      </div>
+
+      <h2>Nutrition Timing</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="300" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#ffd700" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">MEET DAY NUTRITION TIMELINE</text>
+
+          <!-- Timeline -->
+          <line x1="50" y1="150" x2="650" y2="150" stroke="#3f3f46" stroke-width="3"/>
+
+          <!-- Weigh-in marker -->
+          <circle cx="100" cy="150" r="15" fill="#a855f7"/>
+          <text x="100" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">W</text>
+          <text x="100" y="185" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Weigh-in</text>
+
+          <!-- Big meal -->
+          <circle cx="180" cy="150" r="15" fill="#22c55e"/>
+          <text x="180" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">1</text>
+          <text x="180" y="120" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">BIG MEAL</text>
+          <text x="180" y="185" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Carbs + protein</text>
+          <text x="180" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">electrolytes</text>
+
+          <!-- Pre-squat -->
+          <circle cx="300" cy="150" r="15" fill="#22c55e"/>
+          <text x="300" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">2</text>
+          <text x="300" y="120" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">PRE-SQUAT</text>
+          <text x="300" y="185" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Light snack</text>
+          <text x="300" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">30-45 min before</text>
+
+          <!-- Squat marker -->
+          <rect x="370" y="135" width="60" height="30" rx="4" fill="rgba(249, 115, 22, 0.5)"/>
+          <text x="400" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">SQUAT</text>
+
+          <!-- Post-squat -->
+          <circle cx="480" cy="150" r="15" fill="#22c55e"/>
+          <text x="480" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">3</text>
+          <text x="480" y="120" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">POST-SQUAT</text>
+          <text x="480" y="185" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Quick carbs</text>
+          <text x="480" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">during break</text>
+
+          <!-- Bench marker -->
+          <rect x="530" y="135" width="60" height="30" rx="4" fill="rgba(249, 115, 22, 0.5)"/>
+          <text x="560" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">BENCH</text>
+
+          <!-- Pre-deadlift -->
+          <circle cx="630" cy="150" r="15" fill="#22c55e"/>
+          <text x="630" y="155" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="700">4</text>
+          <text x="630" y="120" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">PRE-DEAD</text>
+          <text x="630" y="185" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Sugar/caffeine</text>
+          <text x="630" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">if needed</text>
+
+          <!-- Food suggestions -->
+          <rect x="50" y="230" width="600" height="55" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+          <text x="70" y="255" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" font-weight="600">GOOD OPTIONS:</text>
+          <text x="180" y="255" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">Rice + chicken • Bagel + PB • Fruit • Gummy bears • Sports drink • Banana</text>
+          <text x="70" y="275" fill="#ef4444" font-family="Inter, sans-serif" font-size="11" font-weight="600">AVOID:</text>
+          <text x="120" y="275" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10">High fat • High fiber • Anything new • Excessive caffeine early</text>
+        </svg>
+        <div class="diagram-caption">Small, frequent feeds keep energy stable without causing GI distress</div>
+      </div>
+
+      <h2>Mental Prep Between Lifts</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="250" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#ffd700" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">BETWEEN-LIFT MENTAL CYCLE</text>
+
+          <!-- Circular flow -->
+          <g transform="translate(350, 140)">
+            <!-- Center circle -->
+            <circle cx="0" cy="0" r="40" fill="rgba(255, 215, 0, 0.2)" stroke="#ffd700" stroke-width="2"/>
+            <text x="0" y="-5" fill="#ffd700" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">FOCUS</text>
+            <text x="0" y="10" fill="#ffd700" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">STATE</text>
+
+            <!-- Outer stages -->
+            <!-- 1. Complete lift -->
+            <g transform="translate(-180, -60)">
+              <rect x="-60" y="-25" width="120" height="50" rx="8" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="1"/>
+              <text x="0" y="-5" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">1. COMPLETE</text>
+              <text x="0" y="12" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Lift is done</text>
+            </g>
+
+            <!-- 2. Release -->
+            <g transform="translate(-180, 60)">
+              <rect x="-60" y="-25" width="120" height="50" rx="8" fill="rgba(139, 92, 246, 0.2)" stroke="#a855f7" stroke-width="1"/>
+              <text x="0" y="-5" fill="#a855f7" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">2. RELEASE</text>
+              <text x="0" y="12" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Let go of result</text>
+            </g>
+
+            <!-- 3. Recover -->
+            <g transform="translate(0, 100)">
+              <rect x="-60" y="-25" width="120" height="50" rx="8" fill="rgba(161, 161, 170, 0.2)" stroke="#a1a1aa" stroke-width="1"/>
+              <text x="0" y="-5" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">3. RECOVER</text>
+              <text x="0" y="12" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Eat, hydrate, rest</text>
+            </g>
+
+            <!-- 4. Prepare -->
+            <g transform="translate(180, 60)">
+              <rect x="-60" y="-25" width="120" height="50" rx="8" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="1"/>
+              <text x="0" y="-5" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">4. PREPARE</text>
+              <text x="0" y="12" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Review next attempt</text>
+            </g>
+
+            <!-- 5. Activate -->
+            <g transform="translate(180, -60)">
+              <rect x="-60" y="-25" width="120" height="50" rx="8" fill="rgba(255, 215, 0, 0.2)" stroke="#ffd700" stroke-width="1"/>
+              <text x="0" y="-5" fill="#ffd700" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">5. ACTIVATE</text>
+              <text x="0" y="12" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Get mentally ready</text>
+            </g>
+
+            <!-- Arrows -->
+            <path d="M-125 -50 Q-100 -60 -60 -45" stroke="#3f3f46" stroke-width="2" fill="none" marker-end="url(#arrow5)"/>
+            <path d="M-130 20 Q-140 50 -110 75" stroke="#3f3f46" stroke-width="2" fill="none" marker-end="url(#arrow5)"/>
+            <path d="M-45 95 Q0 110 45 95" stroke="#3f3f46" stroke-width="2" fill="none" marker-end="url(#arrow5)"/>
+            <path d="M110 75 Q140 50 130 20" stroke="#3f3f46" stroke-width="2" fill="none" marker-end="url(#arrow5)"/>
+            <path d="M125 -50 Q100 -60 60 -45" stroke="#3f3f46" stroke-width="2" fill="none" marker-end="url(#arrow5)"/>
+          </g>
+
+          <defs>
+            <marker id="arrow5" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3f3f46"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Don't stay amped up for hours—cycle between relaxation and focus</div>
+      </div>
+
+      <div class="checklist">
+        <h4>Meet Day Bag Checklist</h4>
+        <ul>
+          <li>Singlet + approved t-shirt (if required)</li>
+          <li>Belt, wraps, sleeves, shoes</li>
+          <li>Backup of all equipment</li>
+          <li>Food: meals + snacks for full day</li>
+          <li>Water bottle + electrolytes</li>
+          <li>Caffeine source (pills, coffee, etc.)</li>
+          <li>Ammonia/smelling salts (if you use)</li>
+          <li>Chalk (verify if venue provides)</li>
+          <li>Phone charger</li>
+          <li>Warm layers for between lifts</li>
+          <li>Foam roller/lacrosse ball</li>
+          <li>Attempt card/notebook</li>
+        </ul>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/qP6lKyQMvck" title="Meet Day Preparation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Meet day walkthrough</div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li>Arrive early—rushing leads to mistakes and elevated stress</li>
+        <li>Time warmups by counting lifters, not the clock</li>
+        <li>Last warmup at ~90%, about 5 lifters out from your opener</li>
+        <li>Eat small, familiar foods throughout the day</li>
+        <li>Cycle between rest and focus—don't stay amped for 6 hours</li>
+        <li>Your opener should feel like a warmup—it IS your last warmup</li>
+      </ul>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/compete/attempt-selection/" class="related-card">
+          <h4>Attempt Selection</h4>
+          <p>Choosing your 9 attempts strategically</p>
+        </a>
+        <a href="/compete/platform-commands/" class="related-card">
+          <h4>Platform Commands</h4>
+          <p>Know the calls for each lift</p>
+        </a>
+        <a href="/fuel/meet-day-nutrition/" class="related-card">
+          <h4>Meet Day Nutrition</h4>
+          <p>Full nutrition protocol</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>

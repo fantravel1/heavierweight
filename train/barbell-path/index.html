@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbell Path Analysis for Powerlifting - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #f97316; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(249, 115, 22, 0.2);
+      color: #f97316;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #f97316;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.1));
+      border-left: 4px solid #f97316;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .comparison-card {
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .comparison-card.correct {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .comparison-card.incorrect {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .comparison-card h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .comparison-card.correct h4 { color: #22c55e; }
+    .comparison-card.incorrect h4 { color: #ef4444; }
+
+    .comparison-card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #f97316;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train/">Train</a>
+          <span>/</span>
+          <span>Barbell Path</span>
+        </div>
+        <div class="category-badge">Train</div>
+        <h1>Barbell Path Analysis</h1>
+        <p class="subtitle">Understanding optimal bar paths for maximum efficiency and strength expression in all three lifts.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>The barbell path—the trajectory the bar travels during a lift—directly impacts mechanical efficiency. A poor bar path wastes energy fighting gravity, while an optimal path minimizes horizontal displacement and keeps the load balanced over your base of support.</p>
+
+      <h2>Squat Bar Path</h2>
+
+      <p>The optimal squat bar path is a straight vertical line over the midfoot. Any forward or backward drift forces you to compensate with extra muscular effort. Here's what correct and incorrect paths look like:</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">SQUAT BAR PATH COMPARISON</text>
+
+          <!-- Correct path (left) -->
+          <g transform="translate(100, 60)">
+            <text x="100" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">CORRECT</text>
+
+            <!-- Floor line -->
+            <line x1="20" y1="300" x2="180" y2="300" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Foot outline -->
+            <rect x="60" y="290" width="80" height="10" rx="2" fill="#3f3f46"/>
+
+            <!-- Midfoot marker -->
+            <line x1="100" y1="290" x2="100" y2="300" stroke="#22c55e" stroke-width="2"/>
+            <text x="100" y="320" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Midfoot</text>
+
+            <!-- Straight vertical bar path -->
+            <line x1="100" y1="70" x2="100" y2="280" stroke="#22c55e" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Top position lifter silhouette -->
+            <circle cx="100" cy="70" r="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="85" x2="100" y2="130" stroke="#22c55e" stroke-width="2"/>
+            <line x1="70" y1="95" x2="130" y2="95" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="130" x2="80" y2="180" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="130" x2="120" y2="180" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Bottom position -->
+            <circle cx="100" cy="200" r="12" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+            <path d="M100 212 L100 235" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+            <line x1="75" y1="220" x2="125" y2="220" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+            <path d="M100 235 Q85 260 70 280" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+            <path d="M100 235 Q115 260 130 280" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+
+            <!-- Bar markers -->
+            <circle cx="100" cy="70" r="4" fill="#22c55e"/>
+            <circle cx="100" cy="200" r="4" fill="#22c55e" opacity="0.5"/>
+            <text x="100" y="340" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bar stays over midfoot</text>
+          </g>
+
+          <!-- Incorrect - forward path (middle) -->
+          <g transform="translate(300, 60)">
+            <text x="100" y="20" fill="#ef4444" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">FORWARD DRIFT</text>
+
+            <!-- Floor line -->
+            <line x1="20" y1="300" x2="180" y2="300" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Foot outline -->
+            <rect x="60" y="290" width="80" height="10" rx="2" fill="#3f3f46"/>
+
+            <!-- Midfoot marker -->
+            <line x1="100" y1="290" x2="100" y2="300" stroke="#a1a1aa" stroke-width="2"/>
+
+            <!-- Forward drifting bar path -->
+            <path d="M100 70 Q120 150 130 200 Q135 240 130 280" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Top position -->
+            <circle cx="100" cy="70" r="15" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="85" x2="100" y2="130" stroke="#ef4444" stroke-width="2"/>
+            <line x1="70" y1="95" x2="130" y2="95" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="130" x2="80" y2="180" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="130" x2="120" y2="180" stroke="#ef4444" stroke-width="2"/>
+
+            <!-- Bottom position (leaned forward) -->
+            <circle cx="115" cy="195" r="12" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M115 207 L120 232" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <line x1="90" y1="212" x2="140" y2="205" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M120 232 Q105 260 85 280" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M120 232 Q135 260 145 280" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+
+            <!-- Bar markers -->
+            <circle cx="100" cy="70" r="4" fill="#ef4444"/>
+            <circle cx="130" cy="200" r="4" fill="#ef4444" opacity="0.5"/>
+
+            <!-- Arrows showing drift -->
+            <path d="M100 120 L120 120" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+            <text x="100" y="340" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bar moves over toes</text>
+          </g>
+
+          <!-- Incorrect - backward path (right) -->
+          <g transform="translate(500, 60)">
+            <text x="100" y="20" fill="#ef4444" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">BACKWARD DRIFT</text>
+
+            <!-- Floor line -->
+            <line x1="20" y1="300" x2="180" y2="300" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Foot outline -->
+            <rect x="60" y="290" width="80" height="10" rx="2" fill="#3f3f46"/>
+
+            <!-- Midfoot marker -->
+            <line x1="100" y1="290" x2="100" y2="300" stroke="#a1a1aa" stroke-width="2"/>
+
+            <!-- Backward drifting bar path -->
+            <path d="M100 70 Q80 150 70 200 Q65 240 70 280" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Top position -->
+            <circle cx="100" cy="70" r="15" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="85" x2="100" y2="130" stroke="#ef4444" stroke-width="2"/>
+            <line x1="70" y1="95" x2="130" y2="95" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="130" x2="80" y2="180" stroke="#ef4444" stroke-width="2"/>
+            <line x1="100" y1="130" x2="120" y2="180" stroke="#ef4444" stroke-width="2"/>
+
+            <!-- Bottom position (sitting back too far) -->
+            <circle cx="85" cy="195" r="12" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M85 207 L80 232" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <line x1="60" y1="205" x2="110" y2="212" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M80 232 Q65 260 55 280" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+            <path d="M80 232 Q95 260 115 280" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+
+            <!-- Bar markers -->
+            <circle cx="100" cy="70" r="4" fill="#ef4444"/>
+            <circle cx="70" cy="200" r="4" fill="#ef4444" opacity="0.5"/>
+
+            <!-- Arrows showing drift -->
+            <path d="M100 120 L80 120" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+            <text x="100" y="340" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bar moves over heels</text>
+          </g>
+
+          <defs>
+            <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Side view: The bar should travel in a straight vertical line over midfoot throughout the entire squat</div>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card correct">
+          <h4>Correct: Vertical Path</h4>
+          <p>Bar stays directly over midfoot through descent and ascent. Weight balanced, minimal energy wasted fighting leverage.</p>
+        </div>
+        <div class="comparison-card incorrect">
+          <h4>Forward Drift Causes</h4>
+          <p>Knees shooting too far forward, chest dropping, heels rising. Puts excess stress on lower back and reduces quad drive.</p>
+        </div>
+      </div>
+
+      <h2>Bench Press Bar Path</h2>
+
+      <p>Unlike the squat, the bench press bar path is NOT perfectly straight. The optimal path forms a slight J-curve, with the bar touching low on the chest and pressing back toward the face.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">BENCH PRESS BAR PATH</text>
+
+          <!-- Side view bench setup -->
+          <g transform="translate(50, 60)">
+            <text x="150" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">SIDE VIEW</text>
+
+            <!-- Bench -->
+            <rect x="50" y="250" width="200" height="15" rx="3" fill="#3f3f46"/>
+            <rect x="40" y="265" width="20" height="50" rx="2" fill="#3f3f46"/>
+            <rect x="240" y="265" width="20" height="50" rx="2" fill="#3f3f46"/>
+
+            <!-- Lifter on bench (head to left, feet to right) -->
+            <ellipse cx="100" cy="235" rx="20" ry="15" fill="none" stroke="#a1a1aa" stroke-width="2"/>
+            <line x1="120" y1="235" x2="200" y2="235" stroke="#a1a1aa" stroke-width="2"/>
+            <line x1="200" y1="235" x2="230" y2="280" stroke="#a1a1aa" stroke-width="2"/>
+            <line x1="230" y1="280" x2="230" y2="310" stroke="#a1a1aa" stroke-width="2"/>
+
+            <!-- Arms at lockout (straight up) -->
+            <line x1="160" y1="220" x2="160" y2="150" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Arms at bottom (tucked) -->
+            <line x1="175" y1="225" x2="190" y2="210" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+
+            <!-- J-Curve bar path -->
+            <path d="M160 80 Q155 120 155 160 Q157 190 190 210" fill="none" stroke="#22c55e" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Bar positions -->
+            <line x1="120" y1="80" x2="200" y2="80" stroke="#22c55e" stroke-width="4"/>
+            <text x="160" y="70" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Lockout (over shoulders)</text>
+
+            <line x1="150" y1="210" x2="230" y2="210" stroke="#22c55e" stroke-width="4" opacity="0.5"/>
+            <text x="190" y="200" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" opacity="0.7">Touch (lower chest)</text>
+
+            <!-- J-curve label -->
+            <path d="M130 140 Q145 145 155 155" fill="none" stroke="#f97316" stroke-width="1"/>
+            <text x="115" y="145" fill="#f97316" font-family="Inter, sans-serif" font-size="11" text-anchor="end">J-Curve</text>
+
+            <!-- Shoulder line marker -->
+            <line x1="155" y1="60" x2="155" y2="250" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="3"/>
+            <text x="155" y="55" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Shoulder line</text>
+          </g>
+
+          <!-- Comparison: correct vs incorrect -->
+          <g transform="translate(400, 60)">
+            <text x="125" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">PATH COMPARISON</text>
+
+            <!-- Shoulder/chest reference -->
+            <circle cx="125" cy="200" r="30" fill="none" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4"/>
+            <text x="125" y="245" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Chest</text>
+
+            <!-- Vertical lines for reference -->
+            <line x1="90" y1="50" x2="90" y2="230" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3"/>
+            <line x1="160" y1="50" x2="160" y2="230" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3"/>
+
+            <!-- Correct J-curve (green) -->
+            <path d="M90 80 Q85 130 88 160 Q95 190 125 205" fill="none" stroke="#22c55e" stroke-width="3"/>
+            <circle cx="90" cy="80" r="5" fill="#22c55e"/>
+            <circle cx="125" cy="205" r="5" fill="#22c55e"/>
+            <text x="60" y="140" fill="#22c55e" font-family="Inter, sans-serif" font-size="10">Correct</text>
+
+            <!-- Wrong: straight vertical (red) -->
+            <line x1="160" y1="80" x2="160" y2="200" stroke="#ef4444" stroke-width="3"/>
+            <circle cx="160" cy="80" r="5" fill="#ef4444"/>
+            <circle cx="160" cy="200" r="5" fill="#ef4444"/>
+            <text x="175" y="140" fill="#ef4444" font-family="Inter, sans-serif" font-size="10">Wrong</text>
+
+            <!-- Labels -->
+            <text x="90" y="65" fill="#22c55e" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Lockout</text>
+            <text x="160" y="65" fill="#ef4444" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Lockout</text>
+            <text x="125" y="275" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">J-curve back vs straight up</text>
+          </g>
+
+          <!-- Key points -->
+          <g transform="translate(50, 330)">
+            <rect x="0" y="0" width="600" height="50" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="20" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" font-weight="600">KEY POINTS:</text>
+            <text x="20" y="38" fill="#d1d5db" font-family="Inter, sans-serif" font-size="11">Touch low on chest → Press back toward face → Lock out over shoulders (not over touch point)</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">The bench J-curve allows you to use leg drive effectively and maintain shoulder health</div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Why the J-Curve Works</h4>
+        <p>Locking out over the shoulders (not the touch point) keeps the bar balanced over your shoulder joint, reducing stress. The slight back-press also engages the lats and lets you use leg drive more effectively. A straight up-and-down path puts excessive strain on the shoulder joint.</p>
+      </div>
+
+      <h2>Deadlift Bar Path</h2>
+
+      <p>The deadlift bar path should be as straight and vertical as possible, staying in contact with (or very close to) your body throughout. Any forward drift dramatically increases lower back stress.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="450" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">DEADLIFT BAR PATH</text>
+
+          <!-- Correct path (left) -->
+          <g transform="translate(80, 60)">
+            <text x="100" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">CORRECT</text>
+
+            <!-- Floor -->
+            <line x1="20" y1="350" x2="180" y2="350" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Feet -->
+            <rect x="60" y="340" width="35" height="10" rx="2" fill="#3f3f46"/>
+            <rect x="105" y="340" width="35" height="10" rx="2" fill="#3f3f46"/>
+
+            <!-- Midfoot reference -->
+            <line x1="100" y1="330" x2="100" y2="350" stroke="#22c55e" stroke-width="2"/>
+            <text x="100" y="370" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Midfoot</text>
+
+            <!-- Start position (bent over) -->
+            <circle cx="100" cy="180" r="15" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <path d="M100 195 L100 250" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <path d="M100 250 Q100 290 85 330" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <path d="M100 250 Q100 290 115 330" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <line x1="75" y1="210" x2="125" y2="210" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <line x1="75" y1="210" x2="100" y2="320" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+            <line x1="125" y1="210" x2="100" y2="320" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+
+            <!-- End position (standing) -->
+            <circle cx="100" cy="70" r="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="85" x2="100" y2="160" stroke="#22c55e" stroke-width="2"/>
+            <line x1="75" y1="100" x2="125" y2="100" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="160" x2="85" y2="250" stroke="#22c55e" stroke-width="2"/>
+            <line x1="100" y1="160" x2="115" y2="250" stroke="#22c55e" stroke-width="2"/>
+            <line x1="85" y1="250" x2="85" y2="340" stroke="#22c55e" stroke-width="2"/>
+            <line x1="115" y1="250" x2="115" y2="340" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Straight bar path -->
+            <line x1="100" y1="100" x2="100" y2="320" stroke="#22c55e" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Bar positions -->
+            <line x1="65" y1="320" x2="135" y2="320" stroke="#22c55e" stroke-width="5" opacity="0.5"/>
+            <line x1="65" y1="170" x2="135" y2="170" stroke="#22c55e" stroke-width="5"/>
+
+            <text x="100" y="390" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bar drags up shins/thighs</text>
+          </g>
+
+          <!-- Incorrect - bar drifts forward -->
+          <g transform="translate(300, 60)">
+            <text x="100" y="20" fill="#ef4444" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">FORWARD DRIFT</text>
+
+            <!-- Floor -->
+            <line x1="20" y1="350" x2="180" y2="350" stroke="#3f3f46" stroke-width="2"/>
+
+            <!-- Feet -->
+            <rect x="60" y="340" width="35" height="10" rx="2" fill="#3f3f46"/>
+            <rect x="105" y="340" width="35" height="10" rx="2" fill="#3f3f46"/>
+
+            <!-- Midfoot reference -->
+            <line x1="100" y1="330" x2="100" y2="350" stroke="#a1a1aa" stroke-width="1"/>
+
+            <!-- Start position -->
+            <circle cx="100" cy="180" r="15" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.4"/>
+            <path d="M100 195 L100 250" stroke="#ef4444" stroke-width="2" opacity="0.4"/>
+            <path d="M100 250 Q100 290 85 330" stroke="#ef4444" stroke-width="2" opacity="0.4"/>
+            <path d="M100 250 Q100 290 115 330" stroke="#ef4444" stroke-width="2" opacity="0.4"/>
+
+            <!-- End position (good morning position - hips back) -->
+            <circle cx="85" cy="90" r="15" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <path d="M85 105 L95 160" stroke="#ef4444" stroke-width="2"/>
+            <line x1="60" y1="120" x2="115" y2="110" stroke="#ef4444" stroke-width="2"/>
+            <path d="M95 160 Q90 200 80 250" stroke="#ef4444" stroke-width="2"/>
+            <path d="M95 160 Q100 200 110 250" stroke="#ef4444" stroke-width="2"/>
+            <line x1="80" y1="250" x2="75" y2="340" stroke="#ef4444" stroke-width="2"/>
+            <line x1="110" y1="250" x2="120" y2="340" stroke="#ef4444" stroke-width="2"/>
+
+            <!-- Bar path curving forward -->
+            <path d="M100 320 Q115 260 125 200 Q130 150 125 110" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6"/>
+
+            <!-- Bar positions -->
+            <line x1="65" y1="320" x2="135" y2="320" stroke="#ef4444" stroke-width="5" opacity="0.5"/>
+            <line x1="90" y1="110" x2="160" y2="110" stroke="#ef4444" stroke-width="5"/>
+
+            <!-- Arrow showing forward drift -->
+            <path d="M100 200 L120 200" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed2)"/>
+
+            <text x="100" y="390" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Bar swings away from body</text>
+          </g>
+
+          <!-- Around the knees detail -->
+          <g transform="translate(500, 60)">
+            <text x="100" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">KNEE CLEARANCE</text>
+
+            <rect x="20" y="50" width="160" height="300" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="#3f3f46" stroke-width="1"/>
+
+            <!-- Leg close-up -->
+            <path d="M100 80 Q95 140 90 200 Q88 240 100 280 Q105 300 100 340" fill="none" stroke="#a1a1aa" stroke-width="15" stroke-linecap="round"/>
+
+            <!-- Knee bulge -->
+            <ellipse cx="92" cy="200" rx="20" ry="25" fill="#1a1a2e" stroke="#a1a1aa" stroke-width="2"/>
+            <text x="60" y="205" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">Knee</text>
+
+            <!-- Good bar path (straight, behind knee) -->
+            <line x1="125" y1="90" x2="125" y2="330" stroke="#22c55e" stroke-width="3"/>
+            <circle cx="125" cy="90" r="6" fill="#22c55e"/>
+            <circle cx="125" cy="200" r="6" fill="#22c55e"/>
+            <circle cx="125" cy="330" r="6" fill="#22c55e"/>
+
+            <!-- Labels -->
+            <text x="145" y="95" fill="#22c55e" font-family="Inter, sans-serif" font-size="9">Top</text>
+            <text x="145" y="205" fill="#22c55e" font-family="Inter, sans-serif" font-size="9">Knee</text>
+            <text x="145" y="335" fill="#22c55e" font-family="Inter, sans-serif" font-size="9">Floor</text>
+
+            <text x="100" y="375" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Knees back = bar clears</text>
+          </g>
+
+          <defs>
+            <marker id="arrowRed2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Keep the bar touching or near your body throughout—shin contact is normal and expected</div>
+      </div>
+
+      <h3>Conventional vs. Sumo Bar Path</h3>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="300" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">STANCE COMPARISON: BAR PATH</text>
+
+          <!-- Conventional (left) -->
+          <g transform="translate(100, 50)">
+            <text x="100" y="20" fill="#f97316" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">CONVENTIONAL</text>
+
+            <!-- Top view feet and bar -->
+            <text x="100" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Top View</text>
+
+            <!-- Bar -->
+            <line x1="30" y1="100" x2="170" y2="100" stroke="#f97316" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- Feet (narrow, inside hands) -->
+            <rect x="70" y="120" width="25" height="45" rx="5" fill="none" stroke="#a1a1aa" stroke-width="2"/>
+            <rect x="105" y="120" width="25" height="45" rx="5" fill="none" stroke="#a1a1aa" stroke-width="2"/>
+
+            <!-- Hands (outside feet) -->
+            <circle cx="55" cy="100" r="8" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <circle cx="145" cy="100" r="8" fill="none" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Side view reference -->
+            <text x="100" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Side View: More torso lean</text>
+            <line x1="60" y1="220" x2="100" y2="170" stroke="#a1a1aa" stroke-width="2"/>
+            <circle cx="100" cy="165" r="8" fill="none" stroke="#a1a1aa" stroke-width="1"/>
+            <line x1="60" y1="220" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2"/>
+            <text x="100" y="265" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Longer bar path</text>
+          </g>
+
+          <!-- Sumo (right) -->
+          <g transform="translate(400, 50)">
+            <text x="100" y="20" fill="#a855f7" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">SUMO</text>
+
+            <!-- Top view feet and bar -->
+            <text x="100" y="50" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Top View</text>
+
+            <!-- Bar -->
+            <line x1="30" y1="100" x2="170" y2="100" stroke="#a855f7" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- Feet (wide, outside hands) -->
+            <rect x="35" y="110" width="25" height="45" rx="5" fill="none" stroke="#a1a1aa" stroke-width="2" transform="rotate(30 47 132)"/>
+            <rect x="140" y="110" width="25" height="45" rx="5" fill="none" stroke="#a1a1aa" stroke-width="2" transform="rotate(-30 152 132)"/>
+
+            <!-- Hands (inside feet, close grip) -->
+            <circle cx="85" cy="100" r="8" fill="none" stroke="#22c55e" stroke-width="2"/>
+            <circle cx="115" cy="100" r="8" fill="none" stroke="#22c55e" stroke-width="2"/>
+
+            <!-- Side view reference -->
+            <text x="100" y="200" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Side View: More upright</text>
+            <line x1="80" y1="220" x2="95" y2="175" stroke="#a1a1aa" stroke-width="2"/>
+            <circle cx="95" cy="170" r="8" fill="none" stroke="#a1a1aa" stroke-width="1"/>
+            <line x1="80" y1="220" x2="80" y2="250" stroke="#a1a1aa" stroke-width="2"/>
+            <text x="100" y="265" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Shorter bar path</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Sumo has a shorter vertical bar path due to wider stance and more upright torso</div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VGZaCuWIK5w" title="Deadlift Bar Path Analysis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Understanding deadlift mechanics</div>
+
+      <h2>How to Analyze Your Own Bar Path</h2>
+
+      <ul>
+        <li><strong>Film from the side:</strong> Set up your phone at hip height, perpendicular to your lifting direction</li>
+        <li><strong>Draw a line:</strong> Many video apps let you draw on footage—trace the bar path frame by frame</li>
+        <li><strong>Compare to ideal:</strong> Squat/deadlift should be vertical over midfoot; bench should show slight J-curve</li>
+        <li><strong>Identify deviation points:</strong> Where does the bar first drift? That's usually where the technique breakdown originates</li>
+        <li><strong>Use bar path apps:</strong> Apps like WL Analysis or Iron Path can automatically trace your bar path</li>
+      </ul>
+
+      <div class="tip-box">
+        <h4>Common Fixes</h4>
+        <p><strong>Squat forward drift:</strong> Sit back more, keep chest up, drive knees out. <strong>Bench straight path:</strong> Touch lower on chest, focus on pressing toward face. <strong>Deadlift around knees:</strong> Push knees back as bar passes, don't let bar swing out.</p>
+      </div>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/train/common-mistakes/" class="related-card">
+          <h4>Common Lifting Mistakes</h4>
+          <p>Visual form error guide</p>
+        </a>
+        <a href="/science/squat-depth-guide/" class="related-card">
+          <h4>Squat Depth Guide</h4>
+          <p>Understanding competition depth</p>
+        </a>
+        <a href="/train/grip-width-guide/" class="related-card">
+          <h4>Grip Width Guide</h4>
+          <p>Optimize your grip for each lift</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>
