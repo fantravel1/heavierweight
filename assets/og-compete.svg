@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect x="0" y="580" width="1200" height="50" fill="url(#goldGrad)"/>
+  <!-- Trophy Icon -->
+  <g transform="translate(600, 220)">
+    <path d="M-60,-100 L60,-100 L50,20 C50,60 30,80 0,100 C-30,80 -50,60 -50,20 Z" fill="url(#goldGrad)"/>
+    <rect x="-15" y="100" width="30" height="40" fill="#b8860b"/>
+    <rect x="-40" y="140" width="80" height="20" rx="5" fill="#ffd700"/>
+    <ellipse cx="-90" cy="-40" rx="35" ry="50" fill="none" stroke="#ffd700" stroke-width="12"/>
+    <ellipse cx="90" cy="-40" rx="35" ry="50" fill="none" stroke="#ffd700" stroke-width="12"/>
+  </g>
+  <!-- Text -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">COMPETE</text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="28" fill="#a0a0a0" text-anchor="middle">Federations, Meet Prep &amp; Athletes</text>
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="24" fill="#ffd700" text-anchor="middle">HEAVIERWEIGHT.COM</text>
+</svg>

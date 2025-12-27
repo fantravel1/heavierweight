@@ -1,3 +1,22 @@
+---
+title: "HEAVIERWEIGHT Style Guide: Voice, Formatting & SEO Standards"
+description: "Complete style guide for HEAVIERWEIGHT content. Voice and tone, article templates, SEO requirements, and formatting standards."
+keywords:
+  - content style guide
+  - writing guidelines
+  - SEO requirements
+  - brand voice
+emoji: "📝"
+og_image: "/assets/og-editorial.svg"
+og_title: "Style Guide | HEAVIERWEIGHT"
+og_description: "Content creation guidelines: voice, formatting, SEO requirements, and brand standards for women's lifting content."
+canonical: "https://heavierweight.com/editorial/style-guide/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+version: "1.0"
+---
+
 # HEAVIERWEIGHT Style Guide
 
 ## Voice & Tone

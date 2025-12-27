@@ -1,3 +1,23 @@
+---
+title: "Keyword Research: SEO Strategy for Women's Lifting Content"
+description: "100+ keyword opportunities for women's competitive lifting. Search volumes, intent analysis, and content clustering strategy."
+keywords:
+  - keyword research
+  - SEO strategy
+  - content keywords
+  - search volume analysis
+emoji: "🔎"
+og_image: "/assets/og-research.svg"
+og_title: "Keyword Research | HEAVIERWEIGHT SEO Strategy"
+og_description: "100+ keyword opportunities across 6 pillars. High-volume primaries, long-tail gaps, and content clustering."
+canonical: "https://heavierweight.com/research/keyword-research/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+research_type: "seo_analysis"
+keywords_identified: 100
+---
+
 # Keyword Research
 
 ## High-Volume Primary Keywords

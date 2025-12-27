@@ -1,3 +1,27 @@
+---
+title: "COMPETE: Powerlifting Federations, Meet Prep & Athlete Profiles"
+description: "28+ articles on competitive lifting for women. Federation guides, first meet preparation, weight class strategy, and inspiring athlete profiles."
+keywords:
+  - powerlifting federations
+  - first powerlifting meet
+  - USAPL vs USPA
+  - women's powerlifting
+  - meet prep guide
+emoji: "🏆"
+og_image: "/assets/og-compete.svg"
+og_title: "COMPETE | Women's Powerlifting Competition Guide"
+og_description: "Federation guides, meet prep, weight class strategy, and athlete profiles. Everything for competitive female lifters."
+canonical: "https://heavierweight.com/compete/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "compete"
+article_count: 28
+primary_keyword: "powerlifting federations"
+search_volume: "800-1,200/month"
+competitive_advantage: "No competitor owns competitive lifting content for women"
+---
+
 # Pillar 2: COMPETE - Federations, Meet Prep, Athletes
 
 > **Purpose**: Fill the most significant gap in competitive landscape - no competitor adequately covers competitive lifting for women.

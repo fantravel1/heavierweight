@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="partnerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect x="0" y="580" width="1200" height="50" fill="url(#partnerGrad)"/>
+  <!-- Handshake Icon -->
+  <g transform="translate(600, 180)">
+    <!-- Left hand -->
+    <path d="M-100,40 L-60,0 L-20,0 L20,40 L60,40 L60,60 L10,60 L-30,20 L-70,60 L-100,60 Z" fill="#e94560"/>
+    <!-- Right hand -->
+    <path d="M100,40 L60,0 L20,0 L-20,40 L-60,40 L-60,60 L-10,60 L30,20 L70,60 L100,60 Z" fill="#ff6b6b"/>
+    <!-- Overlap -->
+    <ellipse cx="0" cy="30" rx="25" ry="20" fill="#ffffff" opacity="0.3"/>
+  </g>
+  <!-- Text -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">PARTNERS</text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="28" fill="#a0a0a0" text-anchor="middle">Athletes, Experts &amp; Brand Collaborations</text>
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="24" fill="#e94560" text-anchor="middle">HEAVIERWEIGHT.COM</text>
+</svg>

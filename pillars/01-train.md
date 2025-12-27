@@ -1,3 +1,26 @@
+---
+title: "TRAIN: Women's Strength Training Programs & Technique Guides"
+description: "75 evidence-based articles on strength training for women. Beginner to advanced programs, technique guides, and Olympic weightlifting content."
+keywords:
+  - strength training for women
+  - beginner powerlifting program
+  - women's weightlifting technique
+  - female strength training
+  - powerlifting programs for women
+emoji: "🏋️"
+og_image: "/assets/og-train.svg"
+og_title: "TRAIN | Women's Strength Training & Programming"
+og_description: "Complete beginner-to-elite training pathway. 75 articles covering programs, technique, and Olympic weightlifting for women."
+canonical: "https://heavierweight.com/train/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "train"
+article_count: 75
+primary_keyword: "strength training for women"
+search_volume: "8,000-12,000/month"
+---
+
 # Pillar 1: TRAIN - Programming & Technique
 
 > **Purpose**: Capture high-volume keyword cluster ("strength training for women" at 8,000-12,000/month) while serving complete beginner-to-elite pathway.

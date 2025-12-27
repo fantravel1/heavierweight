@@ -1,3 +1,21 @@
+---
+title: "Contributing to HEAVIERWEIGHT: Contributor Guidelines"
+description: "How to contribute to HEAVIERWEIGHT.COM. Guidelines for expert contributors, article submissions, athlete profiles, and corrections."
+keywords:
+  - contributor guidelines
+  - content submission
+  - expert contributors
+  - writing guidelines
+emoji: "✍️"
+og_image: "/assets/og-home.svg"
+og_title: "Contributing | HEAVIERWEIGHT"
+og_description: "Contribute to HEAVIERWEIGHT.COM. Guidelines for coaches, researchers, athletes, and content creators."
+canonical: "https://heavierweight.com/contributing/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+---
+
 # Contributing to HEAVIERWEIGHT.COM
 
 Thank you for your interest in contributing to HEAVIERWEIGHT.COM's content strategy.

@@ -1,3 +1,27 @@
+---
+title: "LIFE: Mindset, Community & Wellness for Women Lifters"
+description: "24 articles on lifting lifestyle. Body image, gym confidence, health conditions, and community building for women who lift."
+keywords:
+  - will lifting make me bulky
+  - gym intimidation women
+  - PCOS strength training
+  - lifting community women
+  - body image strength training
+emoji: "💪"
+og_image: "/assets/og-life.svg"
+og_title: "LIFE | Mindset, Community & Wellness"
+og_description: "Beyond the barbell. Body image, confidence, health conditions, and building your lifting community."
+canonical: "https://heavierweight.com/life/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "life"
+article_count: 24
+primary_keyword: "will lifting make me bulky"
+search_volume: "2,000-3,000/month"
+positioning: "Body positive without saying body positive"
+---
+
 # Pillar 6: LIFE - Hormones, Stages, Mindset, Community
 
 > **Purpose**: Create sticky, shareable content that builds community. Addresses "body positive without saying body positive" positioning.

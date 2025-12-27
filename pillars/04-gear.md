@@ -1,3 +1,27 @@
+---
+title: "GEAR: Women's Lifting Equipment Reviews & Buying Guides"
+description: "40 equipment reviews for female lifters. Belts, shoes, barbells, knee sleeves, and home gym guides with women's sizing and fit focus."
+keywords:
+  - best lifting belt for women
+  - women's weightlifting shoes
+  - best knee sleeves women
+  - women's barbell
+  - powerlifting gear women
+emoji: "⚙️"
+og_image: "/assets/og-gear.svg"
+og_title: "GEAR | Women's Lifting Equipment Reviews"
+og_description: "40 in-depth equipment reviews. Belts, shoes, barbells, and accessories with women's sizing, fit, and federation approval info."
+canonical: "https://heavierweight.com/gear/"
+schema_type: "CollectionPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+pillar: "gear"
+article_count: 40
+primary_keyword: "best lifting belt for women"
+search_volume: "1,500-2,500/month"
+monetization: "Primary affiliate revenue driver"
+---
+
 # Pillar 4: GEAR - Equipment Reviews & Buying Guides
 
 > **Purpose**: Drive affiliate revenue while filling genuine content gap. No competitor owns women's lifting equipment content.

@@ -1,3 +1,24 @@
+---
+title: "Editorial Calendar 2026: Authority & Dominance Strategy"
+description: "HEAVIERWEIGHT 2026 content calendar. Phase 3-4 roadmap with 140 articles, video content, podcast launch, and expert contributor network."
+keywords:
+  - content calendar 2026
+  - editorial expansion
+  - video content strategy
+  - podcast launch
+emoji: "🚀"
+og_image: "/assets/og-editorial.svg"
+og_title: "2026 Editorial Calendar | HEAVIERWEIGHT"
+og_description: "Phase 3-4 content roadmap: Authority & Dominance. 140 articles, video, podcast, and expert network expansion."
+canonical: "https://heavierweight.com/editorial/calendar-2026/"
+schema_type: "WebPage"
+author: "HEAVIERWEIGHT Editorial"
+date_modified: "2024-12-27"
+year: 2026
+phase: "Authority & Dominance"
+article_target: 140
+---
+
 # Editorial Calendar 2026
 
 ## Overview

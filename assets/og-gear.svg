@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect x="0" y="580" width="1200" height="50" fill="url(#gearGrad)"/>
+  <!-- Gear/Cog Icon -->
+  <g transform="translate(600, 200)">
+    <circle cx="0" cy="0" r="50" fill="#16213e" stroke="#8b5cf6" stroke-width="8"/>
+    <path d="M0,-100 L15,-85 L15,-70 C30,-65 45,-55 55,-45 L70,-55 L85,-40 L75,-25 C85,-15 90,0 90,15 L105,15 L105,35 L90,35 C90,50 85,65 75,75 L85,90 L70,105 L55,95 C45,105 30,115 15,120 L15,135 L-15,135 L-15,120 C-30,115 -45,105 -55,95 L-70,105 L-85,90 L-75,75 C-85,65 -90,50 -90,35 L-105,35 L-105,15 L-90,15 C-90,0 -85,-15 -75,-25 L-85,-40 L-70,-55 L-55,-45 C-45,-55 -30,-65 -15,-70 L-15,-85 Z" fill="url(#gearGrad)"/>
+    <circle cx="0" cy="25" r="35" fill="#16213e"/>
+  </g>
+  <!-- Text -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">GEAR</text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="28" fill="#a0a0a0" text-anchor="middle">Equipment Reviews &amp; Buying Guides</text>
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="24" fill="#8b5cf6" text-anchor="middle">HEAVIERWEIGHT.COM</text>
+</svg>
