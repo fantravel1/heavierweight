@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belt Positioning & Tightness by Lift - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #a855f7, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #a855f7;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a855f7;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #a855f7, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #a855f7;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.05));
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #a855f7;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .lift-section {
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lift-section h3 {
+      margin-top: 0;
+    }
+
+    .lift-section.squat {
+      border-left: 4px solid #ef4444;
+    }
+
+    .lift-section.squat h3 { color: #ef4444; }
+
+    .lift-section.bench {
+      border-left: 4px solid #3b82f6;
+    }
+
+    .lift-section.bench h3 { color: #3b82f6; }
+
+    .lift-section.deadlift {
+      border-left: 4px solid #22c55e;
+    }
+
+    .lift-section.deadlift h3 { color: #22c55e; }
+
+    .tightness-scale {
+      display: flex;
+      margin: 1.5rem 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .tightness-level {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      color: #0a0a0f;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .tightness-1 { background: #22c55e; }
+    .tightness-2 { background: #84cc16; }
+    .tightness-3 { background: #fbbf24; }
+    .tightness-4 { background: #f97316; }
+    .tightness-5 { background: #ef4444; }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #a855f7;
+      border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(168, 85, 247, 0.05);
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #a855f7;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #a855f7;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .lift-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/gear">Gear</a>
+          <span>/</span>
+          <span>Belt Positioning</span>
+        </div>
+        <h1>Belt Positioning & <span>Tightness</span> by Lift</h1>
+        <div class="article-meta">
+          <span>10 min read</span>
+          <span>•</span>
+          <span>Equipment Setup</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>Why Position Matters</h2>
+
+      <p>Your belt position and tightness should change based on which lift you're performing. The squat, bench, and deadlift each create different torso positions and require different bracing strategies. What works for squats may dig painfully into your hips during deadlifts.</p>
+
+      <p>The goal is always the same: create something for your core to push against, increasing intra-abdominal pressure and spinal stability. But the optimal way to achieve this varies by lift and body type.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#a855f7" font-size="16" font-weight="bold">Belt Position Zones by Lift</text>
+
+          <!-- Torso diagram -->
+          <ellipse cx="350" cy="180" rx="80" ry="120" fill="none" stroke="#808080" stroke-width="2"/>
+
+          <!-- Ribs indication -->
+          <path d="M280 130 Q350 100 420 130" stroke="#808080" stroke-width="1" fill="none"/>
+          <text x="350" y="85" text-anchor="middle" fill="#808080" font-size="10">Ribs</text>
+
+          <!-- Hip indication -->
+          <path d="M280 260 Q350 290 420 260" stroke="#808080" stroke-width="1" fill="none"/>
+          <text x="350" y="305" text-anchor="middle" fill="#808080" font-size="10">Hip bones</text>
+
+          <!-- Navel marker -->
+          <circle cx="350" cy="190" r="4" fill="#808080"/>
+          <text x="380" y="195" fill="#808080" font-size="9">Navel</text>
+
+          <!-- Squat zone (higher) -->
+          <rect x="275" y="135" width="150" height="35" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2" rx="5"/>
+          <text x="130" y="158" fill="#ef4444" font-size="11" font-weight="bold">SQUAT</text>
+          <line x1="155" y1="155" x2="275" y2="155" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Bench zone (middle) -->
+          <rect x="275" y="175" width="150" height="30" fill="rgba(59, 130, 246, 0.3)" stroke="#3b82f6" stroke-width="2" rx="5"/>
+          <text x="130" y="195" fill="#3b82f6" font-size="11" font-weight="bold">BENCH</text>
+          <line x1="160" y1="190" x2="275" y2="190" stroke="#3b82f6" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Deadlift zone (lower) -->
+          <rect x="275" y="215" width="150" height="35" fill="rgba(34, 197, 94, 0.3)" stroke="#22c55e" stroke-width="2" rx="5"/>
+          <text x="130" y="238" fill="#22c55e" font-size="11" font-weight="bold">DEADLIFT</text>
+          <line x1="175" y1="235" x2="275" y2="235" stroke="#22c55e" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Annotations on right -->
+          <text x="450" y="155" fill="#ef4444" font-size="10">Higher = more upright torso support</text>
+          <text x="450" y="190" fill="#3b82f6" font-size="10">Mid-range = arch support</text>
+          <text x="450" y="235" fill="#22c55e" font-size="10">Lower = clears hips for hinge</text>
+
+          <!-- General note -->
+          <rect x="180" y="315" width="340" height="25" fill="#12121a" rx="4"/>
+          <text x="350" y="332" text-anchor="middle" fill="#b0b0b0" font-size="10">Positions vary by body type—these are starting points</text>
+        </svg>
+        <div class="diagram-caption">General belt positioning zones for each lift—experiment within these ranges</div>
+      </div>
+
+      <h2>Tightness Scale</h2>
+
+      <p>How tight should your belt be? Use this scale as a reference:</p>
+
+      <div class="tightness-scale">
+        <div class="tightness-level tightness-1">1<br><span style="font-size:0.7rem;font-weight:400">Loose</span></div>
+        <div class="tightness-level tightness-2">2<br><span style="font-size:0.7rem;font-weight:400">Snug</span></div>
+        <div class="tightness-level tightness-3">3<br><span style="font-size:0.7rem;font-weight:400">Firm</span></div>
+        <div class="tightness-level tightness-4">4<br><span style="font-size:0.7rem;font-weight:400">Tight</span></div>
+        <div class="tightness-level tightness-5">5<br><span style="font-size:0.7rem;font-weight:400">Max</span></div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Description</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 - Loose</td>
+            <td>Belt moves freely, little pressure</td>
+            <td>Warm-ups only (if at all)</td>
+          </tr>
+          <tr>
+            <td>2 - Snug</td>
+            <td>Belt stays in place, can breathe fully</td>
+            <td>Submaximal work, high rep sets</td>
+          </tr>
+          <tr>
+            <td>3 - Firm</td>
+            <td>Noticeable pressure, can still breathe deeply</td>
+            <td>Most training, moderate intensity</td>
+          </tr>
+          <tr>
+            <td>4 - Tight</td>
+            <td>Significant pressure, requires effort to brace fully</td>
+            <td>Heavy singles, competition attempts</td>
+          </tr>
+          <tr>
+            <td>5 - Max</td>
+            <td>Maximum tightness, difficult to get on</td>
+            <td>Rarely appropriate—usually too tight</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning-box">
+        <h4>Tighter Isn't Always Better</h4>
+        <p>A belt that's too tight restricts your ability to breathe into your belly and actually reduces your brace. If you can't take a full diaphragmatic breath with your belt on, loosen it. The goal is to have something to push against, not to be crushed.</p>
+      </div>
+
+      <h2>Position & Tightness by Lift</h2>
+
+      <div class="lift-section squat">
+        <h3>Squat Belt Setup</h3>
+
+        <p><strong>Position:</strong> Higher on the torso, typically just above or at the navel. The squat requires a more upright torso position, so the belt can sit higher without interfering with hip flexion.</p>
+
+        <p><strong>Tightness:</strong> Level 3-4. Tight enough to brace against, but you must be able to fill your belly with air. Many lifters prefer their belt slightly tighter for squats than other lifts.</p>
+
+        <div class="highlight-box">
+          <h4>Squat Belt Tips</h4>
+          <ul>
+            <li>Take your breath BEFORE you unrack, not after</li>
+            <li>Belt should sit above your hip bones, not on them</li>
+            <li>If it digs into your thighs in the hole, move it higher</li>
+            <li>Wider belts (4") often work well for squats</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lift-section bench">
+        <h3>Bench Belt Setup</h3>
+
+        <p><strong>Position:</strong> Many lifters don't belt for bench, but if you do, position it at or slightly below the navel. The belt should support your arch without restricting your setup.</p>
+
+        <p><strong>Tightness:</strong> Level 2-3. Looser than squat or deadlift because you're lying down and the belt should help maintain your arch, not restrict breathing.</p>
+
+        <div class="highlight-box">
+          <h4>Bench Belt Tips</h4>
+          <ul>
+            <li>Put the belt on AFTER setting your arch</li>
+            <li>Should support the arch, not create it</li>
+            <li>If it's uncomfortable on the bench, skip it</li>
+            <li>Many elite benchers don't use a belt—test both ways</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lift-section deadlift">
+        <h3>Deadlift Belt Setup</h3>
+
+        <p><strong>Position:</strong> Lower on the torso, often just above the hip bones or even lower. The deadlift requires significant hip flexion, so the belt must clear your hips or it will dig in painfully at the start position.</p>
+
+        <p><strong>Tightness:</strong> Level 3-4. Similar to squat, but position is more critical than tightness. A perfectly positioned belt at level 3 beats an uncomfortable belt at level 5.</p>
+
+        <div class="highlight-box">
+          <h4>Deadlift Belt Tips</h4>
+          <ul>
+            <li>Test your setup position before adding weight</li>
+            <li>The belt should NOT dig into your thighs at the bottom</li>
+            <li>Some lifters angle the belt (higher in back, lower in front)</li>
+            <li>Tapered belts (3" front, 4" back) work well for deadlifts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="25" text-anchor="middle" fill="#a855f7" font-size="14" font-weight="bold">Deadlift Belt Angle Options</text>
+
+          <!-- Option 1: Level -->
+          <rect x="50" y="50" width="180" height="180" fill="#12121a" rx="10" stroke="#808080"/>
+          <text x="140" y="75" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">LEVEL</text>
+
+          <!-- Torso outline -->
+          <ellipse cx="140" cy="150" rx="40" ry="70" fill="none" stroke="#808080" stroke-width="1"/>
+          <!-- Level belt -->
+          <rect x="100" y="155" width="80" height="20" fill="rgba(168, 85, 247, 0.4)" stroke="#a855f7" stroke-width="2" rx="3"/>
+
+          <text x="140" y="245" text-anchor="middle" fill="#b0b0b0" font-size="9">Standard position</text>
+          <text x="140" y="258" text-anchor="middle" fill="#b0b0b0" font-size="9">Works for most</text>
+
+          <!-- Option 2: Angled -->
+          <rect x="260" y="50" width="180" height="180" fill="#12121a" rx="10" stroke="#22c55e"/>
+          <text x="350" y="75" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="bold">ANGLED</text>
+
+          <!-- Torso outline -->
+          <ellipse cx="350" cy="150" rx="40" ry="70" fill="none" stroke="#808080" stroke-width="1"/>
+          <!-- Angled belt - higher in back, lower in front -->
+          <polygon points="310,175 390,175 385,155 315,155" fill="rgba(34, 197, 94, 0.4)" stroke="#22c55e" stroke-width="2"/>
+
+          <text x="350" y="245" text-anchor="middle" fill="#b0b0b0" font-size="9">Higher back, lower front</text>
+          <text x="350" y="258" text-anchor="middle" fill="#b0b0b0" font-size="9">Clears hips better</text>
+
+          <!-- Option 3: Low -->
+          <rect x="470" y="50" width="180" height="180" fill="#12121a" rx="10" stroke="#fbbf24"/>
+          <text x="560" y="75" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">LOW</text>
+
+          <!-- Torso outline -->
+          <ellipse cx="560" cy="150" rx="40" ry="70" fill="none" stroke="#808080" stroke-width="1"/>
+          <!-- Low belt -->
+          <rect x="520" y="175" width="80" height="20" fill="rgba(251, 191, 36, 0.4)" stroke="#fbbf24" stroke-width="2" rx="3"/>
+
+          <text x="560" y="245" text-anchor="middle" fill="#b0b0b0" font-size="9">Very low position</text>
+          <text x="560" y="258" text-anchor="middle" fill="#b0b0b0" font-size="9">Sumo pullers often prefer</text>
+        </svg>
+        <div class="diagram-caption">Different deadlift belt positions—experiment to find what works for your build and style</div>
+      </div>
+
+      <h2>Finding Your Personal Setup</h2>
+
+      <p>The positions and tightness levels above are starting points. Your ideal setup depends on your body proportions, lifting style, and personal preference. Here's how to dial it in:</p>
+
+      <div class="protocol-box">
+        <h4>Finding Your Position</h4>
+        <ul>
+          <li>Start with the guidelines above as a baseline</li>
+          <li>Take videos from the side to see where the belt sits during the lift</li>
+          <li>Note any pinching, digging, or discomfort</li>
+          <li>Adjust by small increments (half a hole, slight angle change)</li>
+          <li>Test with working weights, not just warm-ups</li>
+        </ul>
+      </div>
+
+      <div class="protocol-box">
+        <h4>Finding Your Tightness</h4>
+        <ul>
+          <li>Put the belt on and take a full breath into your belly</li>
+          <li>If you can't fill your belly with air, loosen it</li>
+          <li>Your core should push OUT against the belt, not be crushed by it</li>
+          <li>Tightness may vary by lift, phase, and even how bloated you are that day</li>
+          <li>Note which hole you use for each lift in your training log</li>
+        </ul>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/2C3GtR0yHKI" title="How to Wear a Lifting Belt" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Juggernaut Training Systems - How to Wear a Lifting Belt</div>
+
+      <h2>Common Belt Mistakes</h2>
+
+      <div class="warning-box">
+        <h4>Same Position for Every Lift</h4>
+        <p>Many lifters set their belt once and never adjust it. This often means it's wrong for at least one lift. Take the extra 10 seconds to reposition between squat and deadlift.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Breathing on Top of Belt</h4>
+        <p>Your breath should go INTO your belly, pushing against the belt—not on top of it into your chest. If you're breathing into your chest with a belt on, you're losing most of the benefit.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Belt as a Crutch</h4>
+        <p>A belt enhances bracing—it doesn't replace it. If you can't brace properly without a belt, work on beltless bracing before adding the belt. The belt amplifies good technique; it can't fix bad technique.</p>
+      </div>
+
+      <h2>When to Wear Your Belt</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Intensity/Purpose</th>
+            <th>Belt Recommendation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empty bar / very light warm-ups</td>
+            <td>No belt</td>
+          </tr>
+          <tr>
+            <td>Warm-up sets (under 60%)</td>
+            <td>Optional—many go beltless</td>
+          </tr>
+          <tr>
+            <td>Working sets (65-85%)</td>
+            <td>Personal preference—experiment</td>
+          </tr>
+          <tr>
+            <td>Heavy singles/doubles (85%+)</td>
+            <td>Usually yes</td>
+          </tr>
+          <tr>
+            <td>Competition attempts</td>
+            <td>Yes (if you train with one)</td>
+          </tr>
+          <tr>
+            <td>Accessories (hypertrophy work)</td>
+            <td>Usually no—build core strength</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Position varies by lift:</strong> Higher for squat, lower for deadlift</li>
+        <li><strong>Tighter isn't better:</strong> You need to be able to breathe into your belly</li>
+        <li><strong>Breath INTO the belt:</strong> Not on top of it into your chest</li>
+        <li><strong>Adjust for each lift:</strong> Takes 10 seconds, makes a big difference</li>
+        <li><strong>Find YOUR setup:</strong> Use guidelines as starting points, then personalize</li>
+        <li><strong>Belt enhances, doesn't replace:</strong> Learn to brace properly first</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/gear/powerlifting-belt-guide" class="related-card">
+            <h4>Powerlifting Belt Guide</h4>
+            <p>Choose the right belt for your needs</p>
+          </a>
+          <a href="/train/breathing-bracing" class="related-card">
+            <h4>Breathing & Bracing</h4>
+            <p>Master the skill your belt supports</p>
+          </a>
+          <a href="/train/bench-arch" class="related-card">
+            <h4>Bench Press Arch</h4>
+            <p>Set up properly before belting</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
