@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signs of Overtraining & Recovery - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #00d9ff, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00d9ff;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #00d9ff;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #00d9ff, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #00d9ff;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #00d9ff;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .symptom-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid;
+    }
+
+    .symptom-card.physical {
+      border-color: #ef4444;
+    }
+
+    .symptom-card.performance {
+      border-color: #f97316;
+    }
+
+    .symptom-card.psychological {
+      border-color: #a855f7;
+    }
+
+    .symptom-card.immune {
+      border-color: #22c55e;
+    }
+
+    .symptom-card h4 {
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .symptom-card.physical h4 { color: #ef4444; }
+    .symptom-card.performance h4 { color: #f97316; }
+    .symptom-card.psychological h4 { color: #a855f7; }
+    .symptom-card.immune h4 { color: #22c55e; }
+
+    .symptom-card ul {
+      font-size: 0.95rem;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .symptom-card li {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #00d9ff;
+      border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(0, 217, 255, 0.05);
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .stage-indicator {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .stage {
+      flex: 1;
+      min-width: 150px;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .stage-normal {
+      background: rgba(34, 197, 94, 0.2);
+      border: 2px solid #22c55e;
+    }
+
+    .stage-overreaching {
+      background: rgba(251, 191, 36, 0.2);
+      border: 2px solid #fbbf24;
+    }
+
+    .stage-overtraining {
+      background: rgba(239, 68, 68, 0.2);
+      border: 2px solid #ef4444;
+    }
+
+    .stage h5 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stage p {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    .stage-normal h5 { color: #22c55e; }
+    .stage-overreaching h5 { color: #fbbf24; }
+    .stage-overtraining h5 { color: #ef4444; }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #00d9ff;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #00d9ff;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .stage-indicator { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/science">Science</a>
+          <span>/</span>
+          <span>Overtraining Signs</span>
+        </div>
+        <h1>Signs of <span>Overtraining</span> & When to Back Off</h1>
+        <div class="article-meta">
+          <span>14 min read</span>
+          <span>•</span>
+          <span>Recovery Science</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>Understanding Overtraining</h2>
+
+      <p>Overtraining isn't just "being tired from training." It's a chronic state where accumulated stress exceeds your recovery capacity, leading to performance decrements, health problems, and prolonged dysfunction. True overtraining syndrome can take months to recover from.</p>
+
+      <p>The distinction between productive training stress and harmful overtraining lies in recovery. Training breaks you down; recovery builds you back stronger. When recovery can't keep pace, you start sliding backward.</p>
+
+      <div class="stage-indicator">
+        <div class="stage stage-normal">
+          <h5>Normal Training</h5>
+          <p>Stress + Recovery = Adaptation</p>
+        </div>
+        <div class="stage stage-overreaching">
+          <h5>Functional Overreaching</h5>
+          <p>Temporary decrease, rebounds with rest</p>
+        </div>
+        <div class="stage stage-overtraining">
+          <h5>Overtraining Syndrome</h5>
+          <p>Chronic dysfunction, months to recover</p>
+        </div>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#00d9ff" font-size="16" font-weight="bold">The Overtraining Continuum</text>
+
+          <!-- Axes -->
+          <line x1="80" y1="280" x2="650" y2="280" stroke="#808080" stroke-width="2"/>
+          <line x1="80" y1="280" x2="80" y2="60" stroke="#808080" stroke-width="2"/>
+
+          <!-- Y axis label -->
+          <text x="40" y="170" fill="#808080" font-size="11" transform="rotate(-90 40 170)">PERFORMANCE</text>
+
+          <!-- X axis label -->
+          <text x="365" y="310" text-anchor="middle" fill="#808080" font-size="11">ACCUMULATED TRAINING STRESS</text>
+
+          <!-- Performance curve -->
+          <path d="M100 200 Q200 100 300 120 Q400 140 450 200 Q500 260 600 300"
+                stroke="#00d9ff" stroke-width="3" fill="none"/>
+
+          <!-- Zones -->
+          <!-- Normal training zone -->
+          <rect x="100" y="60" width="150" height="210" fill="rgba(34, 197, 94, 0.1)"/>
+          <text x="175" y="85" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">PRODUCTIVE</text>
+          <text x="175" y="100" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">TRAINING</text>
+
+          <!-- Overreaching zone -->
+          <rect x="250" y="60" width="150" height="210" fill="rgba(251, 191, 36, 0.1)"/>
+          <text x="325" y="85" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">FUNCTIONAL</text>
+          <text x="325" y="100" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">OVERREACHING</text>
+
+          <!-- Overtraining zone -->
+          <rect x="400" y="60" width="220" height="210" fill="rgba(239, 68, 68, 0.1)"/>
+          <text x="510" y="85" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">OVERTRAINING</text>
+          <text x="510" y="100" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">SYNDROME</text>
+
+          <!-- Annotations -->
+          <!-- Peak -->
+          <circle cx="300" cy="120" r="6" fill="#22c55e"/>
+          <line x1="300" y1="126" x2="300" y2="160" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="300" y="175" text-anchor="middle" fill="#22c55e" font-size="9">Peak</text>
+          <text x="300" y="186" text-anchor="middle" fill="#22c55e" font-size="9">Performance</text>
+
+          <!-- Decline starts -->
+          <circle cx="400" cy="160" r="6" fill="#fbbf24"/>
+          <line x1="400" y1="166" x2="400" y2="200" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="400" y="215" text-anchor="middle" fill="#fbbf24" font-size="9">Decline</text>
+          <text x="400" y="226" text-anchor="middle" fill="#fbbf24" font-size="9">Begins</text>
+
+          <!-- Danger zone -->
+          <circle cx="520" cy="260" r="6" fill="#ef4444"/>
+          <line x1="520" y1="254" x2="520" y2="220" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="520" y="215" text-anchor="middle" fill="#ef4444" font-size="9">Systemic</text>
+          <text x="520" y="204" text-anchor="middle" fill="#ef4444" font-size="9">Breakdown</text>
+
+          <!-- Recovery annotations -->
+          <rect x="100" y="320" width="150" height="25" fill="#12121a" rx="4"/>
+          <text x="175" y="337" text-anchor="middle" fill="#22c55e" font-size="9">Days to recover</text>
+
+          <rect x="250" y="320" width="150" height="25" fill="#12121a" rx="4"/>
+          <text x="325" y="337" text-anchor="middle" fill="#fbbf24" font-size="9">1-2 weeks to recover</text>
+
+          <rect x="400" y="320" width="220" height="25" fill="#12121a" rx="4"/>
+          <text x="510" y="337" text-anchor="middle" fill="#ef4444" font-size="9">Weeks to months to recover</text>
+        </svg>
+        <div class="diagram-caption">As training stress accumulates beyond recovery capacity, performance declines and recovery time extends</div>
+      </div>
+
+      <h2>Categories of Overtraining Symptoms</h2>
+
+      <p>Overtraining affects your entire system. Symptoms typically appear in clusters across multiple categories—if you're only experiencing one symptom, you're probably just tired, not overtrained.</p>
+
+      <div class="symptom-grid">
+        <div class="symptom-card physical">
+          <h4>Physical Symptoms</h4>
+          <ul>
+            <li>Persistent muscle soreness (beyond normal DOMS)</li>
+            <li>Elevated resting heart rate</li>
+            <li>Sleep disturbances despite fatigue</li>
+            <li>Loss of appetite or digestive issues</li>
+            <li>Unexplained weight loss</li>
+            <li>Lingering minor injuries that won't heal</li>
+          </ul>
+        </div>
+
+        <div class="symptom-card performance">
+          <h4>Performance Symptoms</h4>
+          <ul>
+            <li>Decreased strength on main lifts</li>
+            <li>Slow bar speed at normal percentages</li>
+            <li>RPE creep (weights feel harder)</li>
+            <li>Coordination/technique breakdown</li>
+            <li>Inability to complete programmed volume</li>
+            <li>Plateau despite consistent training</li>
+          </ul>
+        </div>
+
+        <div class="symptom-card psychological">
+          <h4>Psychological Symptoms</h4>
+          <ul>
+            <li>Lack of motivation to train</li>
+            <li>Irritability and mood swings</li>
+            <li>Depression or apathy</li>
+            <li>Anxiety about training</li>
+            <li>Difficulty concentrating</li>
+            <li>Mental fatigue and brain fog</li>
+          </ul>
+        </div>
+
+        <div class="symptom-card immune">
+          <h4>Immune/Health Symptoms</h4>
+          <ul>
+            <li>Frequent colds or infections</li>
+            <li>Slow wound healing</li>
+            <li>Menstrual irregularities (amenorrhea)</li>
+            <li>Decreased libido</li>
+            <li>Hair loss</li>
+            <li>Hormonal disruption</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>The Warning Signs Timeline</h2>
+
+      <p>Overtraining doesn't happen overnight. It develops progressively, with warning signs appearing before full syndrome sets in. Catching it early makes recovery much faster.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#00d9ff" font-size="16" font-weight="bold">Early Warning Signs → Full Overtraining</text>
+
+          <!-- Timeline arrow -->
+          <line x1="50" y1="200" x2="650" y2="200" stroke="#808080" stroke-width="3"/>
+          <polygon points="650,195 665,200 650,205" fill="#808080"/>
+
+          <!-- Phase 1: Early Signs -->
+          <rect x="70" y="70" width="150" height="115" fill="#12121a" rx="10" stroke="#22c55e" stroke-width="2"/>
+          <text x="145" y="95" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="bold">WEEK 1-2</text>
+          <text x="145" y="112" text-anchor="middle" fill="#22c55e" font-size="10">Early Warning</text>
+          <text x="85" y="135" fill="#b0b0b0" font-size="9">• Slightly elevated RHR</text>
+          <text x="85" y="150" fill="#b0b0b0" font-size="9">• Mild motivation dip</text>
+          <text x="85" y="165" fill="#b0b0b0" font-size="9">• Weights feel heavier</text>
+          <text x="85" y="180" fill="#b0b0b0" font-size="9">• Sleep quality dropping</text>
+
+          <!-- Marker 1 -->
+          <circle cx="145" cy="200" r="8" fill="#22c55e"/>
+          <line x1="145" y1="185" x2="145" y2="208" stroke="#22c55e" stroke-width="2"/>
+
+          <!-- Phase 2: Moderate Signs -->
+          <rect x="240" y="70" width="150" height="115" fill="#12121a" rx="10" stroke="#fbbf24" stroke-width="2"/>
+          <text x="315" y="95" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">WEEK 2-4</text>
+          <text x="315" y="112" text-anchor="middle" fill="#fbbf24" font-size="10">Accumulating</text>
+          <text x="255" y="135" fill="#b0b0b0" font-size="9">• Performance declining</text>
+          <text x="255" y="150" fill="#b0b0b0" font-size="9">• Persistent soreness</text>
+          <text x="255" y="165" fill="#b0b0b0" font-size="9">• Mood changes</text>
+          <text x="255" y="180" fill="#b0b0b0" font-size="9">• Minor aches lingering</text>
+
+          <!-- Marker 2 -->
+          <circle cx="315" cy="200" r="8" fill="#fbbf24"/>
+          <line x1="315" y1="185" x2="315" y2="208" stroke="#fbbf24" stroke-width="2"/>
+
+          <!-- Phase 3: Serious Signs -->
+          <rect x="410" y="70" width="150" height="115" fill="#12121a" rx="10" stroke="#f97316" stroke-width="2"/>
+          <text x="485" y="95" text-anchor="middle" fill="#f97316" font-size="12" font-weight="bold">WEEK 4-6</text>
+          <text x="485" y="112" text-anchor="middle" fill="#f97316" font-size="10">Overreaching</text>
+          <text x="425" y="135" fill="#b0b0b0" font-size="9">• Significant strength loss</text>
+          <text x="425" y="150" fill="#b0b0b0" font-size="9">• Getting sick often</text>
+          <text x="425" y="165" fill="#b0b0b0" font-size="9">• Dreading training</text>
+          <text x="425" y="180" fill="#b0b0b0" font-size="9">• Appetite changes</text>
+
+          <!-- Marker 3 -->
+          <circle cx="485" cy="200" r="8" fill="#f97316"/>
+          <line x1="485" y1="185" x2="485" y2="208" stroke="#f97316" stroke-width="2"/>
+
+          <!-- Phase 4: Full OTS -->
+          <rect x="580" y="70" width="100" height="115" fill="#12121a" rx="10" stroke="#ef4444" stroke-width="2"/>
+          <text x="630" y="95" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">6+ WEEKS</text>
+          <text x="630" y="112" text-anchor="middle" fill="#ef4444" font-size="10">OTS</text>
+          <text x="590" y="135" fill="#b0b0b0" font-size="9">• Systemic issues</text>
+          <text x="590" y="150" fill="#b0b0b0" font-size="9">• Hormonal</text>
+          <text x="590" y="165" fill="#b0b0b0" font-size="9">  disruption</text>
+          <text x="590" y="180" fill="#b0b0b0" font-size="9">• Depression</text>
+
+          <!-- Marker 4 -->
+          <circle cx="630" cy="200" r="8" fill="#ef4444"/>
+          <line x1="630" y1="185" x2="630" y2="208" stroke="#ef4444" stroke-width="2"/>
+
+          <!-- Recovery boxes below -->
+          <rect x="70" y="225" width="150" height="50" fill="rgba(34, 197, 94, 0.1)" rx="8"/>
+          <text x="145" y="250" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">RECOVERY: 3-5 days</text>
+          <text x="145" y="265" text-anchor="middle" fill="#808080" font-size="9">Light deload sufficient</text>
+
+          <rect x="240" y="225" width="150" height="50" fill="rgba(251, 191, 36, 0.1)" rx="8"/>
+          <text x="315" y="250" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">RECOVERY: 1-2 weeks</text>
+          <text x="315" y="265" text-anchor="middle" fill="#808080" font-size="9">Full deload needed</text>
+
+          <rect x="410" y="225" width="150" height="50" fill="rgba(249, 115, 22, 0.1)" rx="8"/>
+          <text x="485" y="250" text-anchor="middle" fill="#f97316" font-size="10" font-weight="bold">RECOVERY: 2-4 weeks</text>
+          <text x="485" y="265" text-anchor="middle" fill="#808080" font-size="9">Extended rest period</text>
+
+          <rect x="580" y="225" width="100" height="50" fill="rgba(239, 68, 68, 0.1)" rx="8"/>
+          <text x="630" y="250" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">MONTHS</text>
+          <text x="630" y="265" text-anchor="middle" fill="#808080" font-size="9">Medical attention</text>
+
+          <!-- Action annotation -->
+          <rect x="200" y="295" width="300" height="90" fill="#12121a" rx="8" stroke="#00d9ff" stroke-width="2"/>
+          <text x="350" y="320" text-anchor="middle" fill="#00d9ff" font-size="12" font-weight="bold">KEY INSIGHT</text>
+          <text x="350" y="340" text-anchor="middle" fill="#b0b0b0" font-size="10">The earlier you catch warning signs,</text>
+          <text x="350" y="355" text-anchor="middle" fill="#b0b0b0" font-size="10">the faster you recover. Don't push through</text>
+          <text x="350" y="370" text-anchor="middle" fill="#b0b0b0" font-size="10">weeks of warning signs—take action early.</text>
+        </svg>
+        <div class="diagram-caption">Recognizing early signs and taking action prevents progression to full overtraining syndrome</div>
+      </div>
+
+      <h2>Self-Assessment Methods</h2>
+
+      <p>Track objective data to catch overtraining before it becomes severe. These methods help remove bias from your self-assessment.</p>
+
+      <h3>Resting Heart Rate (RHR)</h3>
+
+      <p>Measure your resting heart rate first thing in the morning, before getting out of bed. An elevation of 5-10+ bpm above your baseline for several days suggests accumulated fatigue. Use a fitness tracker or take your pulse manually for 60 seconds.</p>
+
+      <div class="highlight-box">
+        <h4>RHR Tracking Protocol</h4>
+        <ul>
+          <li>Measure at the same time daily (immediately upon waking)</li>
+          <li>Establish your baseline over 7-14 days of normal training</li>
+          <li>One elevated day: probably fine, note it</li>
+          <li>2-3 elevated days: consider reducing volume</li>
+          <li>5+ elevated days: take a deload</li>
+        </ul>
+      </div>
+
+      <h3>Heart Rate Variability (HRV)</h3>
+
+      <p>HRV measures the variation in time between heartbeats—a marker of nervous system recovery. Higher HRV indicates better recovery. Many apps and devices now track this automatically.</p>
+
+      <h3>Training Log Analysis</h3>
+
+      <p>Track RPE for your main lifts. "RPE creep"—where the same weights feel harder over time—is an objective sign of accumulated fatigue.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="25" text-anchor="middle" fill="#00d9ff" font-size="14" font-weight="bold">RPE Creep: Same Weight, Increasing Difficulty</text>
+
+          <!-- Grid -->
+          <line x1="100" y1="220" x2="600" y2="220" stroke="#3b3b5c" stroke-width="1"/>
+          <line x1="100" y1="180" x2="600" y2="180" stroke="#3b3b5c" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="100" y1="140" x2="600" y2="140" stroke="#3b3b5c" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="100" y1="100" x2="600" y2="100" stroke="#3b3b5c" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="100" y1="60" x2="600" y2="60" stroke="#3b3b5c" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Y axis labels -->
+          <text x="85" y="225" text-anchor="end" fill="#808080" font-size="10">6</text>
+          <text x="85" y="185" text-anchor="end" fill="#808080" font-size="10">7</text>
+          <text x="85" y="145" text-anchor="end" fill="#808080" font-size="10">8</text>
+          <text x="85" y="105" text-anchor="end" fill="#808080" font-size="10">9</text>
+          <text x="85" y="65" text-anchor="end" fill="#808080" font-size="10">10</text>
+          <text x="40" y="145" text-anchor="middle" fill="#808080" font-size="10" transform="rotate(-90 40 145)">RPE</text>
+
+          <!-- X axis labels -->
+          <text x="150" y="245" text-anchor="middle" fill="#808080" font-size="10">Week 1</text>
+          <text x="250" y="245" text-anchor="middle" fill="#808080" font-size="10">Week 2</text>
+          <text x="350" y="245" text-anchor="middle" fill="#808080" font-size="10">Week 3</text>
+          <text x="450" y="245" text-anchor="middle" fill="#808080" font-size="10">Week 4</text>
+          <text x="550" y="245" text-anchor="middle" fill="#808080" font-size="10">Week 5</text>
+
+          <!-- Healthy pattern (green) -->
+          <path d="M150 180 L250 180 L350 170 L450 150 L550 140" stroke="#22c55e" stroke-width="3" fill="none"/>
+          <circle cx="150" cy="180" r="6" fill="#22c55e"/>
+          <circle cx="250" cy="180" r="6" fill="#22c55e"/>
+          <circle cx="350" cy="170" r="6" fill="#22c55e"/>
+          <circle cx="450" cy="150" r="6" fill="#22c55e"/>
+          <circle cx="550" cy="140" r="6" fill="#22c55e"/>
+
+          <!-- Overtraining pattern (red) -->
+          <path d="M150 180 L250 155 L350 120 L450 85 L550 60" stroke="#ef4444" stroke-width="3" fill="none"/>
+          <circle cx="150" cy="180" r="6" fill="#ef4444"/>
+          <circle cx="250" cy="155" r="6" fill="#ef4444"/>
+          <circle cx="350" cy="120" r="6" fill="#ef4444"/>
+          <circle cx="450" cy="85" r="6" fill="#ef4444"/>
+          <circle cx="550" cy="60" r="6" fill="#ef4444"/>
+
+          <!-- Legend -->
+          <rect x="420" y="255" width="180" height="20" fill="#12121a" rx="4"/>
+          <line x1="435" y1="265" x2="465" y2="265" stroke="#22c55e" stroke-width="2"/>
+          <text x="475" y="269" fill="#22c55e" font-size="9">Normal adaptation</text>
+          <line x1="535" y1="265" x2="565" y2="265" stroke="#ef4444" stroke-width="2"/>
+          <text x="575" y="269" fill="#ef4444" font-size="9">RPE creep</text>
+
+          <!-- Annotation -->
+          <text x="350" y="48" text-anchor="middle" fill="#b0b0b0" font-size="9">Same weight (e.g., 100kg x 5) each week</text>
+        </svg>
+        <div class="diagram-caption">When the same weight feels progressively harder, fatigue is accumulating faster than recovery</div>
+      </div>
+
+      <h2>Risk Factors for Overtraining</h2>
+
+      <p>Some factors make athletes more susceptible to overtraining. Being aware of these can help you adjust training load proactively.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Risk Factor</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High life stress</td>
+            <td>Stress is stress—work, relationships, and training all draw from the same recovery pool</td>
+          </tr>
+          <tr>
+            <td>Poor sleep</td>
+            <td>Most recovery happens during sleep. Chronic sleep debt = chronic under-recovery</td>
+          </tr>
+          <tr>
+            <td>Inadequate nutrition</td>
+            <td>Undereating (especially protein and carbs) limits recovery capacity</td>
+          </tr>
+          <tr>
+            <td>Rapid volume increases</td>
+            <td>Adding too much work too quickly overwhelms adaptation capacity</td>
+          </tr>
+          <tr>
+            <td>Training age</td>
+            <td>Beginners recover faster; advanced lifters need more recovery time</td>
+          </tr>
+          <tr>
+            <td>Female-specific factors</td>
+            <td>Menstrual cycle phase, relative energy deficiency (RED-S), hormonal status</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What to Do When You Recognize Signs</h2>
+
+      <h3>Mild Symptoms (Early Catching)</h3>
+
+      <div class="protocol-box">
+        <h4>Action: Light Adjustment</h4>
+        <ul>
+          <li>Reduce training volume by 20-30% for 3-5 days</li>
+          <li>Prioritize 8+ hours of sleep</li>
+          <li>Increase carbohydrate and protein intake</li>
+          <li>Add an extra rest day this week</li>
+          <li>Keep intensity but cut sets/reps</li>
+        </ul>
+      </div>
+
+      <h3>Moderate Symptoms (2+ Weeks)</h3>
+
+      <div class="protocol-box">
+        <h4>Action: Full Deload</h4>
+        <ul>
+          <li>Take a structured deload week: 50% volume, 70-80% intensity</li>
+          <li>Sleep: treat 9 hours as medicine</li>
+          <li>Light movement only: walks, stretching, mobility</li>
+          <li>Address any life stressors if possible</li>
+          <li>No HIIT or conditioning work</li>
+        </ul>
+      </div>
+
+      <h3>Severe Symptoms (4+ Weeks)</h3>
+
+      <div class="warning-box">
+        <h4>Action: Extended Recovery</h4>
+        <ul>
+          <li>Complete rest from lifting for 1-2 weeks minimum</li>
+          <li>Light activity only (walking, swimming)</li>
+          <li>Consider seeing a doctor for blood work (hormones, thyroid, etc.)</li>
+          <li>Work with a coach or therapist on training approach going forward</li>
+          <li>Return to training gradually with significantly reduced volume</li>
+        </ul>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7mL81dJWJX8" title="Signs of Overtraining" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Renaissance Periodization - Overtraining: What It Is and How to Avoid It</div>
+
+      <h2>Prevention Strategies</h2>
+
+      <p>The best treatment for overtraining is prevention. Build these practices into your training approach.</p>
+
+      <div class="highlight-box">
+        <h4>Programmed Deloads</h4>
+        <p>Don't wait until you're overtrained to deload. Schedule regular deload weeks every 4-8 weeks of hard training. This prevents accumulation of fatigue before it becomes problematic.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Progressive Overload Within Limits</h4>
+        <p>Increase volume gradually—no more than 10% per week. Big jumps in training load are a common cause of overreaching. Patience with progression prevents problems.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Sleep Prioritization</h4>
+        <p>7-9 hours of quality sleep is non-negotiable for serious athletes. Track your sleep and treat it as importantly as your training program.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Nutrition Support</h4>
+        <p>Eat enough to support your training. Undereating is a common cause of overtraining symptoms, especially in female athletes. Adequate protein (1.6-2.2g/kg) and carbohydrates (3-5g/kg for strength athletes) are essential.</p>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Overtraining is systemic:</strong> It affects performance, mood, immunity, and overall health</li>
+        <li><strong>Watch for clusters:</strong> Multiple symptoms across categories indicate a problem</li>
+        <li><strong>Track objectively:</strong> RHR, HRV, and RPE trends reveal fatigue before you feel it</li>
+        <li><strong>Act early:</strong> A 3-day adjustment is better than a 3-month recovery</li>
+        <li><strong>Prevention beats treatment:</strong> Regular deloads, adequate sleep, and proper nutrition prevent overtraining</li>
+        <li><strong>Recovery is training:</strong> Rest is not weakness—it's when you actually get stronger</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/science/recovery-protocol" class="related-card">
+            <h4>Recovery Protocols</h4>
+            <p>Optimize your recovery between sessions</p>
+          </a>
+          <a href="/science/deload-protocol" class="related-card">
+            <h4>Deload Protocols</h4>
+            <p>How to properly implement recovery weeks</p>
+          </a>
+          <a href="/train/rpe-training" class="related-card">
+            <h4>RPE Training</h4>
+            <p>Use auto-regulation to prevent overtraining</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

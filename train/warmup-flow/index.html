@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Lift Warm-Up Flow - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f97316;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #12121a;
+      border-radius: 12px;
+      border-left: 4px solid #f97316;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0a0a0f;
+    }
+
+    .step-content h4 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .step-content p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .step-content ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .step-content li {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .time-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.2);
+      color: #f97316;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+    .exercise-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .exercise-item {
+      background: #1a1a2e;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .exercise-item strong {
+      color: #f97316;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .exercise-item span {
+      font-size: 0.9rem;
+      color: #808080;
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .lift-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lift-tab {
+      background: #1a1a2e;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: default;
+      border: 2px solid transparent;
+    }
+
+    .lift-tab.squat {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .lift-tab.bench {
+      border-color: #3b82f6;
+      color: #3b82f6;
+    }
+
+    .lift-tab.deadlift {
+      border-color: #22c55e;
+      color: #22c55e;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .flow-step { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train">Train</a>
+          <span>/</span>
+          <span>Warm-Up Flow</span>
+        </div>
+        <h1>Pre-Lift <span>Warm-Up Flow</span></h1>
+        <div class="article-meta">
+          <span>10 min read</span>
+          <span>•</span>
+          <span>Training Preparation</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>The Purpose of Warming Up</h2>
+
+      <p>A proper warm-up prepares your body for heavy lifting by increasing tissue temperature, improving joint mobility, activating key muscle groups, and priming your nervous system for maximal effort. Skip it, and you're leaving strength on the table while increasing injury risk.</p>
+
+      <p>The goal isn't to fatigue yourself before your work sets—it's to optimize your readiness. An effective warm-up takes 10-15 minutes and follows a specific progression from general to specific preparation.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="18" font-weight="bold">The Warm-Up Progression</text>
+
+          <!-- Funnel shape -->
+          <polygon points="150,60 550,60 480,140 220,140" fill="#3b82f6" opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+          <polygon points="220,145 480,145 440,220 260,220" fill="#22c55e" opacity="0.3" stroke="#22c55e" stroke-width="2"/>
+          <polygon points="260,225 440,225 400,300 300,300" fill="#f97316" opacity="0.3" stroke="#f97316" stroke-width="2"/>
+
+          <!-- Labels inside funnel -->
+          <text x="350" y="95" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="bold">GENERAL PREPARATION</text>
+          <text x="350" y="115" text-anchor="middle" fill="#b0b0b0" font-size="11">Raise temperature, blood flow</text>
+
+          <text x="350" y="175" text-anchor="middle" fill="#22c55e" font-size="13" font-weight="bold">MOVEMENT PREPARATION</text>
+          <text x="350" y="195" text-anchor="middle" fill="#b0b0b0" font-size="11">Mobility, activation, patterns</text>
+
+          <text x="350" y="258" text-anchor="middle" fill="#f97316" font-size="13" font-weight="bold">SPECIFIC PREPARATION</text>
+          <text x="350" y="278" text-anchor="middle" fill="#b0b0b0" font-size="11">Bar work, warm-up sets</text>
+
+          <!-- Side annotations -->
+          <text x="80" y="100" text-anchor="middle" fill="#808080" font-size="10">2-5 min</text>
+          <line x1="110" y1="100" x2="148" y2="100" stroke="#808080" stroke-dasharray="3,3"/>
+
+          <text x="130" y="180" text-anchor="middle" fill="#808080" font-size="10">5-8 min</text>
+          <line x1="160" y1="180" x2="218" y2="180" stroke="#808080" stroke-dasharray="3,3"/>
+
+          <text x="200" y="265" text-anchor="middle" fill="#808080" font-size="10">5-10 min</text>
+          <line x1="230" y1="265" x2="258" y2="265" stroke="#808080" stroke-dasharray="3,3"/>
+
+          <!-- Arrow on side -->
+          <path d="M620 70 L620 290" stroke="#f97316" stroke-width="3" marker-end="url(#arrowDown)"/>
+          <text x="640" y="180" fill="#f97316" font-size="10" font-weight="bold" transform="rotate(90 640 180)">SPECIFICITY</text>
+
+          <!-- Bottom note -->
+          <rect x="150" y="310" width="400" height="30" fill="#12121a" rx="4"/>
+          <text x="350" y="330" text-anchor="middle" fill="#b0b0b0" font-size="11">Progress from general → specific as you approach work sets</text>
+
+          <defs>
+            <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="0" orient="auto">
+              <polygon points="0 0, 10 0, 5 7" fill="#f97316"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">The warm-up narrows from general to specific as you approach your working weights</div>
+      </div>
+
+      <h2>Phase 1: General Preparation</h2>
+      <p><span class="time-badge">2-5 minutes</span></p>
+
+      <p>Get your heart rate up and blood flowing to your muscles. This doesn't need to be complicated or intense—just enough to break a light sweat and feel warm.</p>
+
+      <div class="flow-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Light Cardio</h4>
+          <p>Choose low-impact options that don't tire your legs before squatting or deadlifting.</p>
+          <ul>
+            <li>Rowing machine: 2-3 minutes at moderate pace</li>
+            <li>Stationary bike: 3-5 minutes easy spinning</li>
+            <li>Brisk walking on incline treadmill</li>
+            <li>Jumping jacks or light skipping (if joints tolerate)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <h4>Avoid on Leg Days</h4>
+        <p>Skip running or aggressive stair climber before squats and deadlifts. These pre-fatigue your legs. Rowing or biking keeps legs fresh while still warming you up.</p>
+      </div>
+
+      <h2>Phase 2: Movement Preparation</h2>
+      <p><span class="time-badge">5-8 minutes</span></p>
+
+      <p>This phase addresses mobility restrictions and activates the muscles you'll need for your main lift. It's specific to the lift you're about to perform.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Movement Prep by Lift</text>
+
+          <!-- Three columns -->
+          <!-- Squat column -->
+          <rect x="30" y="55" width="200" height="330" fill="rgba(239, 68, 68, 0.1)" rx="12" stroke="#ef4444" stroke-width="2"/>
+          <text x="130" y="85" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">SQUAT DAY</text>
+
+          <text x="45" y="115" fill="#ffffff" font-size="11" font-weight="bold">Mobility Focus:</text>
+          <text x="45" y="135" fill="#b0b0b0" font-size="10">• Ankle dorsiflexion</text>
+          <text x="45" y="150" fill="#b0b0b0" font-size="10">• Hip flexor stretch</text>
+          <text x="45" y="165" fill="#b0b0b0" font-size="10">• T-spine rotation</text>
+          <text x="45" y="180" fill="#b0b0b0" font-size="10">• Adductor rockbacks</text>
+
+          <text x="45" y="210" fill="#ffffff" font-size="11" font-weight="bold">Activation:</text>
+          <text x="45" y="230" fill="#b0b0b0" font-size="10">• Glute bridges 2x10</text>
+          <text x="45" y="245" fill="#b0b0b0" font-size="10">• Banded clamshells 2x10</text>
+          <text x="45" y="260" fill="#b0b0b0" font-size="10">• Goblet squat holds</text>
+          <text x="45" y="275" fill="#b0b0b0" font-size="10">• Core dead bugs 2x8</text>
+
+          <text x="45" y="305" fill="#ffffff" font-size="11" font-weight="bold">Pattern Work:</text>
+          <text x="45" y="325" fill="#b0b0b0" font-size="10">• Bodyweight squats x10</text>
+          <text x="45" y="340" fill="#b0b0b0" font-size="10">• Box squats x5</text>
+          <text x="45" y="355" fill="#b0b0b0" font-size="10">• Pause squats (air) x5</text>
+
+          <!-- Bench column -->
+          <rect x="250" y="55" width="200" height="330" fill="rgba(59, 130, 246, 0.1)" rx="12" stroke="#3b82f6" stroke-width="2"/>
+          <text x="350" y="85" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">BENCH DAY</text>
+
+          <text x="265" y="115" fill="#ffffff" font-size="11" font-weight="bold">Mobility Focus:</text>
+          <text x="265" y="135" fill="#b0b0b0" font-size="10">• Pec stretch (doorway)</text>
+          <text x="265" y="150" fill="#b0b0b0" font-size="10">• Shoulder dislocates</text>
+          <text x="265" y="165" fill="#b0b0b0" font-size="10">• T-spine extension</text>
+          <text x="265" y="180" fill="#b0b0b0" font-size="10">• Lat stretch</text>
+
+          <text x="265" y="210" fill="#ffffff" font-size="11" font-weight="bold">Activation:</text>
+          <text x="265" y="230" fill="#b0b0b0" font-size="10">• Band pull-aparts 2x15</text>
+          <text x="265" y="245" fill="#b0b0b0" font-size="10">• Face pulls (light) 2x12</text>
+          <text x="265" y="260" fill="#b0b0b0" font-size="10">• Scap push-ups 2x10</text>
+          <text x="265" y="275" fill="#b0b0b0" font-size="10">• Arm circles</text>
+
+          <text x="265" y="305" fill="#ffffff" font-size="11" font-weight="bold">Pattern Work:</text>
+          <text x="265" y="325" fill="#b0b0b0" font-size="10">• Push-ups x10</text>
+          <text x="265" y="340" fill="#b0b0b0" font-size="10">• Practice arch setup</text>
+          <text x="265" y="355" fill="#b0b0b0" font-size="10">• Leg drive drills</text>
+
+          <!-- Deadlift column -->
+          <rect x="470" y="55" width="200" height="330" fill="rgba(34, 197, 94, 0.1)" rx="12" stroke="#22c55e" stroke-width="2"/>
+          <text x="570" y="85" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">DEADLIFT DAY</text>
+
+          <text x="485" y="115" fill="#ffffff" font-size="11" font-weight="bold">Mobility Focus:</text>
+          <text x="485" y="135" fill="#b0b0b0" font-size="10">• Hip hinge pattern</text>
+          <text x="485" y="150" fill="#b0b0b0" font-size="10">• Hamstring stretch</text>
+          <text x="485" y="165" fill="#b0b0b0" font-size="10">• Cat-cow x10</text>
+          <text x="485" y="180" fill="#b0b0b0" font-size="10">• 90/90 hip switches</text>
+
+          <text x="485" y="210" fill="#ffffff" font-size="11" font-weight="bold">Activation:</text>
+          <text x="485" y="230" fill="#b0b0b0" font-size="10">• Glute bridges 2x10</text>
+          <text x="485" y="245" fill="#b0b0b0" font-size="10">• Bird dogs 2x8/side</text>
+          <text x="485" y="260" fill="#b0b0b0" font-size="10">• RDL stretch x5</text>
+          <text x="485" y="275" fill="#b0b0b0" font-size="10">• Light good mornings</text>
+
+          <text x="485" y="305" fill="#ffffff" font-size="11" font-weight="bold">Pattern Work:</text>
+          <text x="485" y="325" fill="#b0b0b0" font-size="10">• Hip hinge drills x10</text>
+          <text x="485" y="340" fill="#b0b0b0" font-size="10">• KB/DB RDL x8</text>
+          <text x="485" y="355" fill="#b0b0b0" font-size="10">• Setup rehearsals</text>
+        </svg>
+        <div class="diagram-caption">Each lift requires specific mobility, activation, and movement pattern work</div>
+      </div>
+
+      <h3>Key Exercises by Focus Area</h3>
+
+      <div class="highlight-box">
+        <h4>Hip Mobility (Squat & Deadlift)</h4>
+        <ul>
+          <li><strong>90/90 Hip Stretch:</strong> 30-60 sec each side, focus on breathing</li>
+          <li><strong>Frog Stretch:</strong> Rock forward and back, 10-15 reps</li>
+          <li><strong>Hip Flexor Stretch:</strong> Half-kneeling, 30 sec each side</li>
+          <li><strong>Goblet Squat Hold:</strong> Use elbows to push knees out, 30 sec</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Shoulder Mobility (Bench & Overhead)</h4>
+        <ul>
+          <li><strong>Shoulder Dislocates:</strong> With band or PVC, 10-15 reps</li>
+          <li><strong>Wall Slides:</strong> Arms against wall, slide up and down, 10 reps</li>
+          <li><strong>Thread the Needle:</strong> T-spine rotation, 8 each side</li>
+          <li><strong>Doorway Pec Stretch:</strong> 30 sec each arm, different angles</li>
+        </ul>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/EN6HAheRHYQ" title="Pre-Squat Warm-Up Routine" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Squat University - Complete Squat Warm-Up</div>
+
+      <h2>Phase 3: Specific Preparation (Bar Work)</h2>
+      <p><span class="time-badge">5-10 minutes</span></p>
+
+      <p>Now you're ready for the barbell. The goal is to progress from the empty bar to your working weight using calculated jumps that prepare your body without fatiguing you.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="320" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Warm-Up Set Structure (Example: 140kg Work Sets)</text>
+
+          <!-- Bar graph style -->
+          <!-- Bar -->
+          <rect x="80" y="200" width="60" height="50" fill="#3b82f6" rx="4"/>
+          <text x="110" y="235" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">Bar</text>
+          <text x="110" y="265" text-anchor="middle" fill="#808080" font-size="10">20kg</text>
+          <text x="110" y="280" text-anchor="middle" fill="#808080" font-size="9">10 reps</text>
+
+          <!-- 40% -->
+          <rect x="160" y="170" width="60" height="80" fill="#3b82f6" rx="4"/>
+          <text x="190" y="220" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">40%</text>
+          <text x="190" y="265" text-anchor="middle" fill="#808080" font-size="10">60kg</text>
+          <text x="190" y="280" text-anchor="middle" fill="#808080" font-size="9">5 reps</text>
+
+          <!-- 60% -->
+          <rect x="240" y="130" width="60" height="120" fill="#22c55e" rx="4"/>
+          <text x="270" y="200" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">60%</text>
+          <text x="270" y="265" text-anchor="middle" fill="#808080" font-size="10">85kg</text>
+          <text x="270" y="280" text-anchor="middle" fill="#808080" font-size="9">3 reps</text>
+
+          <!-- 75% -->
+          <rect x="320" y="95" width="60" height="155" fill="#22c55e" rx="4"/>
+          <text x="350" y="180" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">75%</text>
+          <text x="350" y="265" text-anchor="middle" fill="#808080" font-size="10">105kg</text>
+          <text x="350" y="280" text-anchor="middle" fill="#808080" font-size="9">2 reps</text>
+
+          <!-- 85% -->
+          <rect x="400" y="70" width="60" height="180" fill="#f97316" rx="4"/>
+          <text x="430" y="170" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">85%</text>
+          <text x="430" y="265" text-anchor="middle" fill="#808080" font-size="10">120kg</text>
+          <text x="430" y="280" text-anchor="middle" fill="#808080" font-size="9">1 rep</text>
+
+          <!-- 95% (optional) -->
+          <rect x="480" y="55" width="60" height="195" fill="#f97316" rx="4" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="510" y="155" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">95%</text>
+          <text x="510" y="265" text-anchor="middle" fill="#808080" font-size="10">135kg</text>
+          <text x="510" y="280" text-anchor="middle" fill="#808080" font-size="9">1 rep</text>
+
+          <!-- Work sets -->
+          <rect x="560" y="50" width="100" height="200" fill="#ef4444" rx="4"/>
+          <text x="610" y="140" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">WORK</text>
+          <text x="610" y="160" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">SETS</text>
+          <text x="610" y="265" text-anchor="middle" fill="#ffffff" font-size="11">140kg</text>
+          <text x="610" y="280" text-anchor="middle" fill="#ffffff" font-size="9">3-5 reps</text>
+
+          <!-- Annotations -->
+          <text x="190" y="55" text-anchor="middle" fill="#3b82f6" font-size="10">Light & fast</text>
+          <path d="M160 60 L220 60" stroke="#3b82f6" stroke-width="1"/>
+
+          <text x="310" y="55" text-anchor="middle" fill="#22c55e" font-size="10">Building tension</text>
+          <path d="M260 60 L360 60" stroke="#22c55e" stroke-width="1"/>
+
+          <text x="470" y="55" text-anchor="middle" fill="#f97316" font-size="10">Final prep</text>
+          <path d="M420 60 L520 60" stroke="#f97316" stroke-width="1"/>
+
+          <!-- Rest note -->
+          <rect x="100" y="295" width="500" height="20" fill="#12121a" rx="4"/>
+          <text x="350" y="309" text-anchor="middle" fill="#808080" font-size="10">Rest 60-90 sec between warm-up sets, 2-3 min before work sets</text>
+        </svg>
+        <div class="diagram-caption">Sample warm-up progression to 140kg work sets—adjust percentages based on your max</div>
+      </div>
+
+      <h3>Warm-Up Set Guidelines</h3>
+
+      <div class="protocol-box">
+        <h4>The Rules</h4>
+        <ul>
+          <li><strong>Start with the empty bar:</strong> Always. Use this to rehearse technique and assess how you feel</li>
+          <li><strong>Take bigger jumps early, smaller jumps later:</strong> 30-40% jumps at first, then 10-15% closer to work weight</li>
+          <li><strong>Reduce reps as weight increases:</strong> 8-10 with bar, down to 1-2 at 85%+</li>
+          <li><strong>Focus on speed:</strong> Warm-up sets should feel fast and crisp</li>
+          <li><strong>Rest adequately before work sets:</strong> 2-3 minutes after your heaviest warm-up</li>
+        </ul>
+      </div>
+
+      <table class="comparison-table" style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+        <thead>
+          <tr>
+            <th style="background: #1a1a2e; padding: 1rem; text-align: left; color: #f97316; border-bottom: 2px solid rgba(249, 115, 22, 0.3);">Working Weight</th>
+            <th style="background: #1a1a2e; padding: 1rem; text-align: left; color: #f97316; border-bottom: 2px solid rgba(249, 115, 22, 0.3);">Warm-Up Sets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">60-80kg</td>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">Bar x10, 40kg x5, 60kg x3</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">80-100kg</td>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">Bar x10, 40kg x5, 60kg x3, 80kg x2</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">100-140kg</td>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">Bar x10, 50kg x5, 80kg x3, 100kg x2, 120kg x1</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">140kg+</td>
+            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: #b0b0b0;">Bar x10, 60kg x5, 90kg x3, 110kg x2, 130kg x1, 140kg x1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Complete Flow Examples</h2>
+
+      <div class="lift-tabs">
+        <div class="lift-tab squat">SQUAT DAY</div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>General Warm-Up (3 min)</h4>
+          <p>Row machine, moderate pace</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Hip & Ankle Mobility (3 min)</h4>
+          <ul>
+            <li>90/90 hip stretch: 30 sec each side</li>
+            <li>Hip flexor stretch: 30 sec each side</li>
+            <li>Ankle dorsiflexion mobilization: 10 reps each</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Activation (3 min)</h4>
+          <ul>
+            <li>Glute bridges: 2x10</li>
+            <li>Goblet squat hold: 30 sec</li>
+            <li>Banded clamshells: 1x10 each side</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Bar Work (5-7 min)</h4>
+          <ul>
+            <li>Empty bar x 10 (focus on descent speed, bracing)</li>
+            <li>60kg x 5</li>
+            <li>90kg x 3</li>
+            <li>110kg x 2</li>
+            <li>130kg x 1</li>
+            <li>Rest 2-3 min → Work sets at 140kg</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lift-tabs">
+        <div class="lift-tab bench">BENCH DAY</div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>General Warm-Up (2 min)</h4>
+          <p>Arm circles, jumping jacks, or light rowing</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Shoulder Mobility (3 min)</h4>
+          <ul>
+            <li>Shoulder dislocates with band: 15 reps</li>
+            <li>Doorway pec stretch: 30 sec each arm</li>
+            <li>Thread the needle: 8 each side</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Activation & Setup (3 min)</h4>
+          <ul>
+            <li>Band pull-aparts: 2x15</li>
+            <li>Push-ups: 10 (focus on scap retraction)</li>
+            <li>Practice arch and leg drive on bench</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Bar Work (5 min)</h4>
+          <ul>
+            <li>Empty bar x 10 (practice pause, leg drive)</li>
+            <li>40kg x 5</li>
+            <li>60kg x 3</li>
+            <li>75kg x 2</li>
+            <li>Rest 2 min → Work sets at 85kg</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Common Warm-Up Mistakes</h2>
+
+      <div class="warning-box">
+        <h4>Too Much Static Stretching</h4>
+        <p>Long static holds before lifting can temporarily reduce power output. Keep stretches brief (under 30 sec) or use dynamic alternatives. Save longer stretching for after training.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Not Enough Warm-Up Sets</h4>
+        <p>Jumping from an empty bar to near-work weight is a recipe for poor performance and injury. Your body needs gradual progression to prime the nervous system for heavy loads.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Too Many Warm-Up Reps</h4>
+        <p>Don't turn warm-ups into a workout. If you're doing 5x5 at 80% of your work weight, you're fatiguing yourself. Keep reps low as weight increases.</p>
+      </div>
+
+      <h2>Adjusting for Cold Days & Stiffness</h2>
+
+      <p>Some days you'll feel tighter or colder than usual. When this happens:</p>
+
+      <div class="protocol-box">
+        <h4>Extended Warm-Up Protocol</h4>
+        <ul>
+          <li>Add 2-3 minutes to general prep (more cardio time)</li>
+          <li>Spend extra time on your problem areas</li>
+          <li>Add an extra warm-up set or two at lighter weights</li>
+          <li>Take the first work set slightly lighter if needed</li>
+          <li>Don't rush—a longer warm-up is better than a strained muscle</li>
+        </ul>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>10-15 minutes</strong> is enough for a complete warm-up</li>
+        <li><strong>Progress from general to specific:</strong> Cardio → mobility → activation → bar work</li>
+        <li><strong>Match your warm-up to your lift:</strong> Squat, bench, and deadlift each have different requirements</li>
+        <li><strong>Reduce reps as weight increases:</strong> 10 with bar, 5-3 in middle, 1-2 near work weight</li>
+        <li><strong>Don't fatigue yourself:</strong> Warm-ups should make you ready, not tired</li>
+        <li><strong>Listen to your body:</strong> Some days need more warm-up—that's okay</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/train/breathing-bracing" class="related-card">
+            <h4>Breathing & Bracing</h4>
+            <p>Perfect your setup for maximum stability</p>
+          </a>
+          <a href="/train/mental-cues" class="related-card">
+            <h4>Mental Cues & Focus</h4>
+            <p>Prepare your mind along with your body</p>
+          </a>
+          <a href="/compete/meet-day-timeline" class="related-card">
+            <h4>Meet Day Timeline</h4>
+            <p>Warm-up planning for competition</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

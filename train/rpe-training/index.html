@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPE Training Guide for Powerlifters - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f97316;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .rpe-scale {
+      margin: 2rem 0;
+    }
+
+    .rpe-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      background: #12121a;
+      border-radius: 10px;
+      border-left: 4px solid;
+    }
+
+    .rpe-number {
+      font-size: 2rem;
+      font-weight: 800;
+      width: 60px;
+      text-align: center;
+    }
+
+    .rpe-description h5 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .rpe-description p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: #808080;
+    }
+
+    .rpe-10 { border-color: #ef4444; }
+    .rpe-10 .rpe-number { color: #ef4444; }
+    .rpe-10 h5 { color: #ef4444; }
+
+    .rpe-9 { border-color: #f97316; }
+    .rpe-9 .rpe-number { color: #f97316; }
+    .rpe-9 h5 { color: #f97316; }
+
+    .rpe-8 { border-color: #fbbf24; }
+    .rpe-8 .rpe-number { color: #fbbf24; }
+    .rpe-8 h5 { color: #fbbf24; }
+
+    .rpe-7 { border-color: #22c55e; }
+    .rpe-7 .rpe-number { color: #22c55e; }
+    .rpe-7 h5 { color: #22c55e; }
+
+    .rpe-6 { border-color: #3b82f6; }
+    .rpe-6 .rpe-number { color: #3b82f6; }
+    .rpe-6 h5 { color: #3b82f6; }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #f97316;
+      border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .rpe-item { flex-direction: column; text-align: center; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train">Train</a>
+          <span>/</span>
+          <span>RPE Training</span>
+        </div>
+        <h1><span>RPE Training</span> for Powerlifters</h1>
+        <div class="article-meta">
+          <span>13 min read</span>
+          <span>•</span>
+          <span>Training Methods</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>What Is RPE?</h2>
+
+      <p>RPE stands for Rate of Perceived Exertion—a subjective scale used to gauge how difficult a set was based on how many reps you had left in the tank. Instead of programming exact percentages, RPE-based training lets you adjust intensity based on how you actually feel that day.</p>
+
+      <p>This approach, popularized by coach Mike Tuchscherer and his Reactive Training Systems (RTS), accounts for the reality that your strength fluctuates daily based on sleep, stress, nutrition, and recovery. A weight that's easy on Monday might grind you down on Friday.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="18" font-weight="bold">RPE vs. Percentage-Based Training</text>
+
+          <!-- Left side - Percentage -->
+          <rect x="50" y="60" width="280" height="270" fill="rgba(59, 130, 246, 0.1)" rx="12" stroke="#3b82f6" stroke-width="2"/>
+          <text x="190" y="95" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">PERCENTAGE-BASED</text>
+
+          <text x="70" y="130" fill="#ffffff" font-size="12" font-weight="bold">Program says: 80% x 5</text>
+
+          <!-- Good day -->
+          <rect x="70" y="150" width="240" height="55" fill="#12121a" rx="8"/>
+          <text x="85" y="175" fill="#22c55e" font-size="11" font-weight="bold">Good Day</text>
+          <text x="85" y="195" fill="#b0b0b0" font-size="10">80% feels like RPE 7 — Too easy</text>
+
+          <!-- Bad day -->
+          <rect x="70" y="215" width="240" height="55" fill="#12121a" rx="8"/>
+          <text x="85" y="240" fill="#ef4444" font-size="11" font-weight="bold">Bad Day</text>
+          <text x="85" y="260" fill="#b0b0b0" font-size="10">80% feels like RPE 10 — Too hard</text>
+
+          <text x="190" y="300" text-anchor="middle" fill="#808080" font-size="10">Same weight, different stimulus</text>
+          <text x="190" y="315" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="bold">Fixed input, variable output</text>
+
+          <!-- Right side - RPE -->
+          <rect x="370" y="60" width="280" height="270" fill="rgba(34, 197, 94, 0.1)" rx="12" stroke="#22c55e" stroke-width="2"/>
+          <text x="510" y="95" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">RPE-BASED</text>
+
+          <text x="390" y="130" fill="#ffffff" font-size="12" font-weight="bold">Program says: RPE 8 x 5</text>
+
+          <!-- Good day -->
+          <rect x="390" y="150" width="240" height="55" fill="#12121a" rx="8"/>
+          <text x="405" y="175" fill="#22c55e" font-size="11" font-weight="bold">Good Day</text>
+          <text x="405" y="195" fill="#b0b0b0" font-size="10">Use 85% to hit RPE 8 — Appropriate</text>
+
+          <!-- Bad day -->
+          <rect x="390" y="215" width="240" height="55" fill="#12121a" rx="8"/>
+          <text x="405" y="240" fill="#f97316" font-size="11" font-weight="bold">Tough Day</text>
+          <text x="405" y="260" fill="#b0b0b0" font-size="10">Use 75% to hit RPE 8 — Appropriate</text>
+
+          <text x="510" y="300" text-anchor="middle" fill="#808080" font-size="10">Different weight, same stimulus</text>
+          <text x="510" y="315" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">Variable input, consistent output</text>
+        </svg>
+        <div class="diagram-caption">RPE-based training adjusts load to match your daily readiness, ensuring consistent training stimulus</div>
+      </div>
+
+      <h2>The RPE Scale</h2>
+
+      <p>The RPE scale runs from 1 to 10, but for strength training we typically work between 6 and 10. Here's what each number means:</p>
+
+      <div class="rpe-scale">
+        <div class="rpe-item rpe-10">
+          <div class="rpe-number">10</div>
+          <div class="rpe-description">
+            <h5>Maximal Effort</h5>
+            <p>No reps left. You could not have done another rep even with a gun to your head. True failure.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-9">
+          <div class="rpe-number">9.5</div>
+          <div class="rpe-description">
+            <h5>Near Maximal</h5>
+            <p>Maybe 1 more rep on a perfect day, but probably not. Very close to failure.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-9">
+          <div class="rpe-number">9</div>
+          <div class="rpe-description">
+            <h5>Very Hard</h5>
+            <p>1 rep left in the tank. Last rep was a grind but you could do one more if you had to.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-8">
+          <div class="rpe-number">8.5</div>
+          <div class="rpe-description">
+            <h5>Hard</h5>
+            <p>1-2 reps left. Definitely 1, maybe 2 more reps possible.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-8">
+          <div class="rpe-number">8</div>
+          <div class="rpe-description">
+            <h5>Challenging</h5>
+            <p>2 reps left in the tank. Could definitely do 2 more with good form.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-7">
+          <div class="rpe-number">7.5</div>
+          <div class="rpe-description">
+            <h5>Moderate-Hard</h5>
+            <p>2-3 reps left. Speed is starting to slow slightly.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-7">
+          <div class="rpe-number">7</div>
+          <div class="rpe-description">
+            <h5>Moderate</h5>
+            <p>3 reps left. Weight moves well, could do 3 more reps.</p>
+          </div>
+        </div>
+
+        <div class="rpe-item rpe-6">
+          <div class="rpe-number">6</div>
+          <div class="rpe-description">
+            <h5>Light-Moderate</h5>
+            <p>4+ reps left. Warm-up territory. Good for speed work and technique.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">RPE to Reps in Reserve (RIR) Conversion</text>
+
+          <!-- Scale bar -->
+          <rect x="50" y="80" width="600" height="50" fill="#12121a" rx="8"/>
+
+          <!-- Sections -->
+          <rect x="50" y="80" width="100" height="50" fill="#3b82f6" rx="8"/>
+          <rect x="150" y="80" width="100" height="50" fill="#22c55e"/>
+          <rect x="250" y="80" width="100" height="50" fill="#fbbf24"/>
+          <rect x="350" y="80" width="100" height="50" fill="#f97316"/>
+          <rect x="450" y="80" width="100" height="50" fill="#ef4444"/>
+          <rect x="550" y="80" width="100" height="50" fill="#dc2626" rx="8"/>
+
+          <!-- Fix corners -->
+          <rect x="150" y="80" width="10" height="50" fill="#3b82f6"/>
+          <rect x="250" y="80" width="10" height="50" fill="#22c55e"/>
+          <rect x="350" y="80" width="10" height="50" fill="#fbbf24"/>
+          <rect x="450" y="80" width="10" height="50" fill="#f97316"/>
+          <rect x="550" y="80" width="10" height="50" fill="#ef4444"/>
+
+          <!-- RPE labels -->
+          <text x="100" y="110" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">6</text>
+          <text x="200" y="110" text-anchor="middle" fill="#0a0a0f" font-size="18" font-weight="bold">7</text>
+          <text x="300" y="110" text-anchor="middle" fill="#0a0a0f" font-size="18" font-weight="bold">8</text>
+          <text x="400" y="110" text-anchor="middle" fill="#0a0a0f" font-size="18" font-weight="bold">9</text>
+          <text x="500" y="110" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">9.5</text>
+          <text x="600" y="110" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">10</text>
+
+          <!-- RIR labels -->
+          <text x="100" y="155" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">4+ RIR</text>
+          <text x="200" y="155" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="bold">3 RIR</text>
+          <text x="300" y="155" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">2 RIR</text>
+          <text x="400" y="155" text-anchor="middle" fill="#f97316" font-size="12" font-weight="bold">1 RIR</text>
+          <text x="500" y="155" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">0-1 RIR</text>
+          <text x="600" y="155" text-anchor="middle" fill="#dc2626" font-size="12" font-weight="bold">0 RIR</text>
+
+          <!-- Usage zones -->
+          <rect x="50" y="180" width="200" height="30" fill="rgba(59, 130, 246, 0.2)" rx="4"/>
+          <text x="150" y="200" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="bold">SPEED & TECHNIQUE</text>
+
+          <rect x="250" y="180" width="200" height="30" fill="rgba(34, 197, 94, 0.2)" rx="4"/>
+          <text x="350" y="200" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">STRENGTH BUILDING</text>
+
+          <rect x="450" y="180" width="200" height="30" fill="rgba(239, 68, 68, 0.2)" rx="4"/>
+          <text x="550" y="200" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">TESTING / PEAKING</text>
+
+          <!-- Annotations -->
+          <text x="150" y="235" text-anchor="middle" fill="#808080" font-size="9">Warm-ups</text>
+          <text x="150" y="248" text-anchor="middle" fill="#808080" font-size="9">Light days</text>
+
+          <text x="350" y="235" text-anchor="middle" fill="#808080" font-size="9">Most training</text>
+          <text x="350" y="248" text-anchor="middle" fill="#808080" font-size="9">lives here</text>
+
+          <text x="550" y="235" text-anchor="middle" fill="#808080" font-size="9">Max attempts</text>
+          <text x="550" y="248" text-anchor="middle" fill="#808080" font-size="9">Competition</text>
+        </svg>
+        <div class="diagram-caption">RIR (Reps in Reserve) is the inverse of RPE: RPE 8 = 2 RIR = 2 reps left in the tank</div>
+      </div>
+
+      <h2>Learning to Rate Accurately</h2>
+
+      <p>Most beginners underestimate their RPE—calling sets "RPE 8" when they actually had 4+ reps left. Calibrating your internal sense takes time and practice.</p>
+
+      <h3>Calibration Methods</h3>
+
+      <div class="highlight-box">
+        <h4>Method 1: AMRAP Testing</h4>
+        <p>Periodically take a set to true failure (RPE 10) with a given weight. Count actual reps, then work backwards. If you got 8 reps at RPE 10, then 6 reps would be RPE 8, 5 reps would be RPE 9, etc.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Method 2: Bar Speed Awareness</h4>
+        <p>As sets get harder, bar speed slows. Learn to recognize when speed starts dropping—this usually indicates RPE 7-8. When bar speed slows significantly, you're at RPE 9+.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Method 3: Post-Set Analysis</h4>
+        <p>After each set, honestly ask: "How many more reps could I have done with good form?" Write down your answer and track it over time. Review periodically to catch patterns of over or underestimating.</p>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/uKv7akuDPQ8" title="Learning to Use RPE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Juggernaut Training Systems - Understanding RPE</div>
+
+      <h2>RPE and Rep Ranges</h2>
+
+      <p>RPE correlates to roughly the same percentage of 1RM regardless of rep range. This is because a set of 8 at RPE 8 should be just as relatively hard as a set of 3 at RPE 8—both leave 2 reps in the tank.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>RPE</th>
+            <th>Approximate % 1RM (at various rep ranges)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10</td>
+            <td>100% @ 1, 95% @ 2, 92.5% @ 3, 90% @ 4, 87% @ 5...</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>96% @ 1, 92% @ 2, 89% @ 3, 86% @ 4, 84% @ 5...</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>92% @ 1, 89% @ 2, 86% @ 3, 84% @ 4, 81% @ 5...</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>89% @ 1, 86% @ 2, 84% @ 3, 81% @ 4, 79% @ 5...</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>86% @ 1, 84% @ 2, 81% @ 3, 79% @ 4, 76% @ 5...</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Note: These are approximations. Individual variation is significant. Use these as starting points and adjust based on your actual performance.</p>
+
+      <h2>Programming with RPE</h2>
+
+      <h3>Basic Structure</h3>
+
+      <p>A typical RPE-based program prescribes reps and target RPE, then you select the weight:</p>
+
+      <div class="protocol-box">
+        <h4>Example Squat Session</h4>
+        <ul>
+          <li>Warm-up sets to RPE 6</li>
+          <li>Work up to top set: 4 reps @ RPE 8</li>
+          <li>Back-off sets: 4x4 @ RPE 7</li>
+          <li>Accessories: 3x10 @ RPE 7-8</li>
+        </ul>
+      </div>
+
+      <h3>Load Selection Process</h3>
+
+      <p>Here's how to select your working weight using RPE:</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="380" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">RPE Load Selection Process</text>
+
+          <!-- Step 1 -->
+          <rect x="50" y="55" width="180" height="100" fill="#12121a" rx="12" stroke="#3b82f6" stroke-width="2"/>
+          <circle cx="80" cy="80" r="15" fill="#3b82f6"/>
+          <text x="80" y="85" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">1</text>
+          <text x="140" y="85" fill="#ffffff" font-size="12" font-weight="bold">WARM UP</text>
+          <text x="65" y="110" fill="#b0b0b0" font-size="10">Take warm-up sets</text>
+          <text x="65" y="125" fill="#b0b0b0" font-size="10">Rate each set RPE</text>
+          <text x="65" y="140" fill="#b0b0b0" font-size="10">Note how you feel</text>
+
+          <!-- Arrow 1 -->
+          <path d="M235 105 L260 105" stroke="#808080" stroke-width="2" marker-end="url(#arrowGray2)"/>
+
+          <!-- Step 2 -->
+          <rect x="265" y="55" width="180" height="100" fill="#12121a" rx="12" stroke="#22c55e" stroke-width="2"/>
+          <circle cx="295" cy="80" r="15" fill="#22c55e"/>
+          <text x="295" y="85" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">2</text>
+          <text x="355" y="85" fill="#ffffff" font-size="12" font-weight="bold">ESTIMATE</text>
+          <text x="280" y="110" fill="#b0b0b0" font-size="10">Based on warm-ups,</text>
+          <text x="280" y="125" fill="#b0b0b0" font-size="10">estimate what weight</text>
+          <text x="280" y="140" fill="#b0b0b0" font-size="10">will hit target RPE</text>
+
+          <!-- Arrow 2 -->
+          <path d="M450 105 L475 105" stroke="#808080" stroke-width="2" marker-end="url(#arrowGray2)"/>
+
+          <!-- Step 3 -->
+          <rect x="480" y="55" width="180" height="100" fill="#12121a" rx="12" stroke="#f97316" stroke-width="2"/>
+          <circle cx="510" cy="80" r="15" fill="#f97316"/>
+          <text x="510" y="85" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">3</text>
+          <text x="570" y="85" fill="#ffffff" font-size="12" font-weight="bold">EXECUTE</text>
+          <text x="495" y="110" fill="#b0b0b0" font-size="10">Perform the set</text>
+          <text x="495" y="125" fill="#b0b0b0" font-size="10">with estimated load</text>
+          <text x="495" y="140" fill="#b0b0b0" font-size="10">Focus on execution</text>
+
+          <!-- Step 4 -->
+          <rect x="50" y="200" width="180" height="100" fill="#12121a" rx="12" stroke="#a855f7" stroke-width="2"/>
+          <circle cx="80" cy="225" r="15" fill="#a855f7"/>
+          <text x="80" y="230" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">4</text>
+          <text x="140" y="225" fill="#ffffff" font-size="12" font-weight="bold">RATE</text>
+          <text x="65" y="255" fill="#b0b0b0" font-size="10">After set, honestly</text>
+          <text x="65" y="270" fill="#b0b0b0" font-size="10">rate the actual RPE</text>
+          <text x="65" y="285" fill="#b0b0b0" font-size="10">How many left?</text>
+
+          <!-- Arrow 3 -->
+          <path d="M235 250 L260 250" stroke="#808080" stroke-width="2" marker-end="url(#arrowGray2)"/>
+
+          <!-- Decision diamond -->
+          <polygon points="355,195 430,250 355,305 280,250" fill="#1a1a2e" stroke="#fbbf24" stroke-width="2"/>
+          <text x="355" y="245" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">Hit target</text>
+          <text x="355" y="260" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">RPE?</text>
+
+          <!-- Yes path -->
+          <path d="M430 250 L470 250" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+          <text x="450" y="240" fill="#22c55e" font-size="10">Yes</text>
+
+          <!-- Done box -->
+          <rect x="475" y="220" width="100" height="60" fill="rgba(34, 197, 94, 0.2)" rx="8" stroke="#22c55e" stroke-width="2"/>
+          <text x="525" y="250" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">CONTINUE</text>
+          <text x="525" y="265" text-anchor="middle" fill="#22c55e" font-size="10">same load</text>
+
+          <!-- No path - too easy -->
+          <path d="M355 305 L355 335" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+          <text x="370" y="325" fill="#ef4444" font-size="10">No</text>
+
+          <!-- Adjust box -->
+          <rect x="270" y="340" width="170" height="35" fill="rgba(239, 68, 68, 0.2)" rx="8" stroke="#ef4444" stroke-width="2"/>
+          <text x="355" y="362" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">ADJUST: Add/remove weight</text>
+
+          <defs>
+            <marker id="arrowGray2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#808080"/>
+            </marker>
+            <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+            </marker>
+            <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="3.5" refY="9" orient="auto">
+              <polygon points="0 0, 3.5 10, 7 0" fill="#ef4444"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">The RPE load selection process: estimate, execute, rate, adjust as needed</div>
+      </div>
+
+      <h3>Back-Off Sets</h3>
+
+      <p>After your top set, back-off sets provide additional volume at a more sustainable intensity. Common approaches:</p>
+
+      <div class="highlight-box">
+        <h4>Percentage Drop</h4>
+        <p>After top set at RPE 8-9, reduce weight by 5-10% for back-off sets at the same rep count. This usually lands around RPE 7.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Fatigue Percentage</h4>
+        <p>RTS system uses "fatigue percentages." Example: "5 @ 8, -5% x 4 sets" means hit a top set of 5 at RPE 8, then do 4 more sets at 5% less weight.</p>
+      </div>
+
+      <h2>Benefits of RPE Training</h2>
+
+      <div class="protocol-box">
+        <h4>Auto-Regulation</h4>
+        <p>Your program adapts to your daily readiness. Feeling great? You'll naturally use heavier weights. Tired or stressed? You'll use lighter weights. Either way, you get the intended training stimulus.</p>
+      </div>
+
+      <div class="protocol-box">
+        <h4>Sustainable Progression</h4>
+        <p>Instead of blindly adding weight each week (which eventually fails), you progress when you're ready. A weight that was RPE 9 becomes RPE 8, signaling it's time to increase load.</p>
+      </div>
+
+      <div class="protocol-box">
+        <h4>Injury Prevention</h4>
+        <p>By backing off on bad days instead of grinding through prescribed weights, you reduce injury risk. RPE respects your body's signals.</p>
+      </div>
+
+      <h2>Common RPE Mistakes</h2>
+
+      <div class="warning-box">
+        <h4>Sandbagging</h4>
+        <p>Consistently rating sets easier than they are to use lighter weights. Be honest. If you always end up at RPE 6 when you're supposed to hit RPE 8, you're sandbagging.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Ego Lifting</h4>
+        <p>The opposite problem: rating sets as RPE 7 when they were clearly RPE 9. This leads to accumulated fatigue and eventual breakdown. Honesty is non-negotiable.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Set-to-Set Jumping</h4>
+        <p>Making large weight jumps between sets trying to hit exact RPE. Small jumps (2.5-5kg) are more effective. You can't precisely hit RPE 8—anywhere from 7.5-8.5 is acceptable.</p>
+      </div>
+
+      <h2>When to Use RPE vs. Percentages</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Use RPE When...</th>
+            <th>Use Percentages When...</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You're experienced and can rate accurately</td>
+            <td>You're new to lifting and still learning</td>
+          </tr>
+          <tr>
+            <td>Your recovery varies significantly</td>
+            <td>Your schedule and recovery are consistent</td>
+          </tr>
+          <tr>
+            <td>You want flexibility in your training</td>
+            <td>You want structure and simplicity</td>
+          </tr>
+          <tr>
+            <td>You're peaking and readiness fluctuates</td>
+            <td>You're in a stable building phase</td>
+          </tr>
+          <tr>
+            <td>Training main lifts</td>
+            <td>Training accessories (less precision needed)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Sample RPE-Based Week</h2>
+
+      <div class="highlight-box">
+        <h4>Day 1: Squat</h4>
+        <ul>
+          <li>Squat: Work up to 4 @ RPE 8, then 4x4 @ RPE 7</li>
+          <li>Pause Squat: 3x5 @ RPE 7</li>
+          <li>Leg Press: 3x10 @ RPE 8</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Day 2: Bench</h4>
+        <ul>
+          <li>Bench: Work up to 3 @ RPE 8, then 5x3 @ RPE 7</li>
+          <li>Close Grip Bench: 3x6 @ RPE 7</li>
+          <li>Rows: 4x8 @ RPE 7-8</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Day 3: Deadlift</h4>
+        <ul>
+          <li>Deadlift: Work up to 3 @ RPE 8, then 3x3 @ RPE 7</li>
+          <li>RDL: 3x8 @ RPE 7</li>
+          <li>Back Extensions: 3x12 @ RPE 7</li>
+        </ul>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>RPE = Reps in Reserve:</strong> RPE 8 means 2 reps left, RPE 9 means 1 rep left</li>
+        <li><strong>Auto-regulation:</strong> RPE adjusts intensity to your daily readiness</li>
+        <li><strong>Requires honesty:</strong> Accurate rating is essential—neither sandbagging nor ego lifting</li>
+        <li><strong>Takes practice:</strong> Most lifters need 3-6 months to calibrate accurately</li>
+        <li><strong>Most training at RPE 7-8:</strong> Reserve RPE 9-10 for testing and competition</li>
+        <li><strong>Works with percentages:</strong> Use both systems together for optimal results</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/science/periodization-basics" class="related-card">
+            <h4>Periodization Basics</h4>
+            <p>How to structure your training phases</p>
+          </a>
+          <a href="/science/deload-protocol" class="related-card">
+            <h4>Deload Protocols</h4>
+            <p>When and how to recover from training</p>
+          </a>
+          <a href="/train/video-analysis" class="related-card">
+            <h4>Video Analysis</h4>
+            <p>Review your lifts to improve RPE awareness</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

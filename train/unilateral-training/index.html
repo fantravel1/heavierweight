@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unilateral Training for Powerlifters - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f97316;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .exercise-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .exercise-card h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .exercise-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .exercise-card ul {
+      font-size: 0.9rem;
+      padding-left: 1.25rem;
+    }
+
+    .exercise-card li {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #f97316;
+      border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train">Train</a>
+          <span>/</span>
+          <span>Unilateral Training</span>
+        </div>
+        <h1>Unilateral Training for <span>Powerlifters</span></h1>
+        <div class="article-meta">
+          <span>12 min read</span>
+          <span>•</span>
+          <span>Accessory Programming</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>Why Single-Limb Work Matters</h2>
+
+      <p>Every lifter has asymmetries. Your dominant side is stronger, more coordinated, and often takes over during bilateral movements. In the squat, one leg may drive harder. In the bench, one arm may lock out first. These imbalances aren't just aesthetic concerns—they can limit your total and increase injury risk over time.</p>
+
+      <p>Unilateral training addresses these imbalances by forcing each limb to work independently. There's nowhere for your weaker side to hide when it's doing the work alone.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="35" text-anchor="middle" fill="#f97316" font-size="18" font-weight="bold">Common Bilateral vs. Unilateral Force Distribution</text>
+
+          <!-- Bilateral side (left) -->
+          <text x="175" y="70" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">BILATERAL SQUAT</text>
+
+          <!-- Figure - bilateral -->
+          <rect x="145" y="100" width="60" height="120" fill="#3b3b5c" rx="5"/>
+          <circle cx="175" cy="85" r="12" fill="#3b3b5c"/>
+
+          <!-- Left leg (weaker) -->
+          <rect x="135" y="220" width="25" height="80" fill="#ef4444" rx="3"/>
+          <text x="147" y="310" text-anchor="middle" fill="#ef4444" font-size="11">45%</text>
+
+          <!-- Right leg (stronger) -->
+          <rect x="190" y="220" width="25" height="80" fill="#22c55e" rx="3"/>
+          <text x="202" y="310" text-anchor="middle" fill="#22c55e" font-size="11">55%</text>
+
+          <!-- Arrow showing imbalance -->
+          <path d="M220 260 L260 260" stroke="#f97316" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <text x="280" y="255" fill="#f97316" font-size="10">Dominant side</text>
+          <text x="280" y="270" fill="#f97316" font-size="10">compensates</text>
+
+          <!-- Divider -->
+          <line x1="350" y1="60" x2="350" y2="330" stroke="#3b3b5c" stroke-width="2" stroke-dasharray="5,5"/>
+
+          <!-- Unilateral side (right) -->
+          <text x="525" y="70" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">SPLIT SQUAT</text>
+
+          <!-- Figure - unilateral -->
+          <rect x="495" y="100" width="60" height="100" fill="#3b3b5c" rx="5"/>
+          <circle cx="525" cy="85" r="12" fill="#3b3b5c"/>
+
+          <!-- Working leg -->
+          <rect x="490" y="200" width="30" height="100" fill="#22c55e" rx="3"/>
+          <text x="505" y="310" text-anchor="middle" fill="#22c55e" font-size="11">100%</text>
+
+          <!-- Back leg (support only) -->
+          <rect x="530" y="210" width="20" height="60" fill="#808080" rx="3" transform="rotate(30 540 240)"/>
+          <text x="570" y="280" fill="#808080" font-size="10">Support</text>
+          <text x="570" y="293" fill="#808080" font-size="10">only</text>
+
+          <!-- Benefit annotation -->
+          <rect x="420" y="315" width="210" height="25" fill="rgba(34, 197, 94, 0.2)" rx="4"/>
+          <text x="525" y="332" text-anchor="middle" fill="#22c55e" font-size="11">Each leg forced to handle full load</text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">In bilateral movements, your stronger side can compensate. Unilateral work eliminates this option.</div>
+      </div>
+
+      <h2>Identifying Your Imbalances</h2>
+
+      <p>Before programming unilateral work, you need to know where your asymmetries lie. Most lifters have some intuition about their weak side, but objective assessment reveals the full picture.</p>
+
+      <h3>Self-Assessment Methods</h3>
+
+      <div class="highlight-box">
+        <h4>Single-Leg Tests</h4>
+        <ul>
+          <li><strong>Bulgarian Split Squat Test:</strong> Compare max reps at a given weight, each leg. More than 10-15% difference indicates significant imbalance</li>
+          <li><strong>Single-Leg RDL:</strong> Note which side has worse balance and coordination, not just strength</li>
+          <li><strong>Step-Up Test:</strong> Use a moderate box height and compare control and ease</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Single-Arm Tests</h4>
+        <ul>
+          <li><strong>Single-Arm Dumbbell Press:</strong> Compare weight and stability each side</li>
+          <li><strong>Single-Arm Row:</strong> Note differences in range of motion and control</li>
+          <li><strong>Farmer's Carry:</strong> Walk with weight in one hand—compare torso lean and control</li>
+        </ul>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="320" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Imbalance Assessment Scale</text>
+
+          <!-- Scale bar -->
+          <rect x="100" y="70" width="500" height="30" fill="#2a2a4a" rx="5"/>
+
+          <!-- Gradient sections -->
+          <rect x="100" y="70" width="125" height="30" fill="#22c55e" rx="5"/>
+          <rect x="225" y="70" width="125" height="30" fill="#fbbf24"/>
+          <rect x="350" y="70" width="125" height="30" fill="#f97316"/>
+          <rect x="475" y="70" width="125" height="30" fill="#ef4444" rx="5"/>
+
+          <!-- Fix corner -->
+          <rect x="475" y="70" width="10" height="30" fill="#f97316"/>
+          <rect x="225" y="70" width="10" height="30" fill="#22c55e"/>
+          <rect x="350" y="70" width="10" height="30" fill="#fbbf24"/>
+
+          <!-- Labels -->
+          <text x="162" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">0-5%</text>
+          <text x="287" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">5-10%</text>
+          <text x="412" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">10-20%</text>
+          <text x="537" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">20%+</text>
+
+          <!-- Category labels -->
+          <text x="162" y="125" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">Normal</text>
+          <text x="287" y="125" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">Minor</text>
+          <text x="412" y="125" text-anchor="middle" fill="#f97316" font-size="11" font-weight="bold">Significant</text>
+          <text x="537" y="125" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">Major</text>
+
+          <!-- Recommendations for each category -->
+          <rect x="100" y="150" width="125" height="80" fill="rgba(34, 197, 94, 0.1)" rx="8"/>
+          <text x="162" y="175" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">MAINTENANCE</text>
+          <text x="162" y="195" text-anchor="middle" fill="#b0b0b0" font-size="9">Include unilateral</text>
+          <text x="162" y="208" text-anchor="middle" fill="#b0b0b0" font-size="9">work for general</text>
+          <text x="162" y="221" text-anchor="middle" fill="#b0b0b0" font-size="9">balance</text>
+
+          <rect x="225" y="150" width="125" height="80" fill="rgba(251, 191, 36, 0.1)" rx="8"/>
+          <text x="287" y="175" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">ATTENTION</text>
+          <text x="287" y="195" text-anchor="middle" fill="#b0b0b0" font-size="9">Add 1-2 unilateral</text>
+          <text x="287" y="208" text-anchor="middle" fill="#b0b0b0" font-size="9">exercises, start weak</text>
+          <text x="287" y="221" text-anchor="middle" fill="#b0b0b0" font-size="9">side first</text>
+
+          <rect x="350" y="150" width="125" height="80" fill="rgba(249, 115, 22, 0.1)" rx="8"/>
+          <text x="412" y="175" text-anchor="middle" fill="#f97316" font-size="10" font-weight="bold">PRIORITY</text>
+          <text x="412" y="195" text-anchor="middle" fill="#b0b0b0" font-size="9">2-3 unilateral per</text>
+          <text x="412" y="208" text-anchor="middle" fill="#b0b0b0" font-size="9">session, extra volume</text>
+          <text x="412" y="221" text-anchor="middle" fill="#b0b0b0" font-size="9">on weak side</text>
+
+          <rect x="475" y="150" width="125" height="80" fill="rgba(239, 68, 68, 0.1)" rx="8"/>
+          <text x="537" y="175" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">INTERVENTION</text>
+          <text x="537" y="195" text-anchor="middle" fill="#b0b0b0" font-size="9">Consider physio,</text>
+          <text x="537" y="208" text-anchor="middle" fill="#b0b0b0" font-size="9">may indicate injury</text>
+          <text x="537" y="221" text-anchor="middle" fill="#b0b0b0" font-size="9">or dysfunction</text>
+
+          <!-- Example calculation -->
+          <rect x="100" y="250" width="500" height="55" fill="#12121a" rx="8" stroke="#3b3b5c"/>
+          <text x="115" y="275" fill="#ffffff" font-size="11" font-weight="bold">Example:</text>
+          <text x="115" y="293" fill="#b0b0b0" font-size="11">Right leg: 8 reps @ 50kg | Left leg: 6 reps @ 50kg → (8-6)/8 = 25% difference → Major imbalance</text>
+        </svg>
+        <div class="diagram-caption">Side-to-side difference thresholds and recommended actions</div>
+      </div>
+
+      <h2>The Best Unilateral Exercises for Powerlifters</h2>
+
+      <p>Not all single-limb exercises are created equal. The best choices for powerlifters have direct carryover to the competition lifts while building strength, stability, and muscle.</p>
+
+      <h3>Lower Body Exercises</h3>
+
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <h4>Bulgarian Split Squat</h4>
+          <p><strong>Best for:</strong> Quad strength, hip flexor mobility, balance</p>
+          <ul>
+            <li>Rear foot elevated on bench</li>
+            <li>Keep torso upright</li>
+            <li>Drive through front heel</li>
+            <li>High carryover to squat</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Walking Lunges</h4>
+          <p><strong>Best for:</strong> Dynamic stability, work capacity, quad/glute development</p>
+          <ul>
+            <li>Controlled steps forward</li>
+            <li>Knee tracks over toes</li>
+            <li>Good for higher rep ranges</li>
+            <li>Builds conditioning too</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Single-Leg RDL</h4>
+          <p><strong>Best for:</strong> Hamstring strength, balance, hip hinge pattern</p>
+          <ul>
+            <li>Hinge at the hip</li>
+            <li>Back leg extends behind</li>
+            <li>Great for deadlift setup stability</li>
+            <li>Start light, progress slowly</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Step-Ups</h4>
+          <p><strong>Best for:</strong> Quad strength without back fatigue, starting strength</p>
+          <ul>
+            <li>Box height at or above knee</li>
+            <li>No push-off from back leg</li>
+            <li>Control the descent</li>
+            <li>Mimics squat out of the hole</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/2C-uNgKwPLE" title="Bulgarian Split Squat Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Squat University - Bulgarian Split Squat Technique</div>
+
+      <h3>Upper Body Exercises</h3>
+
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <h4>Single-Arm Dumbbell Press</h4>
+          <p><strong>Best for:</strong> Pressing strength, core anti-rotation, shoulder stability</p>
+          <ul>
+            <li>Keep hips and shoulders square</li>
+            <li>Core works hard to prevent rotation</li>
+            <li>Great for bench lockout work</li>
+            <li>Can do flat, incline, or overhead</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Single-Arm Dumbbell Row</h4>
+          <p><strong>Best for:</strong> Back strength, lat development, deadlift support</p>
+          <ul>
+            <li>Row to hip, not to chest</li>
+            <li>Full range of motion</li>
+            <li>Control the negative</li>
+            <li>Builds the back for heavy pulls</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Single-Arm Farmer's Carry</h4>
+          <p><strong>Best for:</strong> Core stability, grip strength, oblique work</p>
+          <ul>
+            <li>Stay tall, don't lean</li>
+            <li>Walk controlled steps</li>
+            <li>Great for trunk stability</li>
+            <li>Carryover to bracing under load</li>
+          </ul>
+        </div>
+
+        <div class="exercise-card">
+          <h4>Single-Arm Tricep Work</h4>
+          <p><strong>Best for:</strong> Lockout strength, elbow health</p>
+          <ul>
+            <li>Overhead extensions or pushdowns</li>
+            <li>Identify weak tricep</li>
+            <li>Address bench lockout issues</li>
+            <li>Lower injury risk than barbell</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Programming Unilateral Work</h2>
+
+      <p>The key to effective unilateral programming is integration—not replacement. These exercises supplement your main lifts, they don't replace them.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="35" text-anchor="middle" fill="#f97316" font-size="18" font-weight="bold">Unilateral Programming Hierarchy</text>
+
+          <!-- Pyramid structure -->
+          <!-- Top tier - Competition lifts -->
+          <polygon points="350,70 250,140 450,140" fill="#22c55e" stroke="#1a6b3d" stroke-width="2"/>
+          <text x="350" y="115" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">COMPETITION LIFTS</text>
+
+          <!-- Second tier - Main variations -->
+          <polygon points="250,145 170,215 530,215 450,145" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+          <text x="350" y="190" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">BILATERAL VARIATIONS</text>
+
+          <!-- Third tier - Unilateral work -->
+          <polygon points="170,220 100,290 600,290 530,220" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+          <text x="350" y="265" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">UNILATERAL ACCESSORIES</text>
+
+          <!-- Bottom tier - Isolation -->
+          <polygon points="100,295 50,365 650,365 600,295" fill="#8b5cf6" stroke="#6d28d9" stroke-width="2"/>
+          <text x="350" y="340" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">ISOLATION & PREHAB</text>
+
+          <!-- Side labels -->
+          <text x="50" y="115" fill="#22c55e" font-size="10" font-weight="bold">Highest</text>
+          <text x="50" y="130" fill="#22c55e" font-size="10">Priority</text>
+
+          <text x="50" y="340" fill="#8b5cf6" font-size="10" font-weight="bold">Support</text>
+          <text x="50" y="355" fill="#8b5cf6" font-size="10">Work</text>
+
+          <!-- Arrow -->
+          <path d="M30 130 L30 330" stroke="#808080" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+          <!-- Example exercises on right -->
+          <text x="660" y="115" text-anchor="end" fill="#b0b0b0" font-size="9">SBD</text>
+          <text x="660" y="190" text-anchor="end" fill="#b0b0b0" font-size="9">Pause squat, Close grip</text>
+          <text x="660" y="265" text-anchor="end" fill="#b0b0b0" font-size="9">Bulgarian, 1-arm row</text>
+          <text x="660" y="340" text-anchor="end" fill="#b0b0b0" font-size="9">Leg curl, tricep ext</text>
+
+          <!-- Volume indication -->
+          <rect x="480" y="370" width="200" height="22" fill="#12121a" rx="4"/>
+          <text x="580" y="386" text-anchor="middle" fill="#808080" font-size="10">Volume increases down the pyramid</text>
+
+          <defs>
+            <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#808080"/>
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Unilateral work fits in the third tier—important but never replacing main lifts</div>
+      </div>
+
+      <h3>Weak Side First Protocol</h3>
+
+      <p>Always start with your weaker side. This ensures it gets trained when you're freshest and sets the benchmark for your stronger side.</p>
+
+      <div class="protocol-box">
+        <h4>The Match Method</h4>
+        <ul>
+          <li>Start with your weaker side</li>
+          <li>Perform the set to completion (leave 1-2 RIR)</li>
+          <li>Match the reps exactly with your stronger side—don't do more</li>
+          <li>Over time, the weaker side catches up</li>
+        </ul>
+      </div>
+
+      <h3>Sets and Reps for Powerlifters</h3>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Exercise Type</th>
+            <th>Sets x Reps</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hypertrophy</td>
+            <td>Lower body unilateral</td>
+            <td>3-4 x 8-12</td>
+            <td>Build muscle on weaker side</td>
+          </tr>
+          <tr>
+            <td>Hypertrophy</td>
+            <td>Upper body unilateral</td>
+            <td>3-4 x 10-15</td>
+            <td>Higher reps for smaller muscles</td>
+          </tr>
+          <tr>
+            <td>Strength</td>
+            <td>Lower body unilateral</td>
+            <td>3-4 x 5-8</td>
+            <td>Heavier loads, quality reps</td>
+          </tr>
+          <tr>
+            <td>Strength</td>
+            <td>Upper body unilateral</td>
+            <td>3-4 x 6-10</td>
+            <td>Moderate loads, stability focus</td>
+          </tr>
+          <tr>
+            <td>Peaking</td>
+            <td>All unilateral</td>
+            <td>2-3 x 6-8</td>
+            <td>Maintenance only, reduce volume</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning-box">
+        <h4>Don't Go to Failure</h4>
+        <p>Unilateral exercises require more balance and coordination. Going to complete failure increases injury risk. Keep 1-2 reps in reserve, especially on exercises like Bulgarian split squats where balance is a factor.</p>
+      </div>
+
+      <h2>Sample Weekly Integration</h2>
+
+      <p>Here's how unilateral work might fit into a typical 4-day powerlifting split:</p>
+
+      <div class="highlight-box">
+        <h4>Day 1: Squat Focus</h4>
+        <ul>
+          <li>Competition Squat</li>
+          <li>Bulgarian Split Squat: 3x8 each leg</li>
+          <li>Single-Leg RDL: 3x10 each leg (light)</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Day 2: Bench Focus</h4>
+        <ul>
+          <li>Competition Bench</li>
+          <li>Single-Arm Dumbbell Press: 3x10 each arm</li>
+          <li>Single-Arm Row: 3x12 each arm</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Day 3: Deadlift Focus</h4>
+        <ul>
+          <li>Competition Deadlift</li>
+          <li>Step-Ups: 3x8 each leg</li>
+          <li>Single-Arm Farmer's Carry: 3x30m each arm</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Day 4: Volume/Accessory</h4>
+        <ul>
+          <li>Lighter main lift variations</li>
+          <li>Walking Lunges: 3x12 each leg</li>
+          <li>Single-Arm Cable Work: 3x15 each side</li>
+        </ul>
+      </div>
+
+      <h2>Tracking Progress</h2>
+
+      <p>Monitor your imbalances over time. Reassess every 8-12 weeks using the same tests, and adjust programming based on what you find.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Imbalance Correction Timeline</text>
+
+          <!-- Timeline bar -->
+          <rect x="50" y="120" width="600" height="8" fill="#3b3b5c" rx="4"/>
+
+          <!-- Progress fill -->
+          <rect x="50" y="120" width="450" height="8" fill="url(#progressGradient)" rx="4"/>
+
+          <!-- Week markers -->
+          <line x1="50" y1="110" x2="50" y2="140" stroke="#808080" stroke-width="2"/>
+          <text x="50" y="160" text-anchor="middle" fill="#808080" font-size="11">Week 0</text>
+          <text x="50" y="175" text-anchor="middle" fill="#ef4444" font-size="10">20% diff</text>
+
+          <line x1="200" y1="110" x2="200" y2="140" stroke="#808080" stroke-width="2"/>
+          <text x="200" y="160" text-anchor="middle" fill="#808080" font-size="11">Week 4</text>
+          <text x="200" y="175" text-anchor="middle" fill="#f97316" font-size="10">15% diff</text>
+
+          <line x1="350" y1="110" x2="350" y2="140" stroke="#808080" stroke-width="2"/>
+          <text x="350" y="160" text-anchor="middle" fill="#808080" font-size="11">Week 8</text>
+          <text x="350" y="175" text-anchor="middle" fill="#fbbf24" font-size="10">10% diff</text>
+
+          <line x1="500" y1="110" x2="500" y2="140" stroke="#808080" stroke-width="2"/>
+          <text x="500" y="160" text-anchor="middle" fill="#808080" font-size="11">Week 12</text>
+          <text x="500" y="175" text-anchor="middle" fill="#22c55e" font-size="10">5% diff</text>
+
+          <line x1="650" y1="110" x2="650" y2="140" stroke="#808080" stroke-width="2"/>
+          <text x="650" y="160" text-anchor="middle" fill="#808080" font-size="11">Week 16+</text>
+          <text x="650" y="175" text-anchor="middle" fill="#22c55e" font-size="10">Maintain</text>
+
+          <!-- Notes -->
+          <rect x="100" y="200" width="160" height="50" fill="rgba(249, 115, 22, 0.1)" rx="8"/>
+          <text x="180" y="220" text-anchor="middle" fill="#f97316" font-size="10" font-weight="bold">PRIORITY PHASE</text>
+          <text x="180" y="235" text-anchor="middle" fill="#b0b0b0" font-size="9">High unilateral volume</text>
+          <text x="180" y="248" text-anchor="middle" fill="#b0b0b0" font-size="9">Weak side emphasis</text>
+
+          <rect x="300" y="200" width="160" height="50" fill="rgba(251, 191, 36, 0.1)" rx="8"/>
+          <text x="380" y="220" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">PROGRESS PHASE</text>
+          <text x="380" y="235" text-anchor="middle" fill="#b0b0b0" font-size="9">Continue protocols</text>
+          <text x="380" y="248" text-anchor="middle" fill="#b0b0b0" font-size="9">Re-test at week 8</text>
+
+          <rect x="500" y="200" width="160" height="50" fill="rgba(34, 197, 94, 0.1)" rx="8"/>
+          <text x="580" y="220" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">MAINTENANCE</text>
+          <text x="580" y="235" text-anchor="middle" fill="#b0b0b0" font-size="9">Reduced volume</text>
+          <text x="580" y="248" text-anchor="middle" fill="#b0b0b0" font-size="9">Periodic re-testing</text>
+
+          <defs>
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#ef4444"/>
+              <stop offset="50%" style="stop-color:#fbbf24"/>
+              <stop offset="100%" style="stop-color:#22c55e"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Expect gradual improvement over 8-16 weeks with consistent unilateral training</div>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Assess first:</strong> Know where your imbalances are before programming</li>
+        <li><strong>Start weak side:</strong> Always train your weaker side first when fresh</li>
+        <li><strong>Match, don't exceed:</strong> Your stronger side only matches what your weaker side did</li>
+        <li><strong>Integrate, don't replace:</strong> Unilateral work supplements main lifts</li>
+        <li><strong>Be patient:</strong> Expect 8-16 weeks to see significant balance improvements</li>
+        <li><strong>Reassess regularly:</strong> Test every 8-12 weeks and adjust accordingly</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/train/accessory-selection" class="related-card">
+            <h4>Accessory Exercise Selection</h4>
+            <p>Choose accessories that address your weak points</p>
+          </a>
+          <a href="/train/video-analysis" class="related-card">
+            <h4>Video Analysis for Lifters</h4>
+            <p>Review your technique to spot asymmetries</p>
+          </a>
+          <a href="/science/leverages-proportions" class="related-card">
+            <h4>Leverages & Body Proportions</h4>
+            <p>Understand how your structure affects technique</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
