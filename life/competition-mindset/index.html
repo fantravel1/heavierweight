@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competition Mindset for Women Lifters - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f472b6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f472b6;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(244, 114, 182, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f472b6;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f472b6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f472b6;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(244, 114, 182, 0.05));
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f472b6;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .quote-box {
+      background: #12121a;
+      border-left: 4px solid #f472b6;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .quote-box p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .quote-box cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #808080;
+      font-style: normal;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .strategy-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .strategy-card h4 {
+      color: #f472b6;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .strategy-card p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f472b6;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f472b6;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/life">Life</a>
+          <span>/</span>
+          <span>Competition Mindset</span>
+        </div>
+        <h1><span>Competition Mindset</span> for Women Lifters</h1>
+        <div class="article-meta">
+          <span>14 min read</span>
+          <span>•</span>
+          <span>Mental Performance</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>The Mental Game</h2>
+
+      <p>Competition is where you prove what you've built in training. But the platform demands more than physical preparation—it requires mental readiness. The lifter who can harness nerves, focus under pressure, and execute when it counts is the one who performs to their potential.</p>
+
+      <p>For women in strength sports, this mental game often includes additional challenges: navigating male-dominated spaces, overcoming societal conditioning around "acceptable" female strength, and building confidence in an environment that may not have been designed with us in mind.</p>
+
+      <div class="quote-box">
+        <p>"The weight doesn't care who's lifting it. It only knows whether you're strong enough and ready enough."</p>
+      </div>
+
+      <h2>Understanding Competition Anxiety</h2>
+
+      <p>Nervousness before competition is normal—even beneficial. The stress response increases adrenaline, sharpens focus, and prepares your body for performance. The goal isn't to eliminate nerves; it's to channel them productively.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="320" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f472b6" font-size="16" font-weight="bold">Arousal-Performance Relationship</text>
+
+          <!-- Axes -->
+          <line x1="100" y1="250" x2="600" y2="250" stroke="#808080" stroke-width="2"/>
+          <line x1="100" y1="250" x2="100" y2="60" stroke="#808080" stroke-width="2"/>
+
+          <!-- Labels -->
+          <text x="350" y="290" text-anchor="middle" fill="#808080" font-size="11">AROUSAL / ACTIVATION</text>
+          <text x="50" y="155" fill="#808080" font-size="11" transform="rotate(-90 50 155)">PERFORMANCE</text>
+
+          <!-- Curve -->
+          <path d="M120 230 Q200 180 350 80 Q500 180 580 230" stroke="#f472b6" stroke-width="4" fill="none"/>
+
+          <!-- Zones -->
+          <!-- Too low -->
+          <rect x="120" y="180" width="100" height="60" fill="rgba(59, 130, 246, 0.2)" rx="5"/>
+          <text x="170" y="205" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="bold">Too Calm</text>
+          <text x="170" y="220" text-anchor="middle" fill="#808080" font-size="9">Flat, unfocused</text>
+          <text x="170" y="233" text-anchor="middle" fill="#808080" font-size="9">sluggish</text>
+
+          <!-- Optimal -->
+          <rect x="280" y="60" width="140" height="60" fill="rgba(34, 197, 94, 0.2)" rx="5"/>
+          <text x="350" y="85" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">OPTIMAL ZONE</text>
+          <text x="350" y="100" text-anchor="middle" fill="#808080" font-size="9">Alert, focused</text>
+          <text x="350" y="113" text-anchor="middle" fill="#808080" font-size="9">controlled intensity</text>
+
+          <!-- Too high -->
+          <rect x="480" y="180" width="100" height="60" fill="rgba(239, 68, 68, 0.2)" rx="5"/>
+          <text x="530" y="205" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">Too Wired</text>
+          <text x="530" y="220" text-anchor="middle" fill="#808080" font-size="9">Anxious, rushing</text>
+          <text x="530" y="233" text-anchor="middle" fill="#808080" font-size="9">losing technique</text>
+
+          <!-- Arrows and labels -->
+          <text x="150" y="270" text-anchor="middle" fill="#808080" font-size="10">Low</text>
+          <text x="350" y="270" text-anchor="middle" fill="#808080" font-size="10">Moderate</text>
+          <text x="550" y="270" text-anchor="middle" fill="#808080" font-size="10">High</text>
+        </svg>
+        <div class="diagram-caption">The inverted-U: Too little or too much arousal hurts performance—aim for the optimal zone</div>
+      </div>
+
+      <h3>Signs You're Under-Aroused</h3>
+      <ul>
+        <li>Feeling flat or disinterested</li>
+        <li>Sluggish movements in warm-ups</li>
+        <li>Difficulty getting focused</li>
+        <li>Going through the motions without intensity</li>
+      </ul>
+
+      <h3>Signs You're Over-Aroused</h3>
+      <ul>
+        <li>Racing thoughts, inability to focus</li>
+        <li>Rushing through setup</li>
+        <li>Feeling shaky or jittery</li>
+        <li>Losing technical precision</li>
+        <li>Feeling like you might throw up (beyond normal butterflies)</li>
+      </ul>
+
+      <h2>Pre-Competition Mental Strategies</h2>
+
+      <h3>The Week Before</h3>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>Visualization</h4>
+          <p>Spend 5-10 minutes daily visualizing successful lifts. See yourself walking to the bar, setting up perfectly, executing with power. Make it vivid—feel the bar, hear the crowd, sense your confidence.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Process Focus</h4>
+          <p>Shift focus from outcome (numbers, placement) to process (perfect setup, strong cues, controlled execution). You control your process; you don't control outcomes.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Routine Practice</h4>
+          <p>Practice your pre-lift routine until it's automatic. Same setup sequence, same cues, same timing. Routine creates consistency under pressure.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Reduce Unknowns</h4>
+          <p>Pack early, plan travel, know the venue if possible. Every unknown adds stress. Eliminate what you can control so you can focus on lifting.</p>
+        </div>
+      </div>
+
+      <h3>The Night Before</h3>
+
+      <div class="protocol-box">
+        <h4>Evening Protocol</h4>
+        <ul>
+          <li>Gear bag packed and checked twice</li>
+          <li>Alarm set with backup</li>
+          <li>Light dinner, plenty of water</li>
+          <li>Brief visualization session</li>
+          <li>No training videos or obsessive attempt planning</li>
+          <li>Relaxing activity: reading, light TV, stretching</li>
+          <li>Accept that sleep may be lighter—that's okay</li>
+        </ul>
+      </div>
+
+      <h2>Morning of Competition</h2>
+
+      <div class="highlight-box">
+        <h4>Morning Routine</h4>
+        <ul>
+          <li>Eat familiar foods—nothing new</li>
+          <li>Arrive with plenty of time (you want to wait, not rush)</li>
+          <li>Find your spot in the warm-up room</li>
+          <li>Light movement to feel your body</li>
+          <li>Minimize social media and phone scrolling</li>
+          <li>Stay in your bubble—friendly but focused</li>
+        </ul>
+      </div>
+
+      <h3>Managing Nerves in the Warm-Up Room</h3>
+
+      <p>The warm-up room is where nerves peak for many lifters. You're surrounded by strong athletes, the clock is ticking, and your session is approaching. Here's how to stay centered:</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f472b6" font-size="16" font-weight="bold">Grounding Technique: 5-4-3-2-1</text>
+
+          <!-- Central circle -->
+          <circle cx="350" cy="190" r="80" fill="none" stroke="#f472b6" stroke-width="3"/>
+          <text x="350" y="185" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">PRESENT</text>
+          <text x="350" y="205" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">MOMENT</text>
+
+          <!-- 5 things you see -->
+          <circle cx="150" cy="100" r="50" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
+          <text x="150" y="95" text-anchor="middle" fill="#3b82f6" font-size="24" font-weight="bold">5</text>
+          <text x="150" y="115" text-anchor="middle" fill="#808080" font-size="10">things you</text>
+          <text x="150" y="128" text-anchor="middle" fill="#808080" font-size="10">SEE</text>
+
+          <!-- 4 things you touch -->
+          <circle cx="550" cy="100" r="50" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="2"/>
+          <text x="550" y="95" text-anchor="middle" fill="#22c55e" font-size="24" font-weight="bold">4</text>
+          <text x="550" y="115" text-anchor="middle" fill="#808080" font-size="10">things you</text>
+          <text x="550" y="128" text-anchor="middle" fill="#808080" font-size="10">TOUCH</text>
+
+          <!-- 3 things you hear -->
+          <circle cx="150" cy="280" r="50" fill="rgba(251, 191, 36, 0.2)" stroke="#fbbf24" stroke-width="2"/>
+          <text x="150" y="275" text-anchor="middle" fill="#fbbf24" font-size="24" font-weight="bold">3</text>
+          <text x="150" y="295" text-anchor="middle" fill="#808080" font-size="10">things you</text>
+          <text x="150" y="308" text-anchor="middle" fill="#808080" font-size="10">HEAR</text>
+
+          <!-- 2 things you smell -->
+          <circle cx="550" cy="280" r="50" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="2"/>
+          <text x="550" y="275" text-anchor="middle" fill="#f97316" font-size="24" font-weight="bold">2</text>
+          <text x="550" y="295" text-anchor="middle" fill="#808080" font-size="10">things you</text>
+          <text x="550" y="308" text-anchor="middle" fill="#808080" font-size="10">SMELL</text>
+
+          <!-- 1 thing you taste -->
+          <circle cx="350" cy="320" r="30" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="2"/>
+          <text x="350" y="318" text-anchor="middle" fill="#ef4444" font-size="18" font-weight="bold">1</text>
+          <text x="350" y="355" text-anchor="middle" fill="#808080" font-size="10">TASTE</text>
+        </svg>
+        <div class="diagram-caption">When anxiety rises, use 5-4-3-2-1 grounding to return to the present moment</div>
+      </div>
+
+      <h2>On the Platform</h2>
+
+      <p>When your name is called, everything else fades. It's just you, the bar, and this moment. Here's how to perform when it counts:</p>
+
+      <h3>The Walk-Out</h3>
+
+      <div class="highlight-box">
+        <h4>Approach Mindset</h4>
+        <ul>
+          <li>Deep breath before stepping to the bar</li>
+          <li>Walk with purpose—you belong here</li>
+          <li>Focus on your first cue (grip, foot position, whatever starts your routine)</li>
+          <li>Block out everything except your setup</li>
+          <li>Trust your training—this is what you've prepared for</li>
+        </ul>
+      </div>
+
+      <h3>Cue Words</h3>
+
+      <p>Have 1-3 simple cue words that trigger focus and proper technique. These should be practiced so often they're automatic:</p>
+
+      <ul>
+        <li><strong>"Tight"</strong> — for bracing and setup</li>
+        <li><strong>"Drive"</strong> — for explosive power</li>
+        <li><strong>"Smooth"</strong> — for controlled technique</li>
+        <li><strong>"Own it"</strong> — for confidence</li>
+      </ul>
+
+      <h3>Between Attempts</h3>
+
+      <div class="protocol-box">
+        <h4>Reset Protocol</h4>
+        <ul>
+          <li>Leave the platform and find your spot</li>
+          <li>Quick physical reset: shake it out, roll neck, deep breath</li>
+          <li>Mental reset: that lift is done, focus on the next</li>
+          <li>Stay warm but don't overthink</li>
+          <li>Brief handler check-in for feedback if needed</li>
+          <li>Return to your routine for the next lift</li>
+        </ul>
+      </div>
+
+      <h2>Dealing with Missed Lifts</h2>
+
+      <p>Misses happen. How you respond determines whether you spiral or recover. A missed lift is information, not identity.</p>
+
+      <div class="warning-box">
+        <h4>What NOT to Do After a Miss</h4>
+        <ul>
+          <li>Don't catastrophize ("my meet is ruined")</li>
+          <li>Don't replay the miss over and over</li>
+          <li>Don't apologize or make excuses to everyone around you</li>
+          <li>Don't change your entire game plan in panic</li>
+        </ul>
+      </div>
+
+      <div class="protocol-box">
+        <h4>What TO Do After a Miss</h4>
+        <ul>
+          <li>Accept it happened—can't change it</li>
+          <li>Quick analysis: what went wrong? One thing.</li>
+          <li>Decide on correction for next attempt</li>
+          <li>Physical reset: shake it off, breathe</li>
+          <li>Mental reset: next lift is a new opportunity</li>
+          <li>Trust your handler's guidance on attempt selection</li>
+        </ul>
+      </div>
+
+      <h2>Women-Specific Considerations</h2>
+
+      <p>Women in strength sports navigate unique challenges. Acknowledging them helps you prepare:</p>
+
+      <h3>Confidence in Male-Dominated Spaces</h3>
+
+      <p>Many meets still skew heavily male. You may be one of few women in the warm-up room, or the only one in your flight. This can trigger imposter syndrome or self-consciousness. Remember:</p>
+
+      <ul>
+        <li>You earned your spot through training—you belong there</li>
+        <li>Strength doesn't care about gender</li>
+        <li>Every woman who competes makes it easier for the next</li>
+        <li>Focus on your lifts, not on what others might think</li>
+      </ul>
+
+      <h3>Body Image and the Platform</h3>
+
+      <p>Competition singlets leave little hidden. For many women, this is challenging. Reframe it:</p>
+
+      <div class="quote-box">
+        <p>"This body carries weight others can only imagine. It doesn't exist to be looked at—it exists to perform."</p>
+      </div>
+
+      <h3>Menstrual Cycle Considerations</h3>
+
+      <p>Competition doesn't schedule around your cycle. Track your patterns, know how you typically feel in different phases, and adjust expectations if needed—but don't use it as an excuse before you've even tried.</p>
+
+      <h2>Building Long-Term Mental Toughness</h2>
+
+      <p>Competition mindset isn't just for meet day. It's built through deliberate practice over time:</p>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>Train Your Routine</h4>
+          <p>Use your pre-lift routine in training, especially on heavy days. Make it so ingrained that it happens automatically under pressure.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Practice Pressure</h4>
+          <p>Create pressure in training: mock meets, invited lifters to watch, timer-based warm-ups. Inoculate yourself to stress.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Compete Often</h4>
+          <p>The more you compete, the more comfortable you become. First meets are hardest. By your fifth, the platform feels like home.</p>
+        </div>
+
+        <div class="strategy-card">
+          <h4>Post-Competition Review</h4>
+          <p>After each meet, review what worked mentally and what didn't. Write it down. Build on successes, address weaknesses.</p>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/yN6Q7neGlVc" title="Competition Mindset for Powerlifters" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Juggernaut Training Systems - Competition Mental Preparation</div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Nerves are normal:</strong> Channel them, don't fight them</li>
+        <li><strong>Process over outcome:</strong> Control what you can control</li>
+        <li><strong>Routine creates consistency:</strong> Practice your pre-lift ritual until it's automatic</li>
+        <li><strong>Stay present:</strong> This lift, this moment—nothing else matters</li>
+        <li><strong>Recover from misses:</strong> Accept, analyze, adjust, move on</li>
+        <li><strong>You belong here:</strong> Your training earned your spot on the platform</li>
+        <li><strong>Build over time:</strong> Mental skills improve with practice just like physical skills</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/train/mental-cues" class="related-card">
+            <h4>Mental Cues & Focus</h4>
+            <p>Develop effective cue words for each lift</p>
+          </a>
+          <a href="/compete/meet-day-timeline" class="related-card">
+            <h4>Meet Day Timeline</h4>
+            <p>Plan every aspect of competition day</p>
+          </a>
+          <a href="/compete/attempt-selection" class="related-card">
+            <h4>Attempt Selection</h4>
+            <p>Strategic planning for your nine attempts</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
