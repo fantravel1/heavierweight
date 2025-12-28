@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Analysis Guide for Powerlifting - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #f97316; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(249, 115, 22, 0.2);
+      color: #f97316;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #f97316;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .checklist-card {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .checklist-card h4 {
+      color: #f97316;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .checklist-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checklist-card li {
+      padding-left: 1.25rem;
+      position: relative;
+      color: #d1d5db;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .checklist-card li::before {
+      content: "□";
+      position: absolute;
+      left: 0;
+      color: #f97316;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.1));
+      border-left: 4px solid #f97316;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #f97316;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train/">Train</a>
+          <span>/</span>
+          <span>Video Analysis</span>
+        </div>
+        <div class="category-badge">Train</div>
+        <h1>Video Analysis Guide</h1>
+        <p class="subtitle">Learn to film, review, and improve your lifts using video as your most honest coach.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>Video doesn't lie. What feels right often looks wrong, and what feels wrong sometimes looks perfect. Regular video review is the fastest way to identify technique issues and track improvement over time.</p>
+
+      <h2>Optimal Camera Angles</h2>
+
+      <p>Different angles reveal different information. For complete analysis, you need at least two angles per lift.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+          <text x="350" y="35" fill="#f97316" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">CAMERA ANGLE SETUP</text>
+
+          <!-- Top-down view of platform -->
+          <g transform="translate(100, 70)">
+            <text x="200" y="20" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle">TOP-DOWN VIEW</text>
+
+            <!-- Platform rectangle -->
+            <rect x="100" y="80" width="200" height="100" rx="4" fill="none" stroke="#3f3f46" stroke-width="2"/>
+            <text x="200" y="140" fill="#3f3f46" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">PLATFORM</text>
+
+            <!-- Lifter position (center) -->
+            <circle cx="200" cy="130" r="15" fill="rgba(249, 115, 22, 0.3)" stroke="#f97316" stroke-width="2"/>
+            <text x="200" y="135" fill="#f97316" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">YOU</text>
+
+            <!-- Barbell -->
+            <line x1="120" y1="130" x2="280" y2="130" stroke="#a1a1aa" stroke-width="4"/>
+
+            <!-- Side angle camera -->
+            <g transform="translate(0, 110)">
+              <rect x="0" y="0" width="30" height="25" rx="4" fill="#22c55e"/>
+              <circle cx="15" cy="12" r="6" fill="#1a1a2e"/>
+              <line x1="30" y1="12" x2="100" y2="20" stroke="#22c55e" stroke-width="1" stroke-dasharray="4"/>
+            </g>
+            <text x="15" y="165" fill="#22c55e" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">SIDE</text>
+
+            <!-- Back angle camera -->
+            <g transform="translate(185, 200)">
+              <rect x="0" y="0" width="30" height="25" rx="4" fill="#a855f7"/>
+              <circle cx="15" cy="12" r="6" fill="#1a1a2e"/>
+              <line x1="15" y1="0" x2="15" y2="-65" stroke="#a855f7" stroke-width="1" stroke-dasharray="4"/>
+            </g>
+            <text x="200" y="250" fill="#a855f7" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">BACK</text>
+
+            <!-- 45-degree angle camera -->
+            <g transform="translate(320, 180)">
+              <rect x="0" y="0" width="30" height="25" rx="4" fill="#00d9ff"/>
+              <circle cx="15" cy="12" r="6" fill="#1a1a2e"/>
+              <line x1="0" y1="12" x2="-85" y2="-40" stroke="#00d9ff" stroke-width="1" stroke-dasharray="4"/>
+            </g>
+            <text x="335" y="225" fill="#00d9ff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">45°</text>
+          </g>
+
+          <!-- What each angle shows -->
+          <g transform="translate(50, 290)">
+            <rect x="0" y="0" width="180" height="80" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="90" y="22" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">SIDE VIEW SHOWS</text>
+            <text x="15" y="42" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Bar path (vertical line)</text>
+            <text x="15" y="56" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Forward lean / hip rise</text>
+            <text x="15" y="70" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Depth (squat)</text>
+          </g>
+
+          <g transform="translate(250, 290)">
+            <rect x="0" y="0" width="180" height="80" rx="8" fill="rgba(168, 85, 247, 0.1)" stroke="#a855f7" stroke-width="1"/>
+            <text x="90" y="22" fill="#a855f7" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">BACK VIEW SHOWS</text>
+            <text x="15" y="42" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Knee cave / valgus</text>
+            <text x="15" y="56" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Bar tilt / lean</text>
+            <text x="15" y="70" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Hip shift</text>
+          </g>
+
+          <g transform="translate(450, 290)">
+            <rect x="0" y="0" width="180" height="80" rx="8" fill="rgba(0, 217, 255, 0.1)" stroke="#00d9ff" stroke-width="1"/>
+            <text x="90" y="22" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">45° VIEW SHOWS</text>
+            <text x="15" y="42" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Combination of both</text>
+            <text x="15" y="56" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Good for overall form</text>
+            <text x="15" y="70" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9">• Less precise for details</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Set phone at hip height, perpendicular to your movement. Side view is most important.</div>
+      </div>
+
+      <h2>Recommended Angles by Lift</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="250" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">BEST ANGLES FOR EACH LIFT</text>
+
+          <!-- Squat -->
+          <g transform="translate(50, 55)">
+            <rect x="0" y="0" width="180" height="170" rx="10" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="90" y="28" fill="#f97316" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">SQUAT</text>
+
+            <text x="20" y="55" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" font-weight="600">PRIMARY: Side</text>
+            <text x="20" y="75" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Depth check</text>
+            <text x="20" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Bar path over midfoot</text>
+            <text x="20" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Forward lean angle</text>
+
+            <text x="20" y="130" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">SECONDARY: Back</text>
+            <text x="20" y="150" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Knee tracking</text>
+            <text x="20" y="165" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Hip shift, bar tilt</text>
+          </g>
+
+          <!-- Bench -->
+          <g transform="translate(260, 55)">
+            <rect x="0" y="0" width="180" height="170" rx="10" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="90" y="28" fill="#f97316" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">BENCH</text>
+
+            <text x="20" y="55" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" font-weight="600">PRIMARY: Side</text>
+            <text x="20" y="75" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Bar path (J-curve)</text>
+            <text x="20" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Touch point</text>
+            <text x="20" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Arch maintenance</text>
+
+            <text x="20" y="130" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">SECONDARY: Head-on</text>
+            <text x="20" y="150" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Elbow angle at bottom</text>
+            <text x="20" y="165" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Even pressing</text>
+          </g>
+
+          <!-- Deadlift -->
+          <g transform="translate(470, 55)">
+            <rect x="0" y="0" width="180" height="170" rx="10" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="90" y="28" fill="#f97316" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">DEADLIFT</text>
+
+            <text x="20" y="55" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" font-weight="600">PRIMARY: Side</text>
+            <text x="20" y="75" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Bar path (straight line)</text>
+            <text x="20" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Back angle / rounding</text>
+            <text x="20" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Hip/shoulder rise sync</text>
+
+            <text x="20" y="130" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">SECONDARY: Front</text>
+            <text x="20" y="150" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Sumo knee tracking</text>
+            <text x="20" y="165" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9">• Lat engagement</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Side view is primary for all three lifts—start there if you can only film one angle</div>
+      </div>
+
+      <h2>What to Look For</h2>
+
+      <h3>Squat Analysis Checklist</h3>
+
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h4>Side View</h4>
+          <ul>
+            <li>Bar stays over midfoot throughout</li>
+            <li>Hip crease below knee (depth)</li>
+            <li>Chest and hips rise together</li>
+            <li>No excessive forward lean</li>
+            <li>Knees track forward, not excessive</li>
+          </ul>
+        </div>
+        <div class="checklist-card">
+          <h4>Back View</h4>
+          <ul>
+            <li>Knees track over toes</li>
+            <li>No knee cave (valgus)</li>
+            <li>Bar stays level, no tilt</li>
+            <li>Hips don't shift left/right</li>
+            <li>Equal drive from both legs</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Bench Analysis Checklist</h3>
+
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h4>Side View</h4>
+          <ul>
+            <li>Bar path shows J-curve back</li>
+            <li>Touch point at lower chest</li>
+            <li>Lockout over shoulders</li>
+            <li>Arch maintained throughout</li>
+            <li>Feet stay planted</li>
+          </ul>
+        </div>
+        <div class="checklist-card">
+          <h4>Head-On View</h4>
+          <ul>
+            <li>Elbows at ~45-75° at bottom</li>
+            <li>Bar touches evenly</li>
+            <li>Both sides press equally</li>
+            <li>Wrists stacked over elbows</li>
+            <li>No excessive elbow flare</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Deadlift Analysis Checklist</h3>
+
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h4>Side View</h4>
+          <ul>
+            <li>Bar path straight vertical</li>
+            <li>Bar stays close to body</li>
+            <li>Hips and shoulders rise together</li>
+            <li>No excessive back rounding</li>
+            <li>Lockout with hips, not hyperextend</li>
+          </ul>
+        </div>
+        <div class="checklist-card">
+          <h4>Front View (Sumo)</h4>
+          <ul>
+            <li>Knees track over toes</li>
+            <li>No knee cave at break</li>
+            <li>Torso stays upright</li>
+            <li>Shoulders stay over bar</li>
+            <li>Even pressure both legs</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Analysis Tools and Apps</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="200" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#f97316" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">USEFUL VIDEO ANALYSIS FEATURES</text>
+
+          <g transform="translate(50, 55)">
+            <rect x="0" y="0" width="140" height="120" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="70" y="25" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">SLOW MOTION</text>
+            <text x="70" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">See details invisible</text>
+            <text x="70" y="65" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">at full speed</text>
+            <text x="70" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Built into most</text>
+            <text x="70" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">phone cameras</text>
+          </g>
+
+          <g transform="translate(210, 55)">
+            <rect x="0" y="0" width="140" height="120" rx="8" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="70" y="25" fill="#f97316" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">BAR PATH TRACING</text>
+            <text x="70" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Visualize bar</text>
+            <text x="70" y="65" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">trajectory</text>
+            <text x="70" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Apps: Iron Path,</text>
+            <text x="70" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">WL Analysis</text>
+          </g>
+
+          <g transform="translate(370, 55)">
+            <rect x="0" y="0" width="140" height="120" rx="8" fill="rgba(139, 92, 246, 0.1)" stroke="#a855f7" stroke-width="1"/>
+            <text x="70" y="25" fill="#a855f7" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">SIDE-BY-SIDE</text>
+            <text x="70" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Compare reps or</text>
+            <text x="70" y="65" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">sessions</text>
+            <text x="70" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Most video editors</text>
+            <text x="70" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">support this</text>
+          </g>
+
+          <g transform="translate(530, 55)">
+            <rect x="0" y="0" width="140" height="120" rx="8" fill="rgba(0, 217, 255, 0.1)" stroke="#00d9ff" stroke-width="1"/>
+            <text x="70" y="25" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">DRAW ON VIDEO</text>
+            <text x="70" y="50" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Add lines, angles,</text>
+            <text x="70" y="65" fill="#d1d5db" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">annotations</text>
+            <text x="70" y="90" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Apps: Coach's Eye,</text>
+            <text x="70" y="105" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Hudl Technique</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Even basic phone slow-mo is valuable—fancy apps are optional</div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/V4rH9IFPDLE" title="How to Film and Review Your Lifts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Self-coaching through video</div>
+
+      <div class="tip-box">
+        <h4>Building a Video Library</h4>
+        <p>Save videos of your best sets at various weights. When something feels off, compare current video to your best technique. This is more useful than comparing to elite lifters with different proportions. Your best you is the benchmark.</p>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li>Side view is the most important angle for all three lifts</li>
+        <li>Film at hip height, perpendicular to your movement direction</li>
+        <li>Use slow-motion to catch details invisible at full speed</li>
+        <li>Compare yourself to your best lifts, not just to others</li>
+        <li>Look for the same issues repeatedly—patterns reveal weaknesses</li>
+        <li>Save good reps to build a reference library of your best technique</li>
+      </ul>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/train/barbell-path/" class="related-card">
+          <h4>Barbell Path Analysis</h4>
+          <p>What optimal bar path looks like</p>
+        </a>
+        <a href="/train/common-mistakes/" class="related-card">
+          <h4>Common Mistakes</h4>
+          <p>What to watch for in video</p>
+        </a>
+        <a href="/train/mental-cues/" class="related-card">
+          <h4>Mental Cues</h4>
+          <p>Fix what you see with cues</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>
