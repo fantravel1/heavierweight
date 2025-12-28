@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Safe Bench Press Arch - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f97316;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .step-list {
+      counter-reset: step;
+      margin: 2rem 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: #12121a;
+      border-radius: 12px;
+      border-left: 4px solid #f97316;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0a0a0f;
+    }
+
+    .step-content h4 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-content p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #f97316;
+      border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .step-item { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train">Train</a>
+          <span>/</span>
+          <span>Bench Arch</span>
+        </div>
+        <h1>Building a Safe <span>Bench Press Arch</span></h1>
+        <div class="article-meta">
+          <span>12 min read</span>
+          <span>•</span>
+          <span>Technique</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>Why Arch?</h2>
+
+      <p>A proper bench press arch shortens the range of motion, places your shoulders in a safer position, and allows you to use leg drive effectively. It's not cheating—it's optimal technique for powerlifting. However, building a good arch takes time, mobility work, and practice.</p>
+
+      <p>The goal isn't to arch as extremely as possible. The goal is to create a stable, powerful position that you can maintain throughout your set while keeping your shoulders healthy.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Flat Back vs. Arched Bench Position</text>
+
+          <!-- Bench base (left) -->
+          <rect x="80" y="220" width="200" height="20" fill="#3b3b5c" rx="3"/>
+          <text x="180" y="260" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">FLAT BACK</text>
+
+          <!-- Flat back figure -->
+          <ellipse cx="180" cy="195" rx="60" ry="12" fill="#ef4444" opacity="0.3"/>
+          <line x1="120" y1="195" x2="240" y2="195" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+          <!-- Head -->
+          <circle cx="110" cy="195" r="15" fill="#ef4444" opacity="0.5"/>
+          <!-- Arm up -->
+          <line x1="160" y1="195" x2="160" y2="130" stroke="#ef4444" stroke-width="3"/>
+          <line x1="200" y1="195" x2="200" y2="130" stroke="#ef4444" stroke-width="3"/>
+          <!-- Bar -->
+          <rect x="140" y="120" width="80" height="8" fill="#808080" rx="4"/>
+
+          <!-- ROM indicator (left) -->
+          <line x1="280" y1="130" x2="280" y2="195" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="295" y="165" fill="#ef4444" font-size="10">65mm ROM</text>
+
+          <!-- Bench base (right) -->
+          <rect x="420" y="220" width="200" height="20" fill="#3b3b5c" rx="3"/>
+          <text x="520" y="260" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="bold">ARCHED</text>
+
+          <!-- Arched figure - curved back -->
+          <path d="M450 210 Q520 150 590 210" stroke="#22c55e" stroke-width="4" fill="none"/>
+          <!-- Chest at peak of arch -->
+          <ellipse cx="520" cy="160" rx="25" ry="15" fill="#22c55e" opacity="0.3"/>
+          <!-- Head -->
+          <circle cx="445" cy="215" r="15" fill="#22c55e" opacity="0.5"/>
+          <!-- Arm up (shorter due to reduced ROM) -->
+          <line x1="505" y1="155" x2="505" y2="120" stroke="#22c55e" stroke-width="3"/>
+          <line x1="535" y1="155" x2="535" y2="120" stroke="#22c55e" stroke-width="3"/>
+          <!-- Bar -->
+          <rect x="485" y="112" width="70" height="8" fill="#808080" rx="4"/>
+
+          <!-- ROM indicator (right) -->
+          <line x1="400" y1="120" x2="400" y2="160" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="370" y="145" fill="#22c55e" font-size="10">40mm</text>
+
+          <!-- Benefits callouts -->
+          <rect x="420" y="280" width="200" height="60" fill="rgba(34, 197, 94, 0.1)" rx="8"/>
+          <text x="520" y="300" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">Benefits:</text>
+          <text x="520" y="318" text-anchor="middle" fill="#b0b0b0" font-size="9">• Shorter ROM = more weight</text>
+          <text x="520" y="333" text-anchor="middle" fill="#b0b0b0" font-size="9">• Safer shoulder position</text>
+
+          <!-- Issues callouts -->
+          <rect x="80" y="280" width="200" height="60" fill="rgba(239, 68, 68, 0.1)" rx="8"/>
+          <text x="180" y="300" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">Issues:</text>
+          <text x="180" y="318" text-anchor="middle" fill="#b0b0b0" font-size="9">• Longer ROM = less weight</text>
+          <text x="180" y="333" text-anchor="middle" fill="#b0b0b0" font-size="9">• More shoulder stress</text>
+        </svg>
+        <div class="diagram-caption">An arch reduces range of motion and puts your shoulders in a more favorable position</div>
+      </div>
+
+      <h2>Anatomy of a Good Arch</h2>
+
+      <p>A powerlifting arch isn't just "bending backward." It involves multiple contact points, specific muscle engagement, and structural support.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Key Contact Points for the Bench Arch</text>
+
+          <!-- Bench -->
+          <rect x="150" y="250" width="400" height="25" fill="#3b3b5c" rx="5"/>
+
+          <!-- Arched figure -->
+          <path d="M180 250 Q350 120 520 250" stroke="#f97316" stroke-width="6" fill="none"/>
+
+          <!-- Head contact -->
+          <circle cx="180" cy="255" r="20" fill="#22c55e" opacity="0.7"/>
+          <line x1="180" y1="235" x2="180" y2="150" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+          <rect x="120" y="100" width="120" height="50" fill="#12121a" rx="8" stroke="#22c55e"/>
+          <text x="180" y="120" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">HEAD</text>
+          <text x="180" y="138" text-anchor="middle" fill="#b0b0b0" font-size="9">Back of head on bench</text>
+
+          <!-- Upper back contact -->
+          <ellipse cx="280" cy="180" rx="40" ry="20" fill="#3b82f6" opacity="0.5"/>
+          <line x1="280" y1="200" x2="280" y2="80" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5"/>
+          <rect x="220" y="40" width="120" height="40" fill="#12121a" rx="8" stroke="#3b82f6"/>
+          <text x="280" y="58" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="bold">UPPER BACK</text>
+          <text x="280" y="72" text-anchor="middle" fill="#b0b0b0" font-size="9">Traps pinched tight</text>
+
+          <!-- Chest peak -->
+          <circle cx="350" cy="140" r="15" fill="#f97316"/>
+          <line x1="350" y1="155" x2="350" y2="290" stroke="#f97316" stroke-width="2" stroke-dasharray="5,5"/>
+          <rect x="300" y="295" width="100" height="40" fill="#12121a" rx="8" stroke="#f97316"/>
+          <text x="350" y="313" text-anchor="middle" fill="#f97316" font-size="11" font-weight="bold">CHEST</text>
+          <text x="350" y="327" text-anchor="middle" fill="#b0b0b0" font-size="9">Highest point</text>
+
+          <!-- Glute contact -->
+          <ellipse cx="450" cy="210" rx="35" ry="20" fill="#a855f7" opacity="0.5"/>
+          <line x1="450" y1="230" x2="450" y2="80" stroke="#a855f7" stroke-width="2" stroke-dasharray="5,5"/>
+          <rect x="390" y="40" width="120" height="40" fill="#12121a" rx="8" stroke="#a855f7"/>
+          <text x="450" y="58" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="bold">GLUTES</text>
+          <text x="450" y="72" text-anchor="middle" fill="#b0b0b0" font-size="9">Stay on bench!</text>
+
+          <!-- Feet -->
+          <rect x="520" y="300" width="30" height="50" fill="#fbbf24" opacity="0.7" rx="5"/>
+          <line x1="535" y1="300" x2="535" y2="200" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+          <rect x="490" y="160" width="90" height="40" fill="#12121a" rx="8" stroke="#fbbf24"/>
+          <text x="535" y="178" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">FEET</text>
+          <text x="535" y="192" text-anchor="middle" fill="#b0b0b0" font-size="9">Drive into floor</text>
+
+          <!-- Floor -->
+          <rect x="500" y="350" width="80" height="10" fill="#3b3b5c" rx="2"/>
+
+          <!-- Leg position -->
+          <line x1="470" y1="250" x2="535" y2="350" stroke="#808080" stroke-width="4"/>
+        </svg>
+        <div class="diagram-caption">Five critical contact points: head, upper back, glutes, and both feet</div>
+      </div>
+
+      <h3>The Contact Points</h3>
+
+      <div class="highlight-box">
+        <h4>1. Head</h4>
+        <p>The back of your head stays on the bench throughout the lift. Some federations require this; all federations allow it. Lifting your head breaks stability and is a common red light.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>2. Upper Back/Traps</h4>
+        <p>This is your primary base. Squeeze your shoulder blades together and down ("in your back pockets"). Your upper traps should be in firm contact with the bench, supporting most of your upper body weight.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>3. Glutes</h4>
+        <p>Your butt must stay on the bench in all federations. This is non-negotiable. The arch happens through your thoracic spine, not by lifting your hips. If your glutes come up, it's a red light and the lift doesn't count.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>4. Feet</h4>
+        <p>Feet position varies by federation (flat vs. heels up), but they should be driving into the floor throughout the lift. Your feet are the start of leg drive, which transfers force through your body to the bar.</p>
+      </div>
+
+      <h2>Building Arch Mobility</h2>
+
+      <p>Most people lack the thoracic spine mobility for a good arch. This takes consistent mobility work over weeks and months. Don't force it—build it gradually.</p>
+
+      <h3>Essential Mobility Drills</h3>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Foam Roller Thoracic Extension</h4>
+            <p>Place a foam roller perpendicular to your spine at mid-back. Support your head with your hands. Extend over the roller, opening your chest toward the ceiling. Move the roller up and down your thoracic spine. 2-3 minutes daily.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Bench T-Spine Extension</h4>
+            <p>Kneel in front of a bench with your elbows on the pad, hands together in prayer position. Sink your chest toward the floor while keeping your elbows on the bench. Hold 30-60 seconds, repeat 2-3 times.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Cat-Cow with Emphasis on Extension</h4>
+            <p>Standard cat-cow, but spend more time in the "cow" (extension) position. Focus on extending through your upper back, not just your lower back. 10-15 reps, focusing on the extension phase.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Supine Arch Practice</h4>
+            <p>Lie on the floor with knees bent. Practice arching your upper back while keeping your glutes and head on the ground. This mimics the bench position without load. Hold for time, building duration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/GmiHT0Hsyn8" title="Building a Bench Arch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - How to Arch for Bench Press</div>
+
+      <h2>Setting Up Your Arch</h2>
+
+      <p>A consistent setup routine ensures you hit the same positions every time. Here's a step-by-step process:</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="500" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Arch Setup Sequence</text>
+
+          <!-- Step 1 -->
+          <rect x="50" y="55" width="180" height="130" fill="#12121a" rx="10" stroke="#3b82f6" stroke-width="2"/>
+          <circle cx="75" cy="80" r="15" fill="#3b82f6"/>
+          <text x="75" y="85" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">1</text>
+          <text x="140" y="85" fill="#ffffff" font-size="12" font-weight="bold">Lie Back</text>
+          <text x="60" y="110" fill="#b0b0b0" font-size="10">Position eyes under bar</text>
+          <text x="60" y="125" fill="#b0b0b0" font-size="10">Feet flat on floor</text>
+          <text x="60" y="140" fill="#b0b0b0" font-size="10">Shoulders relaxed</text>
+          <!-- Simple figure -->
+          <line x1="100" y1="155" x2="180" y2="155" stroke="#808080" stroke-width="3"/>
+          <circle cx="95" cy="155" r="8" fill="#808080"/>
+
+          <!-- Step 2 -->
+          <rect x="260" y="55" width="180" height="130" fill="#12121a" rx="10" stroke="#22c55e" stroke-width="2"/>
+          <circle cx="285" cy="80" r="15" fill="#22c55e"/>
+          <text x="285" y="85" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">2</text>
+          <text x="350" y="85" fill="#ffffff" font-size="12" font-weight="bold">Retract Scaps</text>
+          <text x="270" y="110" fill="#b0b0b0" font-size="10">Squeeze shoulder blades</text>
+          <text x="270" y="125" fill="#b0b0b0" font-size="10">together and DOWN</text>
+          <text x="270" y="140" fill="#b0b0b0" font-size="10">"Into back pockets"</text>
+          <!-- Figure with retraction arrows -->
+          <line x1="310" y1="160" x2="390" y2="160" stroke="#808080" stroke-width="3"/>
+          <path d="M340 155 L350 160 L340 165" stroke="#22c55e" stroke-width="2" fill="none"/>
+          <path d="M360 155 L350 160 L360 165" stroke="#22c55e" stroke-width="2" fill="none"/>
+
+          <!-- Step 3 -->
+          <rect x="470" y="55" width="180" height="130" fill="#12121a" rx="10" stroke="#fbbf24" stroke-width="2"/>
+          <circle cx="495" cy="80" r="15" fill="#fbbf24"/>
+          <text x="495" y="85" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">3</text>
+          <text x="560" y="85" fill="#ffffff" font-size="12" font-weight="bold">Bridge Up</text>
+          <text x="480" y="110" fill="#b0b0b0" font-size="10">Push hips high off bench</text>
+          <text x="480" y="125" fill="#b0b0b0" font-size="10">Drive shoulders into pad</text>
+          <text x="480" y="140" fill="#b0b0b0" font-size="10">Walk feet toward head</text>
+          <!-- Bridged figure -->
+          <path d="M510 170 Q560 140 610 170" stroke="#808080" stroke-width="3" fill="none"/>
+          <circle cx="505" cy="170" r="8" fill="#808080"/>
+
+          <!-- Step 4 -->
+          <rect x="50" y="210" width="180" height="130" fill="#12121a" rx="10" stroke="#f97316" stroke-width="2"/>
+          <circle cx="75" cy="235" r="15" fill="#f97316"/>
+          <text x="75" y="240" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">4</text>
+          <text x="140" y="240" fill="#ffffff" font-size="12" font-weight="bold">Drop Glutes</text>
+          <text x="60" y="265" fill="#b0b0b0" font-size="10">Lower hips to bench</text>
+          <text x="60" y="280" fill="#b0b0b0" font-size="10">Keep upper back set</text>
+          <text x="60" y="295" fill="#b0b0b0" font-size="10">Maintain arch height</text>
+          <!-- Arched figure with glutes down -->
+          <path d="M90 325 Q140 290 190 320" stroke="#808080" stroke-width="3" fill="none"/>
+          <ellipse cx="185" cy="320" rx="12" ry="8" fill="#a855f7" opacity="0.5"/>
+          <circle cx="85" cy="325" r="8" fill="#808080"/>
+
+          <!-- Step 5 -->
+          <rect x="260" y="210" width="180" height="130" fill="#12121a" rx="10" stroke="#a855f7" stroke-width="2"/>
+          <circle cx="285" cy="235" r="15" fill="#a855f7"/>
+          <text x="285" y="240" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">5</text>
+          <text x="350" y="240" fill="#ffffff" font-size="12" font-weight="bold">Set Feet</text>
+          <text x="270" y="265" fill="#b0b0b0" font-size="10">Position feet for leg drive</text>
+          <text x="270" y="280" fill="#b0b0b0" font-size="10">Flat or heels up (rules)</text>
+          <text x="270" y="295" fill="#b0b0b0" font-size="10">Weight through feet</text>
+          <!-- Feet indicator -->
+          <rect x="360" y="310" width="25" height="30" fill="#a855f7" opacity="0.5" rx="3"/>
+          <rect x="395" y="310" width="25" height="30" fill="#a855f7" opacity="0.5" rx="3"/>
+
+          <!-- Step 6 -->
+          <rect x="470" y="210" width="180" height="130" fill="#12121a" rx="10" stroke="#ef4444" stroke-width="2"/>
+          <circle cx="495" cy="235" r="15" fill="#ef4444"/>
+          <text x="495" y="240" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">6</text>
+          <text x="560" y="240" fill="#ffffff" font-size="12" font-weight="bold">Grip & Unrack</text>
+          <text x="480" y="265" fill="#b0b0b0" font-size="10">Take your grip width</text>
+          <text x="480" y="280" fill="#b0b0b0" font-size="10">Maintain position</text>
+          <text x="480" y="295" fill="#b0b0b0" font-size="10">Unrack with help</text>
+          <!-- Bar in hands -->
+          <rect x="500" y="310" width="120" height="8" fill="#808080" rx="4"/>
+          <line x1="530" y1="318" x2="530" y2="340" stroke="#808080" stroke-width="3"/>
+          <line x1="590" y1="318" x2="590" y2="340" stroke="#808080" stroke-width="3"/>
+
+          <!-- Key reminder -->
+          <rect x="150" y="365" width="400" height="120" fill="#12121a" rx="12" stroke="#f97316" stroke-width="2"/>
+          <text x="350" y="395" text-anchor="middle" fill="#f97316" font-size="14" font-weight="bold">CRITICAL REMINDERS</text>
+          <text x="350" y="420" text-anchor="middle" fill="#b0b0b0" font-size="11">• Never lose scapular retraction once set</text>
+          <text x="350" y="440" text-anchor="middle" fill="#b0b0b0" font-size="11">• Glutes must stay on bench during lift</text>
+          <text x="350" y="460" text-anchor="middle" fill="#b0b0b0" font-size="11">• Have a handoff—don't unrack alone with a big arch</text>
+        </svg>
+        <div class="diagram-caption">Master this sequence and perform it identically every set</div>
+      </div>
+
+      <h2>Common Arch Mistakes</h2>
+
+      <div class="warning-box">
+        <h4>Arching Through the Lower Back</h4>
+        <p>The arch should come from thoracic extension, not lumbar hyperextension. If your lower back is doing most of the work, you'll get pain and lose stability. Focus on opening your chest and upper back.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Losing Position on Unrack</h4>
+        <p>If you unrack yourself with a big arch, you'll often lose your setup as you reach for the bar. Always get a handoff from a spotter to maintain your position. This is not optional for a significant arch.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Glutes Coming Up</h4>
+        <p>If your butt leaves the bench, the lift is red-lighted. This often happens when lifters try to arch beyond their mobility or lose tension at the bottom. Practice keeping glute contact at all times.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Feet Sliding or Unstable</h4>
+        <p>Your feet are the foundation of leg drive. If they're slipping or poorly positioned, you lose power transfer. Use grippy shoes, position feet deliberately, and practice driving through your heels or balls of feet.</p>
+      </div>
+
+      <h2>Arch Variations by Federation</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Rule</th>
+            <th>IPF/USAPL</th>
+            <th>USPA</th>
+            <th>Other Feds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Feet Position</td>
+            <td>Flat on floor</td>
+            <td>Heels up allowed</td>
+            <td>Varies</td>
+          </tr>
+          <tr>
+            <td>Head Position</td>
+            <td>On bench (recommended)</td>
+            <td>On bench (recommended)</td>
+            <td>Usually on bench</td>
+          </tr>
+          <tr>
+            <td>Glutes</td>
+            <td>Must stay on bench</td>
+            <td>Must stay on bench</td>
+            <td>Must stay on bench</td>
+          </tr>
+          <tr>
+            <td>Arch Height</td>
+            <td>No limit</td>
+            <td>No limit</td>
+            <td>No limit</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Improving Your Arch Over Time</h2>
+
+      <p>Building a bigger, more stable arch takes months of consistent work. Here's a progressive approach:</p>
+
+      <div class="protocol-box">
+        <h4>Weeks 1-4: Foundation</h4>
+        <ul>
+          <li>Daily thoracic mobility work (5-10 min)</li>
+          <li>Practice setup sequence with empty bar</li>
+          <li>Focus on maintaining position, not maximizing arch</li>
+          <li>Video every session to check position</li>
+        </ul>
+      </div>
+
+      <div class="protocol-box">
+        <h4>Weeks 5-8: Building</h4>
+        <ul>
+          <li>Continue mobility work</li>
+          <li>Gradually increase arch height as mobility allows</li>
+          <li>Practice holding arch for longer sets</li>
+          <li>Add light pause work to test position stability</li>
+        </ul>
+      </div>
+
+      <div class="protocol-box">
+        <h4>Weeks 9+: Refining</h4>
+        <ul>
+          <li>Maintain mobility with weekly sessions</li>
+          <li>Work on leg drive integration</li>
+          <li>Test arch under heavier loads</li>
+          <li>Fine-tune feet and grip positioning</li>
+        </ul>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Arch = thoracic extension:</strong> Not lower back hyperextension</li>
+        <li><strong>Five contact points:</strong> Head, upper back, glutes, and both feet</li>
+        <li><strong>Setup sequence matters:</strong> Follow the same steps every time</li>
+        <li><strong>Always get a handoff:</strong> Don't unrack alone with a significant arch</li>
+        <li><strong>Mobility takes time:</strong> Build gradually over weeks and months</li>
+        <li><strong>Glutes stay down:</strong> This is the most common competition red light</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/train/breathing-bracing" class="related-card">
+            <h4>Breathing & Bracing</h4>
+            <p>Complete your bench setup with proper bracing</p>
+          </a>
+          <a href="/train/barbell-path" class="related-card">
+            <h4>Barbell Path Guide</h4>
+            <p>Optimal bar path for each lift</p>
+          </a>
+          <a href="/train/grip-strength" class="related-card">
+            <h4>Grip Strength Training</h4>
+            <p>Build a stronger grip for bench</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
