@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deload Protocol for Powerlifters - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #00d9ff, #00a6cc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #a1a1aa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover { color: #00d9ff; }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      background: rgba(0, 217, 255, 0.2);
+      color: #00d9ff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 600px;
+    }
+
+    .article-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #00d9ff;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .diagram-container {
+      margin: 2rem 0;
+      background: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      padding: 1rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .method-card {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .method-card h4 {
+      color: #00d9ff;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .method-card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0.5rem;
+    }
+
+    .method-card .example {
+      font-size: 0.85rem;
+      color: #22c55e;
+      margin-top: 0.75rem;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.1));
+      border-left: 4px solid #00d9ff;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .tip-box h4 {
+      color: #00d9ff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: #d1d5db;
+    }
+
+    .related-guides {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-guides h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #00d9ff;
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-card p {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="logo">HEAVIERWEIGHT</a>
+      <ul class="nav-links">
+        <li><a href="/train/">Train</a></li>
+        <li><a href="/compete/">Compete</a></li>
+        <li><a href="/science/">Science</a></li>
+        <li><a href="/gear/">Gear</a></li>
+        <li><a href="/fuel/">Fuel</a></li>
+        <li><a href="/life/">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/science/">Science</a>
+          <span>/</span>
+          <span>Deload Protocol</span>
+        </div>
+        <div class="category-badge">Science</div>
+        <h1>Deload Protocol</h1>
+        <p class="subtitle">Strategic recovery weeks that dissipate fatigue and set up your next phase of progress.</p>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <p>A deload is a planned reduction in training stress that allows accumulated fatigue to dissipate while maintaining the fitness you've built. Skip deloads and you'll plateau or get injured. Time them right and you'll supercompensate—coming back stronger than before.</p>
+
+      <h2>Why Deloads Work</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="350" fill="#1a1a2e"/>
+          <text x="350" y="35" fill="#00d9ff" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle">FITNESS-FATIGUE MODEL</text>
+
+          <!-- Axes -->
+          <line x1="80" y1="280" x2="650" y2="280" stroke="#3f3f46" stroke-width="2"/>
+          <line x1="80" y1="280" x2="80" y2="60" stroke="#3f3f46" stroke-width="2"/>
+
+          <!-- Y-axis label -->
+          <text x="40" y="170" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" transform="rotate(-90 40 170)">Level</text>
+          <text x="350" y="310" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">TIME →</text>
+
+          <!-- Training blocks -->
+          <rect x="100" y="285" width="130" height="20" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+          <text x="165" y="300" fill="#f97316" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Training Block</text>
+
+          <rect x="230" y="285" width="50" height="20" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+          <text x="255" y="300" fill="#22c55e" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Deload</text>
+
+          <rect x="280" y="285" width="130" height="20" rx="4" fill="rgba(249, 115, 22, 0.3)"/>
+          <text x="345" y="300" fill="#f97316" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Training Block</text>
+
+          <rect x="410" y="285" width="50" height="20" rx="4" fill="rgba(34, 197, 94, 0.3)"/>
+          <text x="435" y="300" fill="#22c55e" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Deload</text>
+
+          <!-- Fitness line (blue, stays elevated) -->
+          <path d="M100 220 Q165 180 230 160 Q255 165 280 155 Q345 130 410 115 Q435 118 460 110 Q520 95 580 85" fill="none" stroke="#00d9ff" stroke-width="3"/>
+
+          <!-- Fatigue line (red, builds then drops) -->
+          <path d="M100 230 Q130 200 165 150 Q200 110 230 90 Q245 120 255 150 Q265 170 280 160 Q310 130 345 100 Q380 75 410 60 Q425 90 435 130 Q445 155 460 145 Q490 115 520 90 Q550 70 580 55" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6"/>
+
+          <!-- Performance line (green, difference between fitness and fatigue) -->
+          <path d="M100 210 Q130 230 165 250 Q200 245 230 225 Q245 180 255 150 Q265 135 280 130 Q310 155 345 175 Q380 168 410 155 Q425 120 435 100 Q445 95 460 90 Q490 120 520 135 Q550 125 580 105" fill="none" stroke="#22c55e" stroke-width="3"/>
+
+          <!-- Legend -->
+          <g transform="translate(480, 200)">
+            <rect x="0" y="0" width="150" height="75" rx="6" fill="rgba(255, 255, 255, 0.05)"/>
+            <line x1="15" y1="20" x2="45" y2="20" stroke="#00d9ff" stroke-width="3"/>
+            <text x="55" y="24" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">Fitness</text>
+            <line x1="15" y1="40" x2="45" y2="40" stroke="#ef4444" stroke-width="2" stroke-dasharray="6"/>
+            <text x="55" y="44" fill="#ef4444" font-family="Inter, sans-serif" font-size="10">Fatigue</text>
+            <line x1="15" y1="60" x2="45" y2="60" stroke="#22c55e" stroke-width="3"/>
+            <text x="55" y="64" fill="#22c55e" font-family="Inter, sans-serif" font-size="10">Performance</text>
+          </g>
+
+          <!-- Supercompensation callout -->
+          <circle cx="460" cy="90" r="15" fill="none" stroke="#22c55e" stroke-width="2"/>
+          <text x="460" y="70" fill="#22c55e" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Peak!</text>
+        </svg>
+        <div class="diagram-caption">Fatigue masks fitness. Deloads let fatigue drop, revealing your true strength.</div>
+      </div>
+
+      <h2>Signs You Need a Deload</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="280" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">DELOAD WARNING SIGNS</text>
+
+          <!-- Physical signs -->
+          <g transform="translate(50, 55)">
+            <rect x="0" y="0" width="190" height="200" rx="10" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="1"/>
+            <text x="95" y="28" fill="#ef4444" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">PHYSICAL</text>
+
+            <text x="20" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Weights feel heavier than</text>
+            <text x="25" y="70" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">they should at same RPE</text>
+            <text x="20" y="95" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Persistent joint aches</text>
+            <text x="20" y="115" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Slower recovery between</text>
+            <text x="25" y="130" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">sessions</text>
+            <text x="20" y="155" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Elevated resting heart rate</text>
+            <text x="20" y="180" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Poor sleep quality</text>
+          </g>
+
+          <!-- Mental signs -->
+          <g transform="translate(260, 55)">
+            <rect x="0" y="0" width="190" height="200" rx="10" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="95" y="28" fill="#f97316" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">MENTAL</text>
+
+            <text x="20" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Dreading training sessions</text>
+            <text x="20" y="80" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Lack of motivation/drive</text>
+            <text x="20" y="105" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Difficulty concentrating</text>
+            <text x="20" y="130" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Irritability, mood swings</text>
+            <text x="20" y="155" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Decreased confidence in</text>
+            <text x="25" y="170" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">lifts</text>
+          </g>
+
+          <!-- Performance signs -->
+          <g transform="translate(470, 55)">
+            <rect x="0" y="0" width="190" height="200" rx="10" fill="rgba(139, 92, 246, 0.1)" stroke="#a855f7" stroke-width="1"/>
+            <text x="95" y="28" fill="#a855f7" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">PERFORMANCE</text>
+
+            <text x="20" y="55" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Missing reps you should</text>
+            <text x="25" y="70" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">make</text>
+            <text x="20" y="95" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Bar speed noticeably</text>
+            <text x="25" y="110" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">slower</text>
+            <text x="20" y="135" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Technique breakdown</text>
+            <text x="20" y="160" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Plateau > 2-3 weeks</text>
+            <text x="20" y="185" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10">• Regression in lifts</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">2-3 signs from any category = time to deload. Don't wait for injury.</div>
+      </div>
+
+      <h2>Deload Methods</h2>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>Volume Reduction</h4>
+          <p>Keep intensity (weight) the same, cut sets by 40-60%. Maintains strength qualities while reducing fatigue.</p>
+          <div class="example">Example: 5x5 → 2x5 at same weight</div>
+        </div>
+        <div class="method-card">
+          <h4>Intensity Reduction</h4>
+          <p>Keep volume (sets/reps) similar, reduce weight by 10-20%. Good for joint recovery.</p>
+          <div class="example">Example: 5x5 @ 80% → 5x5 @ 65%</div>
+        </div>
+        <div class="method-card">
+          <h4>Both Reduced</h4>
+          <p>Cut both volume and intensity. Most aggressive recovery approach.</p>
+          <div class="example">Example: 5x5 @ 80% → 3x5 @ 65%</div>
+        </div>
+        <div class="method-card">
+          <h4>Active Rest</h4>
+          <p>No barbell work. Light conditioning, mobility, bodyweight only. For severe fatigue or pre-competition.</p>
+          <div class="example">Example: Walks, stretching, swimming</div>
+        </div>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="300" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">VOLUME vs INTENSITY DELOAD COMPARISON</text>
+
+          <!-- Volume reduction -->
+          <g transform="translate(80, 60)">
+            <text x="110" y="20" fill="#22c55e" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">VOLUME DELOAD</text>
+
+            <!-- Normal week -->
+            <rect x="0" y="40" width="100" height="160" rx="6" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="1"/>
+            <text x="50" y="60" fill="#f97316" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Normal Week</text>
+            <rect x="15" y="75" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="89" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 1</text>
+            <rect x="15" y="100" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="114" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 2</text>
+            <rect x="15" y="125" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="139" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 3</text>
+            <rect x="15" y="150" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="164" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 4</text>
+            <rect x="15" y="175" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="189" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 5</text>
+
+            <!-- Arrow -->
+            <text x="120" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="16">→</text>
+
+            <!-- Deload week -->
+            <rect x="140" y="40" width="80" height="160" rx="6" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="1"/>
+            <text x="180" y="60" fill="#22c55e" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Deload</text>
+            <rect x="155" y="75" width="50" height="20" fill="rgba(34, 197, 94, 0.5)"/>
+            <text x="180" y="89" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 1</text>
+            <rect x="155" y="100" width="50" height="20" fill="rgba(34, 197, 94, 0.5)"/>
+            <text x="180" y="114" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Set 2</text>
+            <text x="180" y="160" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Same weight</text>
+            <text x="180" y="175" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Fewer sets</text>
+          </g>
+
+          <!-- Intensity reduction -->
+          <g transform="translate(400, 60)">
+            <text x="110" y="20" fill="#a855f7" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">INTENSITY DELOAD</text>
+
+            <!-- Normal week -->
+            <rect x="0" y="40" width="100" height="160" rx="6" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="1"/>
+            <text x="50" y="60" fill="#f97316" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Normal Week</text>
+            <rect x="15" y="75" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="89" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">80%</text>
+            <rect x="15" y="100" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="114" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">80%</text>
+            <rect x="15" y="125" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="139" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">80%</text>
+            <rect x="15" y="150" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="164" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">80%</text>
+            <rect x="15" y="175" width="70" height="20" fill="rgba(249, 115, 22, 0.5)"/>
+            <text x="50" y="189" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">80%</text>
+
+            <!-- Arrow -->
+            <text x="120" y="130" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="16">→</text>
+
+            <!-- Deload week -->
+            <rect x="140" y="40" width="80" height="160" rx="6" fill="rgba(139, 92, 246, 0.2)" stroke="#a855f7" stroke-width="1"/>
+            <text x="180" y="60" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Deload</text>
+            <rect x="155" y="75" width="50" height="20" fill="rgba(139, 92, 246, 0.4)"/>
+            <text x="180" y="89" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">65%</text>
+            <rect x="155" y="100" width="50" height="20" fill="rgba(139, 92, 246, 0.4)"/>
+            <text x="180" y="114" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">65%</text>
+            <rect x="155" y="125" width="50" height="20" fill="rgba(139, 92, 246, 0.4)"/>
+            <text x="180" y="139" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">65%</text>
+            <rect x="155" y="150" width="50" height="20" fill="rgba(139, 92, 246, 0.4)"/>
+            <text x="180" y="164" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">65%</text>
+            <rect x="155" y="175" width="50" height="20" fill="rgba(139, 92, 246, 0.4)"/>
+            <text x="180" y="189" fill="#ffffff" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">65%</text>
+            <text x="180" y="215" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Same sets</text>
+            <text x="180" y="230" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Less weight</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">Volume deload maintains intensity feel; intensity deload gives joints a break</div>
+      </div>
+
+      <h2>Deload Timing</h2>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="200" fill="#1a1a2e"/>
+          <text x="350" y="30" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">WHEN TO SCHEDULE DELOADS</text>
+
+          <!-- Timeline showing different approaches -->
+          <g transform="translate(50, 60)">
+            <!-- Proactive approach -->
+            <rect x="0" y="0" width="280" height="60" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1"/>
+            <text x="140" y="22" fill="#22c55e" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">PROACTIVE (Recommended)</text>
+            <text x="140" y="42" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Every 3-5 weeks, planned in advance</text>
+            <text x="140" y="55" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Best for consistent progress</text>
+
+            <!-- Reactive approach -->
+            <rect x="300" y="0" width="280" height="60" rx="8" fill="rgba(249, 115, 22, 0.1)" stroke="#f97316" stroke-width="1"/>
+            <text x="440" y="22" fill="#f97316" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">REACTIVE (As Needed)</text>
+            <text x="440" y="42" fill="#d1d5db" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">When warning signs appear</text>
+            <text x="440" y="55" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Good for experienced lifters</text>
+          </g>
+
+          <!-- By training age -->
+          <g transform="translate(50, 130)">
+            <text x="0" y="15" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10" font-weight="600">BY TRAINING AGE:</text>
+            <rect x="130" y="0" width="120" height="30" rx="4" fill="rgba(139, 92, 246, 0.2)"/>
+            <text x="190" y="20" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Beginner: 5-6 wks</text>
+            <rect x="260" y="0" width="140" height="30" rx="4" fill="rgba(0, 217, 255, 0.2)"/>
+            <text x="330" y="20" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Intermediate: 4-5 wks</text>
+            <rect x="410" y="0" width="140" height="30" rx="4" fill="rgba(249, 115, 22, 0.2)"/>
+            <text x="480" y="20" fill="#f97316" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Advanced: 3-4 wks</text>
+          </g>
+        </svg>
+        <div class="diagram-caption">More advanced = more fatigue accumulated = more frequent deloads needed</div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/uH8dLxpuJiE" title="How to Deload Properly" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Renaissance Periodization - Science of deloading</div>
+
+      <div class="tip-box">
+        <h4>Common Deload Mistakes</h4>
+        <p><strong>Going too hard:</strong> A deload should feel easy. If you're grinding reps, you're not deloading. <strong>Skipping completely:</strong> Zero training can backfire—light movement keeps patterns sharp. <strong>Adding extra work:</strong> Don't fill the "extra time" with conditioning or accessory volume. Rest is the point.</p>
+      </div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li>Deloads dissipate fatigue, revealing strength you've already built</li>
+        <li>Schedule proactively every 3-5 weeks, don't wait for breakdown</li>
+        <li>Reduce volume OR intensity by 40-60%, not necessarily both</li>
+        <li>Light movement beats complete rest for most lifters</li>
+        <li>Advanced lifters need more frequent deloads than beginners</li>
+        <li>If you feel amazing during deload week, you probably needed it more than you thought</li>
+      </ul>
+    </article>
+
+    <section class="related-guides">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <a href="/science/periodization-basics/" class="related-card">
+          <h4>Periodization Basics</h4>
+          <p>Structure training for progress</p>
+        </a>
+        <a href="/science/recovery-protocol/" class="related-card">
+          <h4>Recovery Protocol</h4>
+          <p>Maximize adaptation</p>
+        </a>
+        <a href="/science/progressive-overload/" class="related-card">
+          <h4>Progressive Overload</h4>
+          <p>Drive continued gains</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HEAVIERWEIGHT. Built for strong women.</p>
+  </footer>
+</body>
+</html>
