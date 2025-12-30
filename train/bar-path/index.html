@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Path Analysis for Powerlifting | HEAVIERWEIGHT</title>
+  <meta name="description" content="Understanding optimal bar paths for squat, bench, and deadlift. Video analysis techniques for women powerlifters.">
+  <link rel="canonical" href="https://heavierweight.com/train/bar-path/">
+  <meta property="og:title" content="Bar Path Analysis for Powerlifting">
+  <meta property="og:description" content="The most efficient path between two points isn't always straight.">
+  <meta property="og:image" content="https://heavierweight.com/assets/og-train.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#f97316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .article-hero { padding: 80px 0 60px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(26, 26, 46, 0.95) 100%); }
+    .article-content { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+    .article-content h2 { color: #f97316; margin: 48px 0 24px 0; font-size: 1.75rem; }
+    .article-content h3 { color: #fff; margin: 32px 0 16px 0; font-size: 1.25rem; }
+    .article-content p { color: #a0a0a0; line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-content ul, .article-content ol { color: #a0a0a0; line-height: 2; margin: 20px 0; padding-left: 24px; }
+    .callout { background: rgba(249,115,22,0.1); border-left: 4px solid #f97316; padding: 24px; border-radius: 0 12px 12px 0; margin: 32px 0; }
+    .callout-title { color: #f97316; font-weight: 700; margin-bottom: 8px; }
+    .technique-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 12px; margin: 16px 0; }
+    .technique-card h4 { color: #f97316; margin: 0 0 12px 0; }
+    .diagram-container { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .diagram-caption { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 12px; }
+    .lift-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .lift-box { padding: 20px; border-radius: 8px; text-align: center; }
+    .warning-box { background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 20px; border-radius: 0 12px 12px 0; margin: 24px 0; }
+    .warning-box strong { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <header style="padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem;">HEAVIERWEIGHT</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/train/" style="color: #f97316;">Train</a>
+        <a href="/compete/" style="color: #a0a0a0;">Compete</a>
+        <a href="/science/" style="color: #a0a0a0;">Science</a>
+        <a href="/gear/" style="color: #a0a0a0;">Gear</a>
+        <a href="/fuel/" style="color: #a0a0a0;">Fuel</a>
+        <a href="/life/" style="color: #a0a0a0;">Life</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <a href="/train/" style="color: #a0a0a0; text-decoration: none; font-size: 0.9rem;">← Train</a>
+      <div style="margin-top: 24px;">
+        <span style="background: rgba(249,115,22,0.2); color: #f97316; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Technique</span>
+        <h1 style="font-size: 2.5rem; margin: 16px 0; line-height: 1.2;">Bar Path Analysis</h1>
+        <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 600px;">Understand optimal bar movement patterns for each lift.</p>
+        <div style="display: flex; gap: 24px; margin-top: 24px; color: #6b7280; font-size: 0.9rem;">
+          <span>11 min read</span>
+          <span>Updated Dec 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="article-content">
+    <p style="font-size: 1.2rem; color: #fff; line-height: 1.8;">
+      Bar path—the line the bar traces through space during a lift—reveals technique efficiency. A clean bar path means force is going where it should. A messy one means energy is wasted. Here's how to analyze and optimize yours.
+    </p>
+
+    <h2>Bench Press Bar Path</h2>
+
+    <p>
+      The bench press has the most complex bar path of the big three. Contrary to intuition, the optimal path is NOT a straight line.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="400" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Bench Press Bar Path (Side View)</text>
+
+        <!-- Bench outline -->
+        <rect x="180" y="300" width="340" height="20" fill="#4a4a5a" rx="4"/>
+        <rect x="200" y="280" width="40" height="20" fill="#4a4a5a" rx="2"/>
+
+        <!-- Body outline (simplified) -->
+        <ellipse cx="350" cy="260" rx="120" ry="30" fill="#3a3a4a"/>
+        <circle cx="250" cy="250" r="25" fill="#3a3a4a"/>
+
+        <!-- Arm positions -->
+        <line x1="280" y1="245" x2="340" y2="165" stroke="#6b7280" stroke-width="8" stroke-linecap="round"/>
+        <line x1="420" y1="245" x2="360" y2="165" stroke="#6b7280" stroke-width="8" stroke-linecap="round"/>
+
+        <!-- Bar at lockout -->
+        <rect x="300" y="155" width="100" height="12" fill="#a0a0a0" rx="6"/>
+        <text x="440" y="165" fill="#fff" font-size="11" font-weight="500">Lockout</text>
+        <text x="440" y="178" fill="#6b7280" font-size="9">(over shoulders)</text>
+
+        <!-- Bar at chest (touch point) -->
+        <rect x="250" y="230" width="100" height="12" fill="#a0a0a0" rx="6" opacity="0.5"/>
+        <text x="150" y="240" fill="#fff" font-size="11" font-weight="500">Touch</text>
+        <text x="150" y="253" fill="#6b7280" font-size="9">(lower chest)</text>
+
+        <!-- Correct bar path (J-curve) -->
+        <path d="M 350 161 C 340 180 310 200 300 236"
+              stroke="#22c55e" stroke-width="4" fill="none" stroke-linecap="round"
+              marker-end="url(#greenArrowDown)"/>
+
+        <path d="M 300 236 C 310 200 340 180 350 161"
+              stroke="#22c55e" stroke-width="4" fill="none" stroke-dasharray="8"
+              marker-end="url(#greenArrowUp)"/>
+
+        <!-- Incorrect straight path -->
+        <path d="M 350 161 L 350 236"
+              stroke="#ef4444" stroke-width="3" fill="none" stroke-dasharray="6"/>
+
+        <defs>
+          <marker id="greenArrowDown" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#22c55e"/>
+          </marker>
+          <marker id="greenArrowUp" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M8,0 L0,4 L8,8 z" fill="#22c55e"/>
+          </marker>
+        </defs>
+
+        <!-- Labels -->
+        <rect x="50" y="60" width="150" height="80" fill="rgba(34,197,94,0.1)" stroke="#22c55e" rx="8"/>
+        <text x="125" y="85" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="600">OPTIMAL: J-CURVE</text>
+        <text x="65" y="105" fill="#a0a0a0" font-size="9">• Touch low on chest</text>
+        <text x="65" y="120" fill="#a0a0a0" font-size="9">• Press back toward face</text>
+        <text x="65" y="135" fill="#a0a0a0" font-size="9">• Lock out over shoulders</text>
+
+        <rect x="500" y="60" width="150" height="80" fill="rgba(239,68,68,0.1)" stroke="#ef4444" rx="8"/>
+        <text x="575" y="85" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">INEFFICIENT: STRAIGHT</text>
+        <text x="515" y="105" fill="#a0a0a0" font-size="9">• Longer moment arm</text>
+        <text x="515" y="120" fill="#a0a0a0" font-size="9">• More shoulder stress</text>
+        <text x="515" y="135" fill="#a0a0a0" font-size="9">• Harder lockout</text>
+
+        <!-- Key points -->
+        <circle cx="350" cy="161" r="6" fill="#00d9ff"/>
+        <circle cx="300" cy="236" r="6" fill="#00d9ff"/>
+
+        <text x="350" y="380" text-anchor="middle" fill="#f97316" font-size="11" font-weight="500">The J-curve minimizes the moment arm at the shoulder throughout the press</text>
+      </svg>
+      <div class="diagram-caption">The bar should travel back toward your face as you press, not straight up</div>
+    </div>
+
+    <div class="technique-card">
+      <h4>Key Points for Bench Bar Path</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li><strong>Touch point:</strong> Lower chest, around nipple line or slightly below</li>
+        <li><strong>Press direction:</strong> Back and up—toward your face, not straight up</li>
+        <li><strong>Lockout position:</strong> Directly over shoulder joint</li>
+        <li><strong>The curve:</strong> Creates a "J" or reverse "J" shape when viewed from the side</li>
+      </ul>
+    </div>
+
+    <h2>Squat Bar Path</h2>
+
+    <p>
+      Unlike bench, the squat bar path SHOULD be as vertical as possible. The bar should travel straight down and straight up over midfoot.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="400" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Squat Bar Path (Side View)</text>
+
+        <!-- Floor -->
+        <line x1="50" y1="350" x2="650" y2="350" stroke="#4a4a5a" stroke-width="3"/>
+
+        <!-- Correct path (left) -->
+        <text x="180" y="70" text-anchor="middle" fill="#22c55e" font-size="13" font-weight="600">OPTIMAL</text>
+
+        <!-- Stick figure at top -->
+        <circle cx="180" cy="100" r="15" stroke="#6b7280" stroke-width="2" fill="none"/>
+        <line x1="180" y1="115" x2="180" y2="170" stroke="#6b7280" stroke-width="3"/>
+        <line x1="180" y1="170" x2="155" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <line x1="180" y1="170" x2="205" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <line x1="155" y1="230" x2="155" y2="280" stroke="#6b7280" stroke-width="3"/>
+        <line x1="205" y1="230" x2="205" y2="280" stroke="#6b7280" stroke-width="3"/>
+
+        <!-- Bar on back -->
+        <rect x="145" y="118" width="70" height="8" fill="#a0a0a0" rx="4"/>
+
+        <!-- Stick figure at bottom -->
+        <circle cx="180" cy="200" r="12" stroke="#6b7280" stroke-width="2" fill="none" opacity="0.5"/>
+        <line x1="180" y1="212" x2="180" y2="250" stroke="#6b7280" stroke-width="3" opacity="0.5"/>
+        <line x1="180" y1="250" x2="145" y2="310" stroke="#6b7280" stroke-width="3" opacity="0.5"/>
+        <line x1="180" y1="250" x2="215" y2="310" stroke="#6b7280" stroke-width="3" opacity="0.5"/>
+        <line x1="145" y1="310" x2="145" y2="350" stroke="#6b7280" stroke-width="3" opacity="0.5"/>
+        <line x1="215" y1="310" x2="215" y2="350" stroke="#6b7280" stroke-width="3" opacity="0.5"/>
+
+        <!-- Bar at bottom -->
+        <rect x="150" y="195" width="60" height="6" fill="#a0a0a0" rx="3" opacity="0.5"/>
+
+        <!-- Vertical bar path -->
+        <line x1="180" y1="125" x2="180" y2="200" stroke="#22c55e" stroke-width="4" stroke-dasharray="8"/>
+
+        <!-- Midfoot marker -->
+        <line x1="180" y1="345" x2="180" y2="355" stroke="#00d9ff" stroke-width="3"/>
+        <text x="180" y="375" text-anchor="middle" fill="#00d9ff" font-size="10">Midfoot</text>
+
+        <!-- Forward path (middle) -->
+        <text x="400" y="70" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="600">FORWARD DRIFT</text>
+
+        <!-- Stick figure -->
+        <circle cx="400" cy="100" r="15" stroke="#6b7280" stroke-width="2" fill="none"/>
+        <line x1="400" y1="115" x2="400" y2="170" stroke="#6b7280" stroke-width="3"/>
+        <line x1="400" y1="170" x2="375" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <line x1="400" y1="170" x2="425" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <rect x="365" y="118" width="70" height="8" fill="#a0a0a0" rx="4"/>
+
+        <!-- Forward shifted position -->
+        <circle cx="430" cy="200" r="12" stroke="#6b7280" stroke-width="2" fill="none" opacity="0.5"/>
+        <rect x="400" y="195" width="60" height="6" fill="#a0a0a0" rx="3" opacity="0.5"/>
+
+        <!-- Forward bar path -->
+        <path d="M 400 125 C 410 160 425 180 430 200" stroke="#ef4444" stroke-width="3" stroke-dasharray="6"/>
+
+        <!-- Midfoot marker -->
+        <line x1="400" y1="345" x2="400" y2="355" stroke="#00d9ff" stroke-width="3"/>
+        <text x="400" y="375" text-anchor="middle" fill="#00d9ff" font-size="10">Midfoot</text>
+
+        <!-- Problem annotation -->
+        <text x="480" y="165" fill="#ef4444" font-size="9">Bar drifts forward</text>
+        <text x="480" y="180" fill="#a0a0a0" font-size="9">= Good morning squat</text>
+
+        <!-- Backward path (right) -->
+        <text x="580" y="70" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="600">BACKWARD DRIFT</text>
+
+        <!-- Stick figure -->
+        <circle cx="580" cy="100" r="15" stroke="#6b7280" stroke-width="2" fill="none"/>
+        <line x1="580" y1="115" x2="580" y2="170" stroke="#6b7280" stroke-width="3"/>
+        <line x1="580" y1="170" x2="555" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <line x1="580" y1="170" x2="605" y2="230" stroke="#6b7280" stroke-width="3"/>
+        <rect x="545" y="118" width="70" height="8" fill="#a0a0a0" rx="4"/>
+
+        <!-- Backward shifted position -->
+        <circle cx="550" cy="200" r="12" stroke="#6b7280" stroke-width="2" fill="none" opacity="0.5"/>
+        <rect x="520" y="195" width="60" height="6" fill="#a0a0a0" rx="3" opacity="0.5"/>
+
+        <!-- Backward bar path -->
+        <path d="M 580 125 C 570 160 555 180 550 200" stroke="#fbbf24" stroke-width="3" stroke-dasharray="6"/>
+
+        <!-- Midfoot marker -->
+        <line x1="580" y1="345" x2="580" y2="355" stroke="#00d9ff" stroke-width="3"/>
+        <text x="580" y="375" text-anchor="middle" fill="#00d9ff" font-size="10">Midfoot</text>
+
+        <!-- Problem annotation -->
+        <text x="490" y="235" fill="#fbbf24" font-size="9">Bar drifts back</text>
+        <text x="490" y="250" fill="#a0a0a0" font-size="9">= Off balance</text>
+      </svg>
+      <div class="diagram-caption">The bar should travel straight up and down over midfoot throughout the lift</div>
+    </div>
+
+    <div class="technique-card">
+      <h4>Common Squat Bar Path Errors</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li><strong>Forward drift:</strong> Usually from weak quads or excessive forward lean—leads to "good morning" squat</li>
+        <li><strong>Backward drift:</strong> Often from sitting too far back or losing upper back tightness</li>
+        <li><strong>Side-to-side wobble:</strong> Indicates asymmetry or uneven loading—address imbalances</li>
+      </ul>
+    </div>
+
+    <h2>Deadlift Bar Path</h2>
+
+    <p>
+      The deadlift bar path is the simplest: straight up, staying as close to the body as possible.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="380" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Deadlift Bar Path (Front View)</text>
+
+        <!-- Floor -->
+        <line x1="50" y1="340" x2="650" y2="340" stroke="#4a4a5a" stroke-width="3"/>
+
+        <!-- Optimal path (center) -->
+        <text x="200" y="65" text-anchor="middle" fill="#22c55e" font-size="13" font-weight="600">OPTIMAL</text>
+
+        <!-- Body outline -->
+        <ellipse cx="200" cy="180" rx="40" ry="80" fill="none" stroke="#6b7280" stroke-width="2" opacity="0.5"/>
+
+        <!-- Legs -->
+        <line x1="180" y1="260" x2="170" y2="340" stroke="#6b7280" stroke-width="6"/>
+        <line x1="220" y1="260" x2="230" y2="340" stroke="#6b7280" stroke-width="6"/>
+
+        <!-- Bar at bottom -->
+        <rect x="120" y="325" width="160" height="12" fill="#a0a0a0" rx="6"/>
+
+        <!-- Bar at top -->
+        <rect x="120" y="175" width="160" height="12" fill="#a0a0a0" rx="6" opacity="0.5"/>
+
+        <!-- Straight path -->
+        <line x1="200" y1="330" x2="200" y2="185" stroke="#22c55e" stroke-width="4"/>
+        <circle cx="200" cy="330" r="5" fill="#22c55e"/>
+        <circle cx="200" cy="185" r="5" fill="#22c55e"/>
+
+        <!-- Contact points -->
+        <text x="280" y="220" fill="#22c55e" font-size="10">Bar drags up legs</text>
+        <text x="280" y="235" fill="#22c55e" font-size="10">Stays in contact</text>
+
+        <!-- Drifting path (right side) -->
+        <text x="500" y="65" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="600">BAR DRIFT</text>
+
+        <!-- Body outline -->
+        <ellipse cx="500" cy="180" rx="40" ry="80" fill="none" stroke="#6b7280" stroke-width="2" opacity="0.5"/>
+
+        <!-- Legs -->
+        <line x1="480" y1="260" x2="470" y2="340" stroke="#6b7280" stroke-width="6"/>
+        <line x1="520" y1="260" x2="530" y2="340" stroke="#6b7280" stroke-width="6"/>
+
+        <!-- Bar at bottom -->
+        <rect x="420" y="325" width="160" height="12" fill="#a0a0a0" rx="6"/>
+
+        <!-- Bar at top (drifted forward) -->
+        <rect x="450" y="175" width="160" height="12" fill="#a0a0a0" rx="6" opacity="0.5"/>
+
+        <!-- Curved/forward path -->
+        <path d="M 500 330 C 520 280 540 230 530 185" stroke="#ef4444" stroke-width="3" stroke-dasharray="6"/>
+        <circle cx="500" cy="330" r="5" fill="#ef4444"/>
+        <circle cx="530" cy="185" r="5" fill="#ef4444"/>
+
+        <!-- Error annotation -->
+        <text x="580" y="220" fill="#ef4444" font-size="10">Bar swings away</text>
+        <text x="580" y="235" fill="#ef4444" font-size="10">Longer moment arm</text>
+        <text x="580" y="250" fill="#ef4444" font-size="10">= Harder on back</text>
+
+        <!-- Bottom note -->
+        <rect x="150" y="355" width="400" height="20" fill="rgba(34,197,94,0.1)" rx="4"/>
+        <text x="350" y="369" text-anchor="middle" fill="#22c55e" font-size="10">Every inch the bar drifts forward adds significant load to lower back</text>
+      </svg>
+      <div class="diagram-caption">Keep the bar as close to your body as possible throughout the pull</div>
+    </div>
+
+    <div class="lift-comparison">
+      <div class="lift-box" style="background: rgba(249,115,22,0.1); border: 1px solid #f97316;">
+        <h5 style="color: #f97316; margin: 0 0 8px 0;">Conventional</h5>
+        <p style="color: #a0a0a0; font-size: 0.9rem; margin: 0;">Bar travels up shins, over knees, up thighs. Keep arms vertical.</p>
+      </div>
+      <div class="lift-box" style="background: rgba(168,85,247,0.1); border: 1px solid #a855f7;">
+        <h5 style="color: #a855f7; margin: 0 0 8px 0;">Sumo</h5>
+        <p style="color: #a0a0a0; font-size: 0.9rem; margin: 0;">More vertical torso = more vertical bar path. Bar stays between legs.</p>
+      </div>
+    </div>
+
+    <h2>How to Analyze Your Bar Path</h2>
+
+    <h3>Video Setup</h3>
+
+    <div class="technique-card">
+      <h4>Filming Guidelines</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li><strong>Side view:</strong> Essential for squat and bench. Camera at hip height, perpendicular to movement</li>
+        <li><strong>Front view:</strong> Essential for deadlift. Shows bar drift and asymmetry</li>
+        <li><strong>45-degree angle:</strong> Good supplementary view, shows depth and bar path</li>
+        <li><strong>Slow motion:</strong> 120fps+ helps see bar speed changes and sticking points</li>
+      </ul>
+    </div>
+
+    <h3>Analysis Apps</h3>
+
+    <ul>
+      <li><strong>Iron Path:</strong> Free, traces bar path automatically</li>
+      <li><strong>WL Analysis:</strong> Detailed tracking for Olympic lifts and powerlifts</li>
+      <li><strong>Kinovea:</strong> Free desktop software, manual tracking with measurement tools</li>
+      <li><strong>Coach's Eye:</strong> Side-by-side comparison, drawing tools</li>
+    </ul>
+
+    <h2>What to Look For</h2>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="200" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Bar Path Analysis Checklist</text>
+
+        <!-- Squat -->
+        <rect x="50" y="45" width="190" height="140" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" rx="8"/>
+        <text x="145" y="70" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">SQUAT</text>
+        <text x="65" y="95" fill="#a0a0a0" font-size="10">☐ Vertical over midfoot?</text>
+        <text x="65" y="115" fill="#a0a0a0" font-size="10">☐ Forward lean excessive?</text>
+        <text x="65" y="135" fill="#a0a0a0" font-size="10">☐ Hips rise faster than bar?</text>
+        <text x="65" y="155" fill="#a0a0a0" font-size="10">☐ Any side wobble?</text>
+        <text x="65" y="175" fill="#a0a0a0" font-size="10">☐ Consistent depth?</text>
+
+        <!-- Bench -->
+        <rect x="255" y="45" width="190" height="140" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" rx="8"/>
+        <text x="350" y="70" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="600">BENCH</text>
+        <text x="270" y="95" fill="#a0a0a0" font-size="10">☐ J-curve present?</text>
+        <text x="270" y="115" fill="#a0a0a0" font-size="10">☐ Touch point consistent?</text>
+        <text x="270" y="135" fill="#a0a0a0" font-size="10">☐ Lockout over shoulders?</text>
+        <text x="270" y="155" fill="#a0a0a0" font-size="10">☐ Elbows flaring timing?</text>
+        <text x="270" y="175" fill="#a0a0a0" font-size="10">☐ Bar tilted?</text>
+
+        <!-- Deadlift -->
+        <rect x="460" y="45" width="190" height="140" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" rx="8"/>
+        <text x="555" y="70" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">DEADLIFT</text>
+        <text x="475" y="95" fill="#a0a0a0" font-size="10">☐ Straight vertical path?</text>
+        <text x="475" y="115" fill="#a0a0a0" font-size="10">☐ Bar stays on legs?</text>
+        <text x="475" y="135" fill="#a0a0a0" font-size="10">☐ Hips and shoulders rise together?</text>
+        <text x="475" y="155" fill="#a0a0a0" font-size="10">☐ Lockout smooth?</text>
+        <text x="475" y="175" fill="#a0a0a0" font-size="10">☐ Bar even (no tilt)?</text>
+      </svg>
+      <div class="diagram-caption">Use this checklist when reviewing your training videos</div>
+    </div>
+
+    <h2>Fixing Common Issues</h2>
+
+    <div class="technique-card">
+      <h4>Bench: Bar Drifts Toward Belly</h4>
+      <p style="color: #a0a0a0; margin: 0;">Usually means you're pressing straight up instead of back. Cue: "press toward your face" or "push yourself away from the bar."</p>
+    </div>
+
+    <div class="technique-card">
+      <h4>Squat: Bar Moves Forward Out of Hole</h4>
+      <p style="color: #a0a0a0; margin: 0;">Often weak quads or losing upper back tightness. Strengthen quads with front squats, leg press. Cue: "chest up" and "drive through the floor."</p>
+    </div>
+
+    <div class="technique-card">
+      <h4>Deadlift: Bar Swings Away from Body</h4>
+      <p style="color: #a0a0a0; margin: 0;">Weak lats or not engaging them properly. Cue: "bend the bar around your legs" or "protect your armpits." Add lat work and paused deadlifts.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Individual Variation</strong>
+      <p style="color: #a0a0a0; margin: 8px 0 0 0;">Optimal bar paths vary based on limb lengths, mobility, and style. A long-torso lifter will have different squat mechanics than a short-torso lifter. Use general principles as guidelines, then find what works for your body.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The Bottom Line</div>
+      <p style="margin: 0; color: #a0a0a0;">Bar path reveals efficiency. For squat and deadlift, aim for vertical. For bench, learn the J-curve. Film yourself regularly from consistent angles, and compare over time. Small improvements in bar path can mean big improvements in performance.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 24px; margin: 48px 0;">
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f97316, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">HW</div>
+        <div>
+          <strong style="color: #fff;">HEAVIERWEIGHT Team</strong>
+          <p style="color: #6b7280; margin: 4px 0 0 0; font-size: 0.9rem;">Technique analysis for women who compete.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="color: #fff; margin-bottom: 16px;">Related Articles</h3>
+      <div style="display: grid; gap: 12px;">
+        <a href="/train/video-analysis/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Video Analysis Guide →</a>
+        <a href="/train/bench-arch/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Bench Arch Technique →</a>
+        <a href="/train/sumo-vs-conventional/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Sumo vs. Conventional →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p style="color: #6b7280;">&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+</body>
+</html>
