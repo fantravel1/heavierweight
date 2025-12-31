@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Adaptation Syndrome for Lifters | HEAVIERWEIGHT</title>
+  <meta name="description" content="Understanding stress, adaptation, and supercompensation in strength training. The science behind progressive overload for women powerlifters.">
+  <link rel="canonical" href="https://heavierweight.com/science/stress-adaptation/">
+  <meta property="og:title" content="General Adaptation Syndrome for Lifters">
+  <meta property="og:description" content="The science of how your body gets stronger.">
+  <meta property="og:image" content="https://heavierweight.com/assets/og-science.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#00d9ff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .article-hero { padding: 80px 0 60px; background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(26, 26, 46, 0.95) 100%); }
+    .article-content { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+    .article-content h2 { color: #00d9ff; margin: 48px 0 24px 0; font-size: 1.75rem; }
+    .article-content h3 { color: #fff; margin: 32px 0 16px 0; font-size: 1.25rem; }
+    .article-content p { color: #a0a0a0; line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-content ul, .article-content ol { color: #a0a0a0; line-height: 2; margin: 20px 0; padding-left: 24px; }
+    .callout { background: rgba(0,217,255,0.1); border-left: 4px solid #00d9ff; padding: 24px; border-radius: 0 12px 12px 0; margin: 32px 0; }
+    .callout-title { color: #00d9ff; font-weight: 700; margin-bottom: 8px; }
+    .science-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 12px; margin: 16px 0; }
+    .science-card h4 { color: #00d9ff; margin: 0 0 12px 0; }
+    .diagram-container { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .diagram-caption { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 12px; }
+    .phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .phase-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 8px; }
+    .phase-item h5 { margin: 0 0 12px 0; }
+    .warning-box { background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 20px; border-radius: 0 12px 12px 0; margin: 24px 0; }
+    .warning-box strong { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <header style="padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem;">HEAVIERWEIGHT</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/train/" style="color: #a0a0a0;">Train</a>
+        <a href="/compete/" style="color: #a0a0a0;">Compete</a>
+        <a href="/science/" style="color: #00d9ff;">Science</a>
+        <a href="/gear/" style="color: #a0a0a0;">Gear</a>
+        <a href="/fuel/" style="color: #a0a0a0;">Fuel</a>
+        <a href="/life/" style="color: #a0a0a0;">Life</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <a href="/science/" style="color: #a0a0a0; text-decoration: none; font-size: 0.9rem;">← Science</a>
+      <div style="margin-top: 24px;">
+        <span style="background: rgba(0,217,255,0.2); color: #00d9ff; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Training Science</span>
+        <h1 style="font-size: 2.5rem; margin: 16px 0; line-height: 1.2;">General Adaptation Syndrome</h1>
+        <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 600px;">How your body responds to training stress and why progressive overload works.</p>
+        <div style="display: flex; gap: 24px; margin-top: 24px; color: #6b7280; font-size: 0.9rem;">
+          <span>12 min read</span>
+          <span>Updated Dec 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="article-content">
+    <p style="font-size: 1.2rem; color: #fff; line-height: 1.8;">
+      Every time you train, you're applying stress that your body must adapt to. Understanding how this process works—and what happens when you get it wrong—is the foundation of effective programming.
+    </p>
+
+    <h2>Hans Selye's GAS Model</h2>
+
+    <p>
+      In the 1930s, endocrinologist Hans Selye discovered that organisms respond to any stress in a predictable pattern. He called this the General Adaptation Syndrome (GAS), and it applies directly to strength training.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="320" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">General Adaptation Syndrome</text>
+
+        <!-- Axes -->
+        <line x1="80" y1="250" x2="650" y2="250" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="80" y1="80" x2="80" y2="250" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+        <!-- Axis labels -->
+        <text x="40" y="165" fill="#a0a0a0" font-size="10" transform="rotate(-90 40 165)">Performance Capacity</text>
+        <text x="365" y="280" text-anchor="middle" fill="#a0a0a0" font-size="10">Time →</text>
+
+        <!-- Baseline -->
+        <line x1="80" y1="160" x2="650" y2="160" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4"/>
+        <text x="70" y="165" text-anchor="end" fill="#6b7280" font-size="9">Baseline</text>
+
+        <!-- The GAS curve -->
+        <!-- Alarm phase (drop) -->
+        <path d="M 80 160 C 100 160 120 200 150 210" stroke="#ef4444" stroke-width="3" fill="none"/>
+
+        <!-- Resistance phase (rise) -->
+        <path d="M 150 210 C 200 190 280 120 380 110" stroke="#22c55e" stroke-width="3" fill="none"/>
+
+        <!-- Supercompensation peak -->
+        <path d="M 380 110 C 420 105 460 108 500 120" stroke="#00d9ff" stroke-width="3" fill="none"/>
+
+        <!-- Either: new stimulus or detraining -->
+        <!-- Detraining path -->
+        <path d="M 500 120 C 550 140 600 158 650 160" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6" fill="none"/>
+
+        <!-- Exhaustion path (if overstressed) -->
+        <path d="M 500 120 C 530 130 560 160 590 220 C 610 250 630 265 650 270" stroke="#ef4444" stroke-width="2" stroke-dasharray="6" fill="none"/>
+
+        <!-- Phase labels -->
+        <rect x="90" y="225" width="70" height="20" fill="rgba(239,68,68,0.2)" rx="4"/>
+        <text x="125" y="238" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="500">ALARM</text>
+
+        <rect x="200" y="85" width="90" height="20" fill="rgba(34,197,94,0.2)" rx="4"/>
+        <text x="245" y="98" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="500">RESISTANCE</text>
+
+        <rect x="400" y="85" width="120" height="20" fill="rgba(0,217,255,0.2)" rx="4"/>
+        <text x="460" y="98" text-anchor="middle" fill="#00d9ff" font-size="9" font-weight="500">SUPERCOMPENSATION</text>
+
+        <!-- Fork labels -->
+        <text x="620" y="155" fill="#fbbf24" font-size="9">Detraining</text>
+        <text x="620" y="285" fill="#ef4444" font-size="9">Exhaustion</text>
+
+        <!-- Training stimulus marker -->
+        <rect x="75" y="155" width="10" height="10" fill="#f97316"/>
+        <text x="90" y="145" fill="#f97316" font-size="9">Training</text>
+        <text x="90" y="135" fill="#f97316" font-size="9">Stimulus</text>
+      </svg>
+      <div class="diagram-caption">The three phases of adaptation and what happens after supercompensation</div>
+    </div>
+
+    <h2>The Three Phases</h2>
+
+    <div class="phase-grid">
+      <div class="phase-item">
+        <h5 style="color: #ef4444;">1. Alarm Phase</h5>
+        <p style="color: #a0a0a0; font-size: 0.9rem; margin: 0;">Immediately after training, performance drops. You're fatigued, muscles are damaged, nervous system is taxed. This is normal and necessary.</p>
+      </div>
+      <div class="phase-item">
+        <h5 style="color: #22c55e;">2. Resistance Phase</h5>
+        <p style="color: #a0a0a0; font-size: 0.9rem; margin: 0;">Your body adapts to the stress. Muscle repairs stronger, nervous system recovers, performance returns and exceeds baseline.</p>
+      </div>
+      <div class="phase-item">
+        <h5 style="color: #00d9ff;">3. Supercompensation</h5>
+        <p style="color: #a0a0a0; font-size: 0.9rem; margin: 0;">Peak adaptation window. You're now stronger than before. Ideally, apply new stress here to drive further adaptation.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The Training Window</div>
+      <p style="margin: 0; color: #a0a0a0;">The goal of programming is to apply the next training stress during supercompensation—when you're at your strongest. Too early = accumulated fatigue. Too late = detraining back to baseline.</p>
+    </div>
+
+    <h2>Supercompensation in Practice</h2>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="280" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Optimal vs. Suboptimal Training Timing</text>
+
+        <!-- Optimal timing (top) -->
+        <text x="80" y="55" fill="#22c55e" font-size="11" font-weight="600">OPTIMAL: Training during supercompensation</text>
+
+        <!-- Baseline -->
+        <line x1="80" y1="105" x2="650" y2="105" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3"/>
+
+        <!-- First wave -->
+        <path d="M 80 105 C 100 120 110 125 120 120 C 150 90 180 80 200 78" stroke="#22c55e" stroke-width="2" fill="none"/>
+        <circle cx="200" cy="78" r="4" fill="#f97316"/>
+
+        <!-- Second wave (starts higher) -->
+        <path d="M 200 78 C 220 95 230 98 240 95 C 270 70 300 62 320 60" stroke="#22c55e" stroke-width="2" fill="none"/>
+        <circle cx="320" cy="60" r="4" fill="#f97316"/>
+
+        <!-- Third wave -->
+        <path d="M 320 60 C 340 75 350 80 360 76 C 390 55 420 48 440 46" stroke="#22c55e" stroke-width="2" fill="none"/>
+
+        <!-- Trend line -->
+        <line x1="80" y1="105" x2="440" y2="46" stroke="#22c55e" stroke-width="1" stroke-dasharray="6"/>
+
+        <!-- Labels -->
+        <text x="150" y="140" fill="#f97316" font-size="9">Train</text>
+        <text x="260" y="140" fill="#f97316" font-size="9">Train</text>
+        <text x="370" y="140" fill="#f97316" font-size="9">Train</text>
+        <text x="500" y="55" fill="#22c55e" font-size="10">Continuous progress ↗</text>
+
+        <!-- Suboptimal timing (bottom) -->
+        <text x="80" y="175" fill="#ef4444" font-size="11" font-weight="600">SUBOPTIMAL: Training before recovery</text>
+
+        <!-- Baseline -->
+        <line x1="80" y1="220" x2="650" y2="220" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3"/>
+
+        <!-- Declining waves -->
+        <path d="M 80 220 C 95 230 105 235 115 232" stroke="#ef4444" stroke-width="2" fill="none"/>
+        <circle cx="115" cy="232" r="4" fill="#f97316"/>
+
+        <path d="M 115 232 C 130 242 140 248 150 246" stroke="#ef4444" stroke-width="2" fill="none"/>
+        <circle cx="150" cy="246" r="4" fill="#f97316"/>
+
+        <path d="M 150 246 C 165 255 175 260 185 258" stroke="#ef4444" stroke-width="2" fill="none"/>
+        <circle cx="185" cy="258" r="4" fill="#f97316"/>
+
+        <!-- Trend line -->
+        <line x1="80" y1="220" x2="250" y2="260" stroke="#ef4444" stroke-width="1" stroke-dasharray="6"/>
+
+        <!-- Labels -->
+        <text x="500" y="250" fill="#ef4444" font-size="10">Overtraining spiral ↘</text>
+      </svg>
+      <div class="diagram-caption">Proper timing accumulates adaptations; poor timing accumulates fatigue</div>
+    </div>
+
+    <h2>Factors That Affect Recovery</h2>
+
+    <div class="science-card">
+      <h4>Recovery is Individual</h4>
+      <p style="color: #a0a0a0; margin: 0 0 12px 0;">How quickly you recover depends on many factors:</p>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li><strong>Training age:</strong> More experienced = faster recovery (better work capacity)</li>
+        <li><strong>Chronological age:</strong> Older = potentially slower recovery</li>
+        <li><strong>Sleep:</strong> 7-9+ hours = faster recovery</li>
+        <li><strong>Nutrition:</strong> Adequate protein and calories = faster recovery</li>
+        <li><strong>Life stress:</strong> Work, relationships, anxiety = slower recovery</li>
+        <li><strong>Training volume/intensity:</strong> Heavier loads = longer recovery</li>
+        <li><strong>Menstrual cycle phase:</strong> Some phases may affect recovery speed</li>
+      </ul>
+    </div>
+
+    <h2>Fitness-Fatigue Model</h2>
+
+    <p>
+      A more nuanced view of adaptation recognizes that training produces two effects: fitness gains and fatigue. Performance equals fitness minus fatigue.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="280" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Fitness-Fatigue Model (Two-Factor Theory)</text>
+
+        <!-- Axes -->
+        <line x1="80" y1="230" x2="650" y2="230" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="80" y1="50" x2="80" y2="230" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+        <!-- Baseline -->
+        <line x1="80" y1="140" x2="650" y2="140" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4"/>
+        <text x="75" y="145" text-anchor="end" fill="#6b7280" font-size="9">Baseline</text>
+
+        <!-- Training marker -->
+        <line x1="100" y1="50" x2="100" y2="230" stroke="#f97316" stroke-width="2" stroke-dasharray="4"/>
+        <text x="100" y="245" text-anchor="middle" fill="#f97316" font-size="9">Training</text>
+
+        <!-- Fitness curve (positive, slow decay) -->
+        <path d="M 100 140
+                 C 150 80 250 70 350 90
+                 C 450 105 550 125 650 135"
+              stroke="#22c55e" stroke-width="2.5" fill="none"/>
+        <text x="300" y="65" fill="#22c55e" font-size="10" font-weight="500">FITNESS</text>
+        <text x="300" y="78" fill="#22c55e" font-size="9">(slow to build, slow to decay)</text>
+
+        <!-- Fatigue curve (negative, fast decay) -->
+        <path d="M 100 140
+                 C 130 200 180 220 250 180
+                 C 350 150 450 142 650 140"
+              stroke="#ef4444" stroke-width="2.5" fill="none"/>
+        <text x="180" y="215" fill="#ef4444" font-size="10" font-weight="500">FATIGUE</text>
+        <text x="180" y="228" fill="#ef4444" font-size="9">(fast to build, fast to decay)</text>
+
+        <!-- Performance curve (fitness - fatigue) -->
+        <path d="M 100 140
+                 C 120 160 150 170 200 150
+                 C 280 115 380 90 500 85
+                 C 580 82 620 88 650 95"
+              stroke="#00d9ff" stroke-width="3" fill="none"/>
+        <text x="500" y="70" fill="#00d9ff" font-size="11" font-weight="600">PERFORMANCE = Fitness - Fatigue</text>
+
+        <!-- Supercompensation window -->
+        <rect x="420" y="75" width="120" height="25" fill="rgba(0,217,255,0.15)" stroke="#00d9ff" stroke-dasharray="4" rx="4"/>
+        <text x="480" y="92" text-anchor="middle" fill="#00d9ff" font-size="9">Peak window</text>
+      </svg>
+      <div class="diagram-caption">Fatigue dissipates faster than fitness, creating the supercompensation window</div>
+    </div>
+
+    <div class="science-card">
+      <h4>Key Insight</h4>
+      <p style="color: #a0a0a0; margin: 0;">Fatigue builds quickly but also dissipates quickly. Fitness builds slowly and dissipates slowly. This is why tapers work: you reduce training to shed fatigue, but fitness stays elevated, revealing peak performance.</p>
+    </div>
+
+    <h2>Practical Applications</h2>
+
+    <h3>For Weekly Programming</h3>
+
+    <ul>
+      <li><strong>Heavy day:</strong> Large stress, requires more recovery</li>
+      <li><strong>Light day:</strong> Maintains fitness, allows recovery to continue</li>
+      <li><strong>Rest days:</strong> Full recovery, fatigue dissipation</li>
+    </ul>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="200" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Weekly Stress-Recovery Pattern</text>
+
+        <!-- Days -->
+        <text x="100" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">MON</text>
+        <text x="200" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">TUE</text>
+        <text x="300" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">WED</text>
+        <text x="400" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">THU</text>
+        <text x="500" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">FRI</text>
+        <text x="600" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">SAT-SUN</text>
+
+        <!-- Stress bars -->
+        <rect x="75" y="75" width="50" height="70" fill="#ef4444" rx="4"/>
+        <text x="100" y="115" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">HIGH</text>
+        <text x="100" y="128" text-anchor="middle" fill="#fff" font-size="8">Heavy SQ</text>
+
+        <rect x="175" y="105" width="50" height="40" fill="#22c55e" rx="4"/>
+        <text x="200" y="130" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">LOW</text>
+        <text x="200" y="143" text-anchor="middle" fill="#fff" font-size="8">Light BN</text>
+
+        <rect x="275" y="85" width="50" height="60" fill="#fbbf24" rx="4"/>
+        <text x="300" y="120" text-anchor="middle" fill="#1a1a2e" font-size="9" font-weight="600">MED</text>
+        <text x="300" y="133" text-anchor="middle" fill="#1a1a2e" font-size="8">Heavy DL</text>
+
+        <rect x="375" y="110" width="50" height="35" fill="#22c55e" rx="4"/>
+        <text x="400" y="132" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">LOW</text>
+        <text x="400" y="143" text-anchor="middle" fill="#fff" font-size="8">Access</text>
+
+        <rect x="475" y="80" width="50" height="65" fill="#fbbf24" rx="4"/>
+        <text x="500" y="118" text-anchor="middle" fill="#1a1a2e" font-size="9" font-weight="600">MED</text>
+        <text x="500" y="131" text-anchor="middle" fill="#1a1a2e" font-size="8">Vol Bench</text>
+
+        <rect x="575" y="130" width="50" height="15" fill="#3b82f6" rx="4"/>
+        <text x="600" y="142" text-anchor="middle" fill="#fff" font-size="8">REST</text>
+
+        <!-- Recovery arrow -->
+        <text x="350" y="175" text-anchor="middle" fill="#00d9ff" font-size="10">Recovery happens between sessions, not during</text>
+
+        <!-- Baseline -->
+        <line x1="60" y1="145" x2="640" y2="145" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3"/>
+      </svg>
+      <div class="diagram-caption">Vary training stress to allow recovery while maintaining training frequency</div>
+    </div>
+
+    <h3>For Block Programming</h3>
+
+    <ul>
+      <li><strong>Accumulation blocks:</strong> High volume, moderate intensity → builds fitness, accumulates fatigue</li>
+      <li><strong>Intensification blocks:</strong> Moderate volume, high intensity → maintains fitness, manages fatigue</li>
+      <li><strong>Realization blocks:</strong> Low volume, peak intensity → sheds fatigue, reveals fitness</li>
+    </ul>
+
+    <h2>Signs of Proper Adaptation</h2>
+
+    <div class="science-card">
+      <h4>You're Adapting Well If:</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li>Weight or reps are gradually increasing over weeks</li>
+        <li>RPE stays consistent as loads increase</li>
+        <li>You feel recovered by your next session</li>
+        <li>Sleep quality remains good</li>
+        <li>Appetite and mood are stable</li>
+        <li>Technique stays sharp as fatigue accumulates</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <strong>Signs of Poor Adaptation (Overreaching)</strong>
+      <ul style="color: #a0a0a0; margin: 8px 0 0 0; padding-left: 20px;">
+        <li>Weights feel heavier despite rest</li>
+        <li>Persistent muscle soreness</li>
+        <li>Declining motivation</li>
+        <li>Sleep disruption</li>
+        <li>Increased resting heart rate</li>
+        <li>Mood changes, irritability</li>
+        <li>Stalled or declining performance</li>
+      </ul>
+    </div>
+
+    <h2>Managing Cumulative Fatigue</h2>
+
+    <p>
+      Fatigue doesn't just dissipate between sessions—it can accumulate across weeks if training stress consistently exceeds recovery capacity.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="220" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Fatigue Accumulation Across Training Blocks</text>
+
+        <!-- Block labels -->
+        <text x="120" y="50" text-anchor="middle" fill="#a0a0a0" font-size="10">WEEK 1</text>
+        <text x="220" y="50" text-anchor="middle" fill="#a0a0a0" font-size="10">WEEK 2</text>
+        <text x="320" y="50" text-anchor="middle" fill="#a0a0a0" font-size="10">WEEK 3</text>
+        <text x="420" y="50" text-anchor="middle" fill="#a0a0a0" font-size="10">WEEK 4</text>
+        <text x="520" y="50" text-anchor="middle" fill="#22c55e" font-size="10">DELOAD</text>
+        <text x="620" y="50" text-anchor="middle" fill="#a0a0a0" font-size="10">WEEK 1</text>
+
+        <!-- Baseline -->
+        <line x1="60" y1="130" x2="660" y2="130" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4"/>
+
+        <!-- Fatigue buildup -->
+        <path d="M 80 130 L 150 145 L 180 140 L 200 155 L 240 150
+                 L 280 170 L 320 165 L 360 180 L 400 175 L 440 190"
+              stroke="#ef4444" stroke-width="2" fill="none"/>
+
+        <!-- Deload drop -->
+        <path d="M 440 190 C 480 170 520 130 560 120" stroke="#22c55e" stroke-width="2" fill="none"/>
+
+        <!-- New block start -->
+        <path d="M 560 120 L 620 135 L 660 130" stroke="#ef4444" stroke-width="2" fill="none"/>
+
+        <!-- Weekly recovery dips -->
+        <circle cx="180" cy="140" r="3" fill="#3b82f6"/>
+        <circle cx="280" cy="150" r="3" fill="#3b82f6"/>
+        <circle cx="360" cy="165" r="3" fill="#3b82f6"/>
+        <circle cx="440" cy="175" r="3" fill="#3b82f6"/>
+
+        <!-- Deload zone -->
+        <rect x="470" y="55" width="100" height="135" fill="rgba(34,197,94,0.1)" rx="4"/>
+
+        <!-- Labels -->
+        <text x="580" y="115" fill="#22c55e" font-size="9">Fresh start</text>
+        <text x="350" y="205" text-anchor="middle" fill="#6b7280" font-size="10">Deloads prevent chronic fatigue accumulation</text>
+      </svg>
+      <div class="diagram-caption">Strategic deloads shed accumulated fatigue before it becomes problematic</div>
+    </div>
+
+    <h2>Applying This to Your Training</h2>
+
+    <ol>
+      <li><strong>Track your performance:</strong> Know if you're adapting or accumulating fatigue</li>
+      <li><strong>Autoregulate:</strong> Adjust training based on daily readiness, not just the program</li>
+      <li><strong>Plan deloads:</strong> Every 4-6 weeks, reduce volume/intensity to recover</li>
+      <li><strong>Respect recovery:</strong> Sleep, nutrition, and stress management are training</li>
+      <li><strong>Periodize intelligently:</strong> Vary stress across weeks and blocks</li>
+      <li><strong>Peak strategically:</strong> Shed fatigue before competition to reveal fitness</li>
+    </ol>
+
+    <div class="callout">
+      <div class="callout-title">The Bottom Line</div>
+      <p style="margin: 0; color: #a0a0a0;">Training is stress. Adaptation is the response to stress. Your job is to apply enough stress to drive adaptation, then recover enough to realize those adaptations. Too much stress without recovery = overtraining. Too little stress = no adaptation. Find the balance through smart programming and listening to your body.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 24px; margin: 48px 0;">
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #00d9ff, #0891b2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">HW</div>
+        <div>
+          <strong style="color: #fff;">HEAVIERWEIGHT Team</strong>
+          <p style="color: #6b7280; margin: 4px 0 0 0; font-size: 0.9rem;">Training science for women who lift.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="color: #fff; margin-bottom: 16px;">Related Articles</h3>
+      <div style="display: grid; gap: 12px;">
+        <a href="/train/periodization/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Periodization Guide →</a>
+        <a href="/science/overtraining-signs/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Recognizing Overtraining →</a>
+        <a href="/train/deload-guide/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Deload Week Guide →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p style="color: #6b7280;">&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+</body>
+</html>

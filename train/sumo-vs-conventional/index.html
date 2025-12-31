@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumo vs Conventional Deadlift - HEAVIERWEIGHT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f97316;
+    }
+
+    .article-hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 span {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #808080;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 2rem 0 1rem;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p, .highlight-box li {
+      color: #d0d0d0;
+    }
+
+    .diagram-container {
+      margin: 2.5rem 0;
+      background: #12121a;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #808080;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #808080;
+      margin-top: 0.75rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stance-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 2px solid;
+    }
+
+    .stance-card.conventional {
+      border-color: #3b82f6;
+    }
+
+    .stance-card.sumo {
+      border-color: #22c55e;
+    }
+
+    .stance-card h4 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .stance-card.conventional h4 { color: #3b82f6; }
+    .stance-card.sumo h4 { color: #22c55e; }
+
+    .stance-card ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .stance-card li {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #f97316;
+      border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #b0b0b0;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .protocol-box {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .protocol-box h4 {
+      color: #22c55e;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .protocol-box p, .protocol-box li {
+      color: #d0d0d0;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-box p {
+      color: #d0d0d0;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-card {
+      background: #12121a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: #f97316;
+      transform: translateY(-3px);
+    }
+
+    .related-card h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.9rem;
+      color: #808080;
+      margin: 0;
+    }
+
+    footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #606060;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3rem; }
+      .article-content { padding: 2rem 1.5rem; }
+      .diagram-container { padding: 1rem; }
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">HEAVIERWEIGHT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/train">Train</a></li>
+        <li><a href="/compete">Compete</a></li>
+        <li><a href="/science">Science</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/fuel">Fuel</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/train">Train</a>
+          <span>/</span>
+          <span>Sumo vs Conventional</span>
+        </div>
+        <h1><span>Sumo vs Conventional</span> Deadlift</h1>
+        <div class="article-meta">
+          <span>14 min read</span>
+          <span>•</span>
+          <span>Technique</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <h2>Two Legal Stances, Different Demands</h2>
+
+      <p>Both sumo and conventional deadlifts are legal in powerlifting competition. Neither is "cheating"—they're simply different techniques that favor different body types and leverage advantages. The best stance for you depends on your proportions, mobility, and individual strengths.</p>
+
+      <p>Many lifters try both and settle on one, while others train both and compete with whichever is stronger that day. Understanding the differences helps you make an informed choice.</p>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="400" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="18" font-weight="bold">Stance Comparison: Top-Down View</text>
+
+          <!-- Conventional side -->
+          <text x="175" y="70" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">CONVENTIONAL</text>
+
+          <!-- Barbell -->
+          <rect x="50" y="180" width="250" height="12" fill="#808080" rx="6"/>
+
+          <!-- Feet - narrow, inside hands -->
+          <ellipse cx="140" cy="250" rx="25" ry="40" fill="#3b82f6" opacity="0.6" transform="rotate(-5 140 250)"/>
+          <ellipse cx="210" cy="250" rx="25" ry="40" fill="#3b82f6" opacity="0.6" transform="rotate(5 210 250)"/>
+
+          <!-- Hands - outside feet -->
+          <circle cx="100" cy="186" r="12" fill="#3b82f6"/>
+          <circle cx="250" cy="186" r="12" fill="#3b82f6"/>
+
+          <!-- Labels -->
+          <text x="175" y="320" text-anchor="middle" fill="#808080" font-size="10">Feet hip-width</text>
+          <text x="175" y="335" text-anchor="middle" fill="#808080" font-size="10">Hands outside legs</text>
+          <text x="175" y="350" text-anchor="middle" fill="#808080" font-size="10">Toes forward or slight out</text>
+
+          <!-- Dimension lines -->
+          <line x1="140" y1="295" x2="210" y2="295" stroke="#3b82f6" stroke-width="2"/>
+          <text x="175" y="380" text-anchor="middle" fill="#3b82f6" font-size="11">~Hip width stance</text>
+
+          <!-- Divider -->
+          <line x1="350" y1="50" x2="350" y2="390" stroke="#3b3b5c" stroke-width="2" stroke-dasharray="10,10"/>
+
+          <!-- Sumo side -->
+          <text x="525" y="70" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">SUMO</text>
+
+          <!-- Barbell -->
+          <rect x="400" y="180" width="250" height="12" fill="#808080" rx="6"/>
+
+          <!-- Feet - wide, outside hands -->
+          <ellipse cx="430" cy="250" rx="25" ry="40" fill="#22c55e" opacity="0.6" transform="rotate(-30 430 250)"/>
+          <ellipse cx="620" cy="250" rx="25" ry="40" fill="#22c55e" opacity="0.6" transform="rotate(30 620 250)"/>
+
+          <!-- Hands - inside feet, close grip -->
+          <circle cx="505" cy="186" r="12" fill="#22c55e"/>
+          <circle cx="545" cy="186" r="12" fill="#22c55e"/>
+
+          <!-- Labels -->
+          <text x="525" y="320" text-anchor="middle" fill="#808080" font-size="10">Feet wide</text>
+          <text x="525" y="335" text-anchor="middle" fill="#808080" font-size="10">Hands inside legs</text>
+          <text x="525" y="350" text-anchor="middle" fill="#808080" font-size="10">Toes pointed out 45°+</text>
+
+          <!-- Dimension lines -->
+          <line x1="430" y1="295" x2="620" y2="295" stroke="#22c55e" stroke-width="2"/>
+          <text x="525" y="380" text-anchor="middle" fill="#22c55e" font-size="11">~1.5-2x shoulder width</text>
+        </svg>
+        <div class="diagram-caption">Top-down view showing the fundamental difference in foot and hand placement</div>
+      </div>
+
+      <h2>Key Differences</h2>
+
+      <div class="comparison-grid">
+        <div class="stance-card conventional">
+          <h4>Conventional</h4>
+          <ul>
+            <li>Feet hip-width apart</li>
+            <li>Hands grip outside legs</li>
+            <li>More hip hinge dominant</li>
+            <li>Greater range of motion</li>
+            <li>Higher back demands</li>
+            <li>Longer bar path</li>
+            <li>Stronger off the floor for most</li>
+          </ul>
+        </div>
+
+        <div class="stance-card sumo">
+          <h4>Sumo</h4>
+          <ul>
+            <li>Feet wide (1.5-2x shoulder width)</li>
+            <li>Hands grip inside legs</li>
+            <li>More quad/hip dominant</li>
+            <li>Shorter range of motion</li>
+            <li>Higher hip mobility demands</li>
+            <li>More upright torso</li>
+            <li>Often harder off the floor, easier at lockout</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="380" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Torso Angle & Range of Motion Comparison</text>
+
+          <!-- Conventional side -->
+          <text x="175" y="60" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="bold">CONVENTIONAL</text>
+
+          <!-- Floor -->
+          <rect x="50" y="300" width="250" height="8" fill="#3b3b5c" rx="2"/>
+
+          <!-- Barbell -->
+          <rect x="100" y="280" width="150" height="10" fill="#808080" rx="5"/>
+
+          <!-- Figure - more horizontal torso -->
+          <!-- Legs -->
+          <line x1="150" y1="300" x2="160" y2="230" stroke="#3b82f6" stroke-width="6" stroke-linecap="round"/>
+          <line x1="200" y1="300" x2="190" y2="230" stroke="#3b82f6" stroke-width="6" stroke-linecap="round"/>
+          <!-- Torso - angled forward -->
+          <line x1="175" y1="230" x2="130" y2="150" stroke="#3b82f6" stroke-width="6" stroke-linecap="round"/>
+          <!-- Head -->
+          <circle cx="120" cy="135" r="15" fill="#3b82f6"/>
+          <!-- Arms -->
+          <line x1="145" y1="180" x2="125" y2="285" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+          <line x1="155" y1="175" x2="225" y2="285" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+
+          <!-- Torso angle indicator -->
+          <path d="M175 230 L175 180" stroke="#808080" stroke-width="1" stroke-dasharray="5,5"/>
+          <path d="M175 230 L130 150" stroke="#3b82f6" stroke-width="2"/>
+          <text x="195" y="200" fill="#3b82f6" font-size="10">~45°</text>
+
+          <!-- ROM arrow -->
+          <line x1="280" y1="285" x2="280" y2="140" stroke="#3b82f6" stroke-width="2"/>
+          <polygon points="275,145 280,130 285,145" fill="#3b82f6"/>
+          <text x="295" y="215" fill="#3b82f6" font-size="10" transform="rotate(-90 295 215)">Longer ROM</text>
+
+          <!-- Divider -->
+          <line x1="350" y1="50" x2="350" y2="360" stroke="#3b3b5c" stroke-width="2" stroke-dasharray="10,10"/>
+
+          <!-- Sumo side -->
+          <text x="525" y="60" text-anchor="middle" fill="#22c55e" font-size="13" font-weight="bold">SUMO</text>
+
+          <!-- Floor -->
+          <rect x="400" y="300" width="250" height="8" fill="#3b3b5c" rx="2"/>
+
+          <!-- Barbell -->
+          <rect x="450" y="280" width="150" height="10" fill="#808080" rx="5"/>
+
+          <!-- Figure - more upright torso, wide stance -->
+          <!-- Legs - wide and angled -->
+          <line x1="440" y1="300" x2="490" y2="220" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+          <line x1="610" y1="300" x2="560" y2="220" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+          <!-- Torso - more upright -->
+          <line x1="525" y1="220" x2="520" y2="140" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+          <!-- Head -->
+          <circle cx="518" cy="125" r="15" fill="#22c55e"/>
+          <!-- Arms - straight down -->
+          <line x1="515" y1="170" x2="500" y2="285" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+          <line x1="535" y1="170" x2="550" y2="285" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+
+          <!-- Torso angle indicator -->
+          <path d="M525 220 L525 170" stroke="#808080" stroke-width="1" stroke-dasharray="5,5"/>
+          <path d="M525 220 L520 140" stroke="#22c55e" stroke-width="2"/>
+          <text x="540" y="185" fill="#22c55e" font-size="10">~70°</text>
+
+          <!-- ROM arrow -->
+          <line x1="630" y1="285" x2="630" y2="175" stroke="#22c55e" stroke-width="2"/>
+          <polygon points="625,180 630,165 635,180" fill="#22c55e"/>
+          <text x="645" y="235" fill="#22c55e" font-size="10" transform="rotate(-90 645 235)">Shorter ROM</text>
+
+          <!-- Bottom comparison -->
+          <rect x="150" y="330" width="400" height="40" fill="#12121a" rx="8"/>
+          <text x="350" y="355" text-anchor="middle" fill="#b0b0b0" font-size="11">Sumo: More upright torso, less back stress, shorter bar path</text>
+        </svg>
+        <div class="diagram-caption">Side view showing the difference in torso angle and range of motion</div>
+      </div>
+
+      <h2>Who Should Pull Conventional?</h2>
+
+      <p>Conventional deadlift tends to favor lifters with:</p>
+
+      <div class="highlight-box">
+        <h4>Body Type Indicators for Conventional</h4>
+        <ul>
+          <li><strong>Long arms relative to torso:</strong> Natural leverage advantage</li>
+          <li><strong>Shorter legs / longer torso:</strong> Better hip hinge position</li>
+          <li><strong>Limited hip mobility:</strong> Less external rotation demand</li>
+          <li><strong>Strong posterior chain:</strong> Back, glutes, hamstrings dominant</li>
+          <li><strong>Wider hips:</strong> May feel cramped in sumo stance</li>
+        </ul>
+      </div>
+
+      <h2>Who Should Pull Sumo?</h2>
+
+      <p>Sumo deadlift tends to favor lifters with:</p>
+
+      <div class="highlight-box">
+        <h4>Body Type Indicators for Sumo</h4>
+        <ul>
+          <li><strong>Shorter arms relative to torso:</strong> Sumo reduces reach disadvantage</li>
+          <li><strong>Longer legs / shorter torso:</strong> More upright position helps</li>
+          <li><strong>Good hip mobility:</strong> Can achieve wide stance with knees tracking</li>
+          <li><strong>Strong quads and hip extensors:</strong> Sumo is more quad-involved</li>
+          <li><strong>Narrower hips:</strong> Often allows better sumo positioning</li>
+        </ul>
+      </div>
+
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="320" fill="#1a1a2e"/>
+
+          <!-- Title -->
+          <text x="350" y="30" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold">Muscle Emphasis by Stance</text>
+
+          <!-- Conventional side -->
+          <rect x="50" y="55" width="280" height="240" fill="#12121a" rx="12" stroke="#3b82f6" stroke-width="2"/>
+          <text x="190" y="85" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">CONVENTIONAL</text>
+
+          <!-- Muscle bars -->
+          <text x="70" y="120" fill="#ffffff" font-size="11">Lower Back</text>
+          <rect x="160" y="108" width="150" height="16" fill="#3b82f6" rx="3"/>
+          <text x="175" y="120" fill="#ffffff" font-size="10">PRIMARY</text>
+
+          <text x="70" y="150" fill="#ffffff" font-size="11">Glutes</text>
+          <rect x="160" y="138" width="130" height="16" fill="#3b82f6" rx="3" opacity="0.8"/>
+          <text x="175" y="150" fill="#ffffff" font-size="10">HIGH</text>
+
+          <text x="70" y="180" fill="#ffffff" font-size="11">Hamstrings</text>
+          <rect x="160" y="168" width="140" height="16" fill="#3b82f6" rx="3" opacity="0.8"/>
+          <text x="175" y="180" fill="#ffffff" font-size="10">HIGH</text>
+
+          <text x="70" y="210" fill="#ffffff" font-size="11">Quads</text>
+          <rect x="160" y="198" width="60" height="16" fill="#3b82f6" rx="3" opacity="0.5"/>
+          <text x="175" y="210" fill="#ffffff" font-size="10">LOW</text>
+
+          <text x="70" y="240" fill="#ffffff" font-size="11">Adductors</text>
+          <rect x="160" y="228" width="50" height="16" fill="#3b82f6" rx="3" opacity="0.4"/>
+          <text x="175" y="240" fill="#ffffff" font-size="10">LOW</text>
+
+          <text x="70" y="270" fill="#ffffff" font-size="11">Upper Back</text>
+          <rect x="160" y="258" width="120" height="16" fill="#3b82f6" rx="3" opacity="0.7"/>
+          <text x="175" y="270" fill="#ffffff" font-size="10">MOD</text>
+
+          <!-- Sumo side -->
+          <rect x="370" y="55" width="280" height="240" fill="#12121a" rx="12" stroke="#22c55e" stroke-width="2"/>
+          <text x="510" y="85" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">SUMO</text>
+
+          <!-- Muscle bars -->
+          <text x="390" y="120" fill="#ffffff" font-size="11">Lower Back</text>
+          <rect x="480" y="108" width="80" height="16" fill="#22c55e" rx="3" opacity="0.6"/>
+          <text x="495" y="120" fill="#ffffff" font-size="10">MOD</text>
+
+          <text x="390" y="150" fill="#ffffff" font-size="11">Glutes</text>
+          <rect x="480" y="138" width="140" height="16" fill="#22c55e" rx="3"/>
+          <text x="495" y="150" fill="#ffffff" font-size="10">PRIMARY</text>
+
+          <text x="390" y="180" fill="#ffffff" font-size="11">Hamstrings</text>
+          <rect x="480" y="168" width="70" height="16" fill="#22c55e" rx="3" opacity="0.5"/>
+          <text x="495" y="180" fill="#ffffff" font-size="10">LOW</text>
+
+          <text x="390" y="210" fill="#ffffff" font-size="11">Quads</text>
+          <rect x="480" y="198" width="130" height="16" fill="#22c55e" rx="3" opacity="0.9"/>
+          <text x="495" y="210" fill="#ffffff" font-size="10">HIGH</text>
+
+          <text x="390" y="240" fill="#ffffff" font-size="11">Adductors</text>
+          <rect x="480" y="228" width="140" height="16" fill="#22c55e" rx="3"/>
+          <text x="495" y="240" fill="#ffffff" font-size="10">PRIMARY</text>
+
+          <text x="390" y="270" fill="#ffffff" font-size="11">Upper Back</text>
+          <rect x="480" y="258" width="100" height="16" fill="#22c55e" rx="3" opacity="0.7"/>
+          <text x="495" y="270" fill="#ffffff" font-size="10">MOD</text>
+        </svg>
+        <div class="diagram-caption">Relative muscle emphasis differs significantly between stances</div>
+      </div>
+
+      <h2>How to Test Which Works for You</h2>
+
+      <p>The best way to determine your optimal stance is to train both seriously for a period of time. Here's a testing protocol:</p>
+
+      <div class="protocol-box">
+        <h4>8-Week Stance Testing Protocol</h4>
+        <ul>
+          <li><strong>Weeks 1-2:</strong> Train both stances at moderate weights (70-75%), focus on technique</li>
+          <li><strong>Weeks 3-4:</strong> Build to heavier singles (85-90%) in both stances</li>
+          <li><strong>Week 5-6:</strong> Primary stance training with secondary stance as accessory</li>
+          <li><strong>Week 7:</strong> Test day—work up to heavy singles in both stances, same session</li>
+          <li><strong>Week 8:</strong> Evaluate results and choose primary competition stance</li>
+        </ul>
+      </div>
+
+      <h3>What to Evaluate</h3>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>What to Look For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strength</td>
+            <td>Which stance allows you to lift more weight?</td>
+          </tr>
+          <tr>
+            <td>Consistency</td>
+            <td>Which stance feels more repeatable and stable?</td>
+          </tr>
+          <tr>
+            <td>Speed off floor</td>
+            <td>Where does the bar break the floor faster?</td>
+          </tr>
+          <tr>
+            <td>Lockout</td>
+            <td>Which stance has a smoother, stronger lockout?</td>
+          </tr>
+          <tr>
+            <td>Recovery</td>
+            <td>Which stance leaves you less beat up?</td>
+          </tr>
+          <tr>
+            <td>Comfort</td>
+            <td>Which feels more natural and sustainable?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/hCDzSR6bW10" title="Sumo vs Conventional Deadlift" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Source: Calgary Barbell - Sumo vs Conventional Breakdown</div>
+
+      <h2>Common Mistakes by Stance</h2>
+
+      <h3>Conventional Mistakes</h3>
+
+      <div class="warning-box">
+        <h4>Rounding the Lower Back</h4>
+        <p>The more horizontal torso position puts significant stress on the lower back. If you can't maintain a neutral spine, the weight is too heavy or your positioning is off.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Hips Rising Too Fast</h4>
+        <p>If your hips shoot up and the bar stays on the floor, you're turning the lift into a stiff-leg deadlift. Push through the floor and keep your chest up.</p>
+      </div>
+
+      <h3>Sumo Mistakes</h3>
+
+      <div class="warning-box">
+        <h4>Knees Caving In</h4>
+        <p>Sumo requires strong hip external rotation. If your knees collapse inward, you lose power and risk injury. Push knees out over toes throughout the lift.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>Hips Too Far From Bar</h4>
+        <p>Sumo works best with hips close to the bar. If you're reaching forward, you're losing the leverage advantage. Sit your hips down and forward toward the bar.</p>
+      </div>
+
+      <h2>Can You Train Both?</h2>
+
+      <p>Yes. Many lifters benefit from training both stances:</p>
+
+      <ul>
+        <li><strong>Primary/Secondary:</strong> Main stance for heavy work, alternate stance for accessory volume</li>
+        <li><strong>Block Rotation:</strong> Alternate which stance is primary each training block</li>
+        <li><strong>Competition Flexibility:</strong> Having both stances competition-ready gives you options</li>
+      </ul>
+
+      <p>However, if you're new to deadlifting, pick one stance and get good at it before adding complexity. Mastery of one is better than mediocrity in both.</p>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>Neither is cheating:</strong> Both stances are legal and valid</li>
+        <li><strong>Body type matters:</strong> Your proportions influence which works better</li>
+        <li><strong>Test both seriously:</strong> Give each stance honest effort before deciding</li>
+        <li><strong>Muscle emphasis differs:</strong> Conventional = more back; Sumo = more quads/adductors</li>
+        <li><strong>ROM differs:</strong> Sumo has shorter range of motion for most lifters</li>
+        <li><strong>Mobility requirements:</strong> Sumo demands more hip mobility</li>
+        <li><strong>You can train both:</strong> But master one first</li>
+      </ul>
+
+      <div class="related-articles">
+        <h3>Related Guides</h3>
+        <div class="related-grid">
+          <a href="/train/barbell-path" class="related-card">
+            <h4>Barbell Path Guide</h4>
+            <p>Optimal bar path for each lift</p>
+          </a>
+          <a href="/science/leverages-proportions" class="related-card">
+            <h4>Leverages & Body Proportions</h4>
+            <p>How your structure affects technique</p>
+          </a>
+          <a href="/train/grip-strength" class="related-card">
+            <h4>Grip Strength Training</h4>
+            <p>Build the grip to match your pull</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="copyright">&copy; 2025 HEAVIERWEIGHT. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

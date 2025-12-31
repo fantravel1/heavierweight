@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velocity-Based Training for Powerlifting | HEAVIERWEIGHT</title>
+  <meta name="description" content="How to use bar speed to autoregulate training. VBT zones, devices, and practical applications for women powerlifters.">
+  <link rel="canonical" href="https://heavierweight.com/train/velocity-training/">
+  <meta property="og:title" content="Velocity-Based Training for Powerlifting">
+  <meta property="og:description" content="Let bar speed guide your training intensity.">
+  <meta property="og:image" content="https://heavierweight.com/assets/og-train.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#f97316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .article-hero { padding: 80px 0 60px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(26, 26, 46, 0.95) 100%); }
+    .article-content { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+    .article-content h2 { color: #f97316; margin: 48px 0 24px 0; font-size: 1.75rem; }
+    .article-content h3 { color: #fff; margin: 32px 0 16px 0; font-size: 1.25rem; }
+    .article-content p { color: #a0a0a0; line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-content ul, .article-content ol { color: #a0a0a0; line-height: 2; margin: 20px 0; padding-left: 24px; }
+    .callout { background: rgba(249,115,22,0.1); border-left: 4px solid #f97316; padding: 24px; border-radius: 0 12px 12px 0; margin: 32px 0; }
+    .callout-title { color: #f97316; font-weight: 700; margin-bottom: 8px; }
+    .tech-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 12px; margin: 16px 0; }
+    .tech-card h4 { color: #f97316; margin: 0 0 12px 0; }
+    .diagram-container { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .diagram-caption { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 12px; }
+    .zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 24px 0; }
+    .zone-item { padding: 16px; border-radius: 8px; text-align: center; }
+    .zone-item h5 { margin: 0 0 8px 0; font-size: 1rem; }
+    .zone-item .speed { font-size: 1.5rem; font-weight: 700; }
+    .zone-item p { margin: 8px 0 0 0; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header style="padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem;">HEAVIERWEIGHT</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/train/" style="color: #f97316;">Train</a>
+        <a href="/compete/" style="color: #a0a0a0;">Compete</a>
+        <a href="/science/" style="color: #a0a0a0;">Science</a>
+        <a href="/gear/" style="color: #a0a0a0;">Gear</a>
+        <a href="/fuel/" style="color: #a0a0a0;">Fuel</a>
+        <a href="/life/" style="color: #a0a0a0;">Life</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <a href="/train/" style="color: #a0a0a0; text-decoration: none; font-size: 0.9rem;">← Train</a>
+      <div style="margin-top: 24px;">
+        <span style="background: rgba(249,115,22,0.2); color: #f97316; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Technology</span>
+        <h1 style="font-size: 2.5rem; margin: 16px 0; line-height: 1.2;">Velocity-Based Training</h1>
+        <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 600px;">Use bar speed to autoregulate intensity and optimize training.</p>
+        <div style="display: flex; gap: 24px; margin-top: 24px; color: #6b7280; font-size: 0.9rem;">
+          <span>13 min read</span>
+          <span>Updated Dec 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="article-content">
+    <p style="font-size: 1.2rem; color: #fff; line-height: 1.8;">
+      Velocity-based training (VBT) uses bar speed to objectively measure intensity and fatigue. Instead of guessing your RPE, you let the numbers tell you exactly how hard a set was.
+    </p>
+
+    <h2>Why Bar Speed Matters</h2>
+
+    <p>
+      As weight gets heavier relative to your max, the bar moves slower. This relationship is predictable and measurable, giving you an objective way to gauge intensity without testing maxes.
+    </p>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="320" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Load-Velocity Relationship</text>
+
+        <!-- Axes -->
+        <line x1="100" y1="260" x2="620" y2="260" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="100" y1="60" x2="100" y2="260" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+        <!-- Axis labels -->
+        <text x="360" y="290" text-anchor="middle" fill="#a0a0a0" font-size="11">% of 1RM →</text>
+        <text x="50" y="160" fill="#a0a0a0" font-size="11" transform="rotate(-90 50 160)">Velocity (m/s)</text>
+
+        <!-- Percentage markers -->
+        <text x="140" y="278" text-anchor="middle" fill="#6b7280" font-size="9">50%</text>
+        <text x="230" y="278" text-anchor="middle" fill="#6b7280" font-size="9">60%</text>
+        <text x="320" y="278" text-anchor="middle" fill="#6b7280" font-size="9">70%</text>
+        <text x="410" y="278" text-anchor="middle" fill="#6b7280" font-size="9">80%</text>
+        <text x="500" y="278" text-anchor="middle" fill="#6b7280" font-size="9">90%</text>
+        <text x="590" y="278" text-anchor="middle" fill="#6b7280" font-size="9">100%</text>
+
+        <!-- Velocity markers -->
+        <text x="90" y="85" text-anchor="end" fill="#6b7280" font-size="9">1.0</text>
+        <text x="90" y="130" text-anchor="end" fill="#6b7280" font-size="9">0.8</text>
+        <text x="90" y="175" text-anchor="end" fill="#6b7280" font-size="9">0.6</text>
+        <text x="90" y="220" text-anchor="end" fill="#6b7280" font-size="9">0.4</text>
+        <text x="90" y="258" text-anchor="end" fill="#6b7280" font-size="9">0.2</text>
+
+        <!-- Grid lines -->
+        <line x1="100" y1="80" x2="620" y2="80" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4"/>
+        <line x1="100" y1="125" x2="620" y2="125" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4"/>
+        <line x1="100" y1="170" x2="620" y2="170" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4"/>
+        <line x1="100" y1="215" x2="620" y2="215" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4"/>
+
+        <!-- Load-velocity curve -->
+        <path d="M 140 90 C 200 100 280 130 350 165 C 420 200 500 230 590 252"
+              stroke="#f97316" stroke-width="3" fill="none"/>
+
+        <!-- Data points -->
+        <circle cx="140" cy="90" r="6" fill="#22c55e"/>
+        <circle cx="230" cy="115" r="6" fill="#22c55e"/>
+        <circle cx="320" cy="150" r="6" fill="#fbbf24"/>
+        <circle cx="410" cy="195" r="6" fill="#fbbf24"/>
+        <circle cx="500" cy="230" r="6" fill="#ef4444"/>
+        <circle cx="590" cy="252" r="6" fill="#ef4444"/>
+
+        <!-- Zone shading -->
+        <rect x="120" y="55" width="130" height="210" fill="rgba(34,197,94,0.1)" rx="4"/>
+        <rect x="260" y="55" width="180" height="210" fill="rgba(251,191,36,0.1)" rx="4"/>
+        <rect x="450" y="55" width="160" height="210" fill="rgba(239,68,68,0.1)" rx="4"/>
+
+        <!-- Zone labels -->
+        <text x="185" y="75" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="500">SPEED</text>
+        <text x="350" y="75" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="500">STRENGTH-SPEED</text>
+        <text x="530" y="75" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="500">STRENGTH</text>
+      </svg>
+      <div class="diagram-caption">Heavier loads = slower bar speed. This relationship is consistent and predictable.</div>
+    </div>
+
+    <h2>Velocity Zones</h2>
+
+    <div class="zone-grid">
+      <div class="zone-item" style="background: rgba(34,197,94,0.15); border: 1px solid #22c55e;">
+        <h5 style="color: #22c55e;">Speed-Strength</h5>
+        <div class="speed" style="color: #22c55e;">> 1.0 m/s</div>
+        <p style="color: #a0a0a0;">~30-50% 1RM<br>Power development</p>
+      </div>
+      <div class="zone-item" style="background: rgba(59,130,246,0.15); border: 1px solid #3b82f6;">
+        <h5 style="color: #3b82f6;">Strength-Speed</h5>
+        <div class="speed" style="color: #3b82f6;">0.75-1.0 m/s</div>
+        <p style="color: #a0a0a0;">~50-65% 1RM<br>Speed work</p>
+      </div>
+      <div class="zone-item" style="background: rgba(251,191,36,0.15); border: 1px solid #fbbf24;">
+        <h5 style="color: #fbbf24;">Strength</h5>
+        <div class="speed" style="color: #fbbf24;">0.5-0.75 m/s</div>
+        <p style="color: #a0a0a0;">~65-80% 1RM<br>Hypertrophy/strength</p>
+      </div>
+      <div class="zone-item" style="background: rgba(239,68,68,0.15); border: 1px solid #ef4444;">
+        <h5 style="color: #ef4444;">Max Strength</h5>
+        <div class="speed" style="color: #ef4444;">0.3-0.5 m/s</div>
+        <p style="color: #a0a0a0;">~80-90% 1RM<br>Heavy training</p>
+      </div>
+      <div class="zone-item" style="background: rgba(168,85,247,0.15); border: 1px solid #a855f7;">
+        <h5 style="color: #a855f7;">Near-Max</h5>
+        <div class="speed" style="color: #a855f7;">< 0.3 m/s</div>
+        <p style="color: #a0a0a0;">~90-100% 1RM<br>Peaking/testing</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Minimum Velocity Threshold (MVT)</div>
+      <p style="margin: 0; color: #a0a0a0;">Your MVT is the slowest speed at which you can complete a lift. At true 1RM, most lifters hit 0.15-0.30 m/s on squat/deadlift and 0.10-0.20 m/s on bench. This is individual—tracking yours helps predict maxes.</p>
+    </div>
+
+    <h2>Lift-Specific Velocities</h2>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="280" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Typical Velocities by Lift at Various Intensities</text>
+
+        <!-- Table header -->
+        <rect x="60" y="55" width="120" height="35" fill="rgba(255,255,255,0.05)"/>
+        <text x="120" y="78" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">% 1RM</text>
+
+        <rect x="180" y="55" width="140" height="35" fill="rgba(249,115,22,0.2)"/>
+        <text x="250" y="78" text-anchor="middle" fill="#f97316" font-size="11" font-weight="600">SQUAT</text>
+
+        <rect x="320" y="55" width="140" height="35" fill="rgba(59,130,246,0.2)"/>
+        <text x="390" y="78" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">BENCH</text>
+
+        <rect x="460" y="55" width="140" height="35" fill="rgba(168,85,247,0.2)"/>
+        <text x="530" y="78" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="600">DEADLIFT</text>
+
+        <!-- 60% row -->
+        <rect x="60" y="90" width="120" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="120" y="113" text-anchor="middle" fill="#a0a0a0" font-size="11">60%</text>
+        <rect x="180" y="90" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="250" y="113" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="600">0.80-0.95</text>
+        <rect x="320" y="90" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="390" y="113" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="600">0.65-0.80</text>
+        <rect x="460" y="90" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="530" y="113" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="600">0.75-0.90</text>
+
+        <!-- 70% row -->
+        <rect x="60" y="125" width="120" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="120" y="148" text-anchor="middle" fill="#a0a0a0" font-size="11">70%</text>
+        <rect x="180" y="125" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="250" y="148" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">0.65-0.75</text>
+        <rect x="320" y="125" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="390" y="148" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">0.50-0.60</text>
+        <rect x="460" y="125" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="530" y="148" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">0.60-0.70</text>
+
+        <!-- 80% row -->
+        <rect x="60" y="160" width="120" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="120" y="183" text-anchor="middle" fill="#a0a0a0" font-size="11">80%</text>
+        <rect x="180" y="160" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="250" y="183" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">0.50-0.60</text>
+        <rect x="320" y="160" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="390" y="183" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">0.35-0.45</text>
+        <rect x="460" y="160" width="140" height="35" fill="rgba(255,255,255,0.02)"/>
+        <text x="530" y="183" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">0.45-0.55</text>
+
+        <!-- 90% row -->
+        <rect x="60" y="195" width="120" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="120" y="218" text-anchor="middle" fill="#a0a0a0" font-size="11">90%</text>
+        <rect x="180" y="195" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="250" y="218" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">0.35-0.45</text>
+        <rect x="320" y="195" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="390" y="218" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">0.20-0.30</text>
+        <rect x="460" y="195" width="140" height="35" fill="rgba(255,255,255,0.04)"/>
+        <text x="530" y="218" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">0.30-0.40</text>
+
+        <!-- Note -->
+        <text x="350" y="255" text-anchor="middle" fill="#6b7280" font-size="10">Values in m/s. Bench is typically slowest; squat and deadlift are similar.</text>
+        <text x="350" y="270" text-anchor="middle" fill="#6b7280" font-size="10">Individual variation exists—build your own profiles.</text>
+      </svg>
+      <div class="diagram-caption">General velocity ranges vary by lift due to range of motion and muscle involvement</div>
+    </div>
+
+    <h2>VBT Devices</h2>
+
+    <div class="tech-card">
+      <h4>Linear Position Transducers (LPT)</h4>
+      <p style="color: #a0a0a0; margin: 0;">The gold standard. A cable attaches to the bar and measures displacement. Examples: GymAware, Tendo Unit. Highly accurate but expensive ($500-2000+).</p>
+    </div>
+
+    <div class="tech-card">
+      <h4>Accelerometer-Based Devices</h4>
+      <p style="color: #a0a0a0; margin: 0;">Small units that attach to the bar and measure acceleration. Examples: PUSH Band, Beast Sensor, Vitruve. More affordable ($150-400), good accuracy for most purposes.</p>
+    </div>
+
+    <div class="tech-card">
+      <h4>Camera/App-Based Systems</h4>
+      <p style="color: #a0a0a0; margin: 0;">Use your phone camera to track bar movement. Examples: My Lift, WL Analysis, Iron Path. Free or cheap, accuracy varies. Good for learning concepts.</p>
+    </div>
+
+    <h2>Practical Applications</h2>
+
+    <h3>1. Autoregulating Daily Intensity</h3>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="220" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Velocity-Based Load Adjustment</text>
+
+        <!-- Good day -->
+        <rect x="60" y="50" width="180" height="145" fill="rgba(34,197,94,0.1)" stroke="#22c55e" rx="8"/>
+        <text x="150" y="75" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="600">GOOD DAY</text>
+
+        <text x="80" y="100" fill="#a0a0a0" font-size="10">Warm-up sets feel fast</text>
+        <text x="80" y="120" fill="#a0a0a0" font-size="10">100kg @ 0.72 m/s</text>
+        <text x="80" y="140" fill="#a0a0a0" font-size="10">(normally 0.65 m/s)</text>
+
+        <text x="80" y="165" fill="#22c55e" font-size="10" font-weight="500">→ Add 2.5-5kg today</text>
+        <text x="80" y="182" fill="#22c55e" font-size="10" font-weight="500">→ Push working sets</text>
+
+        <!-- Normal day -->
+        <rect x="260" y="50" width="180" height="145" fill="rgba(251,191,36,0.1)" stroke="#fbbf24" rx="8"/>
+        <text x="350" y="75" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">NORMAL DAY</text>
+
+        <text x="280" y="100" fill="#a0a0a0" font-size="10">Warm-up sets on target</text>
+        <text x="280" y="120" fill="#a0a0a0" font-size="10">100kg @ 0.65 m/s</text>
+        <text x="280" y="140" fill="#a0a0a0" font-size="10">(expected velocity)</text>
+
+        <text x="280" y="165" fill="#fbbf24" font-size="10" font-weight="500">→ Follow program as written</text>
+        <text x="280" y="182" fill="#fbbf24" font-size="10" font-weight="500">→ Standard progression</text>
+
+        <!-- Bad day -->
+        <rect x="460" y="50" width="180" height="145" fill="rgba(239,68,68,0.1)" stroke="#ef4444" rx="8"/>
+        <text x="550" y="75" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">FATIGUED DAY</text>
+
+        <text x="480" y="100" fill="#a0a0a0" font-size="10">Warm-up sets sluggish</text>
+        <text x="480" y="120" fill="#a0a0a0" font-size="10">100kg @ 0.55 m/s</text>
+        <text x="480" y="140" fill="#a0a0a0" font-size="10">(normally 0.65 m/s)</text>
+
+        <text x="480" y="165" fill="#ef4444" font-size="10" font-weight="500">→ Reduce load 5-10%</text>
+        <text x="480" y="182" fill="#ef4444" font-size="10" font-weight="500">→ Or reduce volume</text>
+      </svg>
+      <div class="diagram-caption">Use warm-up velocities to adjust training load for the day</div>
+    </div>
+
+    <h3>2. Velocity Stop Sets</h3>
+
+    <p>
+      Instead of prescribing sets and reps, prescribe a velocity cutoff. When bar speed drops below the threshold, the set ends. This autoregulates fatigue.
+    </p>
+
+    <div class="tech-card">
+      <h4>Example Protocol</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li>Squat @ 75%: Continue reps until velocity drops below 0.50 m/s</li>
+        <li>Usually produces 4-6 reps depending on daily readiness</li>
+        <li>Stops you before grinding—better rep quality, less fatigue</li>
+        <li>Multiple sets with same cutoff accumulates quality volume</li>
+      </ul>
+    </div>
+
+    <h3>3. Estimating 1RM Without Testing</h3>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="200" fill="#1a1a2e"/>
+
+        <!-- Title -->
+        <text x="350" y="25" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Velocity-Based 1RM Estimation</text>
+
+        <!-- Process flow -->
+        <rect x="60" y="55" width="140" height="70" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" rx="8"/>
+        <text x="130" y="85" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">STEP 1</text>
+        <text x="130" y="103" text-anchor="middle" fill="#a0a0a0" font-size="9">Build load-velocity</text>
+        <text x="130" y="116" text-anchor="middle" fill="#a0a0a0" font-size="9">profile over time</text>
+
+        <path d="M 205 90 L 230 90" stroke="#fff" stroke-width="2" marker-end="url(#arrowW)"/>
+
+        <rect x="240" y="55" width="140" height="70" fill="rgba(249,115,22,0.2)" stroke="#f97316" rx="8"/>
+        <text x="310" y="85" text-anchor="middle" fill="#f97316" font-size="11" font-weight="600">STEP 2</text>
+        <text x="310" y="103" text-anchor="middle" fill="#a0a0a0" font-size="9">Know your MVT</text>
+        <text x="310" y="116" text-anchor="middle" fill="#a0a0a0" font-size="9">(e.g., 0.25 m/s squat)</text>
+
+        <path d="M 385 90 L 410 90" stroke="#fff" stroke-width="2" marker-end="url(#arrowW)"/>
+
+        <rect x="420" y="55" width="140" height="70" fill="rgba(34,197,94,0.2)" stroke="#22c55e" rx="8"/>
+        <text x="490" y="85" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="600">STEP 3</text>
+        <text x="490" y="103" text-anchor="middle" fill="#a0a0a0" font-size="9">Extrapolate from</text>
+        <text x="490" y="116" text-anchor="middle" fill="#a0a0a0" font-size="9">submaximal data</text>
+
+        <defs>
+          <marker id="arrowW" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 z" fill="#fff"/>
+          </marker>
+        </defs>
+
+        <!-- Example -->
+        <rect x="150" y="140" width="400" height="45" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" rx="8"/>
+        <text x="350" y="162" text-anchor="middle" fill="#fff" font-size="11" font-weight="500">Example: If 120kg moves at 0.40 m/s and MVT is 0.25 m/s</text>
+        <text x="350" y="177" text-anchor="middle" fill="#00d9ff" font-size="10">Estimated 1RM ≈ 132-135kg (using load-velocity equation)</text>
+      </svg>
+      <div class="diagram-caption">Predict maxes from submaximal work without grinding through true 1RMs</div>
+    </div>
+
+    <h3>4. Velocity Loss for Fatigue Management</h3>
+
+    <p>
+      Track how much velocity drops across a set. More velocity loss = more fatigue. Use this to manage training stress:
+    </p>
+
+    <ul>
+      <li><strong>0-10% loss:</strong> Minimal fatigue, good for speed/power work</li>
+      <li><strong>10-20% loss:</strong> Moderate fatigue, good for strength development</li>
+      <li><strong>20-30% loss:</strong> High fatigue, hypertrophy focus</li>
+      <li><strong>>30% loss:</strong> Very high fatigue, grinding reps (usually avoid)</li>
+    </ul>
+
+    <h2>VBT for Women</h2>
+
+    <div class="tech-card">
+      <h4>Considerations</h4>
+      <ul style="color: #a0a0a0; margin: 0; padding-left: 20px;">
+        <li><strong>Build your own profiles:</strong> Published velocity zones are often from male data—calibrate to yourself</li>
+        <li><strong>Menstrual cycle effects:</strong> Some women show velocity variations across the cycle—track and learn your patterns</li>
+        <li><strong>Fatigue tolerance:</strong> Women often tolerate higher velocity loss before technique breaks—but don't abuse this</li>
+        <li><strong>Bench press:</strong> Women typically have lower absolute bench velocities due to shorter ROM—don't compare to men's data</li>
+      </ul>
+    </div>
+
+    <h2>Getting Started with VBT</h2>
+
+    <ol>
+      <li><strong>Choose a device:</strong> Start with a phone app if budget is tight, or invest in an accelerometer-based unit</li>
+      <li><strong>Build baseline data:</strong> Track velocities at various percentages for 4-6 weeks before making changes</li>
+      <li><strong>Find your MVT:</strong> When you do test maxes, record the velocity</li>
+      <li><strong>Start simple:</strong> Use velocity to guide warm-up load selection before using it for work sets</li>
+      <li><strong>Track trends:</strong> Day-to-day variation is normal; look at weekly/monthly patterns</li>
+    </ol>
+
+    <div class="callout">
+      <div class="callout-title">The Bottom Line</div>
+      <p style="margin: 0; color: #a0a0a0;">VBT provides objective feedback that removes guesswork from training. It's not magic—it's measurement. Use it to autoregulate intensity, manage fatigue, and track readiness. Start by collecting data, then gradually integrate velocity targets into your programming.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 24px; margin: 48px 0;">
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f97316, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">HW</div>
+        <div>
+          <strong style="color: #fff;">HEAVIERWEIGHT Team</strong>
+          <p style="color: #6b7280; margin: 4px 0 0 0; font-size: 0.9rem;">Training technology for women who compete.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="color: #fff; margin-bottom: 16px;">Related Articles</h3>
+      <div style="display: grid; gap: 12px;">
+        <a href="/train/rpe-training/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">RPE Training Guide →</a>
+        <a href="/train/autoregulation/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Autoregulation in Training →</a>
+        <a href="/train/periodization/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; color: #fff; text-decoration: none;">Periodization Guide →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p style="color: #6b7280;">&copy; 2024 HEAVIERWEIGHT.COM</p>
+    </div>
+  </footer>
+</body>
+</html>
