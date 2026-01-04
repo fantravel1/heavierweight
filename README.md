@@ -14,7 +14,7 @@ og_description: "The definitive resource for women's competitive lifting. 225+ a
 canonical: "https://heavierweight.com/"
 schema_type: "WebSite"
 author: "HEAVIERWEIGHT Editorial"
-date_modified: "2024-12-27"
+date_modified: "2026-01-04"
 total_articles: 225
 pillars: 6
 launch_year: 2025
@@ -908,5 +908,5 @@ For partnership inquiries regarding contributor opportunities, see the [Female B
 
 ---
 
-*Last Updated: December 2024*
-*Version: 1.0*
+*Last Updated: January 2026*
+*Version: 1.1*
